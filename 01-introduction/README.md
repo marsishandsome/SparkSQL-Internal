@@ -1,8 +1,9 @@
 # SparkSQL介绍
 2014年9月SparkSQL发布了1.1.0版本，紧接着在12月又发布了1.2.0版本。
 
-SparkSQL1.1.0
+### SparkSQL1.1.0
 [(release note)](https://spark.apache.org/releases/spark-release-1-1-0.html)
+
 版本主要的变动有：
 1. 增加了JDBC/ODBC Server (ThriftServer)，用户可以在应用程序中连接到SparkSQL并使用其中的表和缓存表。
 2. 增加了对JSON文件的支持
@@ -12,8 +13,9 @@ SparkSQL1.1.0
 6. 统一API接口，如sql()、SchemaRDD生成等。
 
 
-SparkSQL1.2.0
+### SparkSQL1.2.0
 [(release note)](https://spark.apache.org/releases/spark-release-1-2-0.html)
+
 版本主要的变动有：
 
 1. 增加访问外部数据的新API，通过该API可以在运行时将外部数据注册为临时表格，并且支持predicte pushdown方式的优化，Spark原生支持Parquet和JSON格式，用户可以自己编写读取其他格数据的代码。
