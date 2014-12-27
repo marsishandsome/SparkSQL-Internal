@@ -1,1 +1,2 @@
 # Catalyst优化器
+Catalyst是SparkSQL的优化器，它是一款基于规则的优化器。其实在SparkSQL中
