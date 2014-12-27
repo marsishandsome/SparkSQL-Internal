@@ -1,7 +1,7 @@
 # SqlContext的运行过程
 SparkSQL有两个分支SqlContext和Hivecontext，SqlContext现在只支持sql语法解析器（SQL-92语法），而HiveContext现在既支持sql语法解析器又支持hivesql语法解析器，默认为hivesql语法解析器，用户可以通过配置切换成sql语法解析器，来运行hiveql不支持的语法。
 
-SqlContext使用sqlContext.sql(sqlText)来提交用户sql语句
+SqlContext使用sqlContext.sql(sqlText)来提交用户sql语句，SqlContext首先会调用parserSql对sqlText进行语法分析，然后返回给用户SchemaRDD。SchemaRDD继承自SchemaRDDLike。
 
 ```
   /**
@@ -17,21 +17,23 @@ SqlContext使用sqlContext.sql(sqlText)来提交用户sql语句
       sys.error(s"Unsupported SQL dialect: $dialect")
     }
   }
-```
 
-```
-  protected[sql] val sqlParser = {
+protected[sql] val sqlParser = {
     val fallback = new catalyst.SqlParser
     new catalyst.SparkSQLParser(fallback(_))
   }
-```
-SqlContext首先会调用catalyst.SqlParser对sqlText进行语法分析，生成Unresolved LogicalPlan，然后返回给用户SchemaRDD。SchemaRDD继承自SchemaRDDLike。
 
-```
 class SchemaRDD(
     @transient val sqlContext: SQLContext,
     @transient val baseLogicalPlan: LogicalPlan)
   extends RDD[Row](sqlContext.sparkContext, Nil) with SchemaRDDLike
+```
+
+parseSql首先会尝试dll语法解析，如果失败则进行sql语法解析。
+```
+   protected[sql] def parseSql(sql: String): LogicalPlan = {
+    ddlParser(sql).getOrElse(sqlParser(sql))
+  }
 ```
 
 然后调用SchemaRDDLike中的sqlContext.executePlan(baseLogicalPlan)来执行catalyst.SqlParser解析后生成的Unresolved LogicalPlan。
