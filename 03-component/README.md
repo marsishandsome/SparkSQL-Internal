@@ -1,15 +1,3 @@
 # SparkSQL组件解析
 
-### LogicalPlan
-
-### SqlParser
-
-### Analyser
-
-### Optimizer
-
-### SparkPlan
-
-### External Data Source
-
-
+本篇将详细地介绍一下SparkSQL关键的一些组件。
