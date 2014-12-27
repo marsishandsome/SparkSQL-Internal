@@ -15,7 +15,7 @@ TreeNode Library是Catalyst的核心类库，语法树的构建都是由一个�
 ![](/images/tree-node.png)
 
 ### 核心方法 transform 方法
-  transform该方法接受一个PartialFunction，Analyzer到的Batch里面的Rule。
+  transform该方法接受一个PartialFunction，例如Analyzer的Batch里面的Rule。
   是会将Rule迭代应用到该节点的所有子节点，最后返回这个节点的副本。
   如果rule没有对一个节点进行PartialFunction的操作，就返回这个节点本身。
 

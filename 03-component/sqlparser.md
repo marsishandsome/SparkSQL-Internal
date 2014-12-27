@@ -1,1 +1,2 @@
 # SqlParser
+SqlParser的功能就是将SQL语句解析成Unresolved LogicalPlan。

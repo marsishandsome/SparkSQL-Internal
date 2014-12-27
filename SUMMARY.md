@@ -15,6 +15,8 @@
    * [Optimizer](03-component/optimizer.md)
    * [SparkPlan](03-component/sparkplan.md)
    * [External Data Source](03-component/external_data_source.md)
+   * [UDF](03-component/udf.md)
+   * [In-Memory Columnar Storage](03-component\in-memory_columnar_storage)
 * [深入sparkSQL运行计划](04-sparksql_in_deap/README.md)
 * [SparkSQL的使用基础](05-use_of_sparksql/README.md)
 * [SparkSQL调优](06-performance-turning/README.md)
