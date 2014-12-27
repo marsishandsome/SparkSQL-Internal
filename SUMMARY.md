@@ -10,7 +10,6 @@
    * [HiveContext的运行过程](02-architeture/hivecontext.md)
    * [Catalyst优化器](02-architeture/catalyst.md)
 * [SparkSQL组件解析](03-component/README.md)
-   * [LogicalPlan](03-component/logicalplan.md)
    * [SqlParser](03-component/sqlparser.md)
    * [Analyser](03-component/analyser.md)
    * [Optimizer](03-component/optimizer.md)

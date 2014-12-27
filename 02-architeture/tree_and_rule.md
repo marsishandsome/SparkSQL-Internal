@@ -1,66 +1,130 @@
-# Tree和Rule
-SparkSQL首先会对SQL语句进行语法解析(Parser)，形成一颗Tree，后续的操作（包括绑定，优化）都是基于Tree的操作，方法都是通过Rule进行模式匹配，对不同的模式进行不同的操作。
+# Tree
 
-### Tree
-Tree的相关代码定义在sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/trees。TreeNode的定义为```abstract class TreeNode[BaseType <: TreeNode[BaseType]]```
-
-Logical Plans、Expressions、Physical Operators都可以使用Tree表示
-
-##### Tree主要有两类操作
-1. 集合相关操作，如foreach, map, flatMap, collect
-2. Tree相关操作，如transformDown,transformUp将Rule应用到给定的数段，然后用结果替代就的数段；再如transformChildrenDown,transformChildrenUp对一个给定的节点进行操作，通过迭代将Rule应用到该节点以及子节点。
+在sparkSQL的运行架构中，LogicalPlan贯穿了大部分的过程，其中catalyst中的SqlParser、Analyzer、Optimizer都要对LogicalPlan进行操作。LogicalPlan继承自QueryPlan，而QueryPlan继承自TreeNode。
 
 ```
-   /**
+abstract class LogicalPlan extends QueryPlan[LogicalPlan] with Logging
+
+abstract class QueryPlan[PlanType <: TreeNode[PlanType]] extends TreeNode[PlanType]
+
+abstract class TreeNode[BaseType <: TreeNode[BaseType]]
+```
+
+TreeNode Library是Catalyst的核心类库，语法树的构建都是由一个个TreeNode组成。在Catalyst里，这些Node都是继承自Logical Plan，可以说每一个TreeNode节点就是一个Logical Plan(包含Expression）（直接继承自TreeNode）。主要继承关系类图如下：
+
+![](/images/tree-node.png)
+
+### 核心方法 transform 方法
+  transform该方法接受一个PartialFunction，Analyzer到的Batch里面的Rule。
+  是会将Rule迭代应用到该节点的所有子节点，最后返回这个节点的副本。
+  如果rule没有对一个节点进行PartialFunction的操作，就返回这个节点本身。
+
+ ```
+/**
+   * Returns a copy of this node where `rule` has been recursively applied to the tree.
+   * When `rule` does not apply to a given node it is left unchanged.
+   * Users should not expect a specific directionality. If a specific directionality is needed,
+   * transformDown or transformUp should be used.
+   * @param rule the function use to transform this nodes children
+   */
+  def transform(rule: PartialFunction[BaseType, BaseType]): BaseType = {
+    transformDown(rule)
+  }
+```
+
+### transformDown方法
+transform方法真正的调用是transformDown，这里提到了用先序遍历来对子节点进行递归的Rule应用。如果在对当前节点应用rule成功，修改后的节点afterRule，来对其children节点进行rule的应用。
+```
+ /**
    * Returns a copy of this node where `rule` has been recursively applied to it and all of its
    * children (pre-order). When `rule` does not apply to a given node it is left unchanged.
    * @param rule the function used to transform this nodes children
    */
-  def transformDown(rule: PartialFunction[BaseType, BaseType]): BaseType
+  def transformDown(rule: PartialFunction[BaseType, BaseType]): BaseType = {
+    val afterRule = rule.applyOrElse(this, identity[BaseType])
+    // Check if unchanged and then possibly return old copy to avoid gc churn.
+    if (this fastEquals afterRule) {
+      transformChildrenDown(rule)
+    } else {
+      afterRule.transformChildrenDown(rule)
+    }
+  }
 ```
 
-```
-   /**
+### transformChildrenDown方法
+最重要的方法transformChildrenDown:
+  对children节点进行递归的调用PartialFunction，利用最终返回的newArgs来生成一个新的节点，这里调用了makeCopy()来生成节点。
+ ```
+  /**
    * Returns a copy of this node where `rule` has been recursively applied to all the children of
    * this node.  When `rule` does not apply to a given node it is left unchanged.
    * @param rule the function used to transform this nodes children
    */
-  def transformChildrenDown(rule: PartialFunction[BaseType, BaseType]): this.type
+  def transformChildrenDown(rule: PartialFunction[BaseType, BaseType]): this.type = {
+    var changed = false
+    val newArgs = productIterator.map {
+      case arg: TreeNode[_] if children contains arg =>
+        val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+        if (!(newChild fastEquals arg)) {
+          changed = true
+          newChild
+        } else {
+          arg
+        }
+      case Some(arg: TreeNode[_]) if children contains arg =>
+        val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+        if (!(newChild fastEquals arg)) {
+          changed = true
+          Some(newChild)
+        } else {
+          Some(arg)
+        }
+      case m: Map[_,_] => m
+      case args: Traversable[_] => args.map {
+        case arg: TreeNode[_] if children contains arg =>
+          val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+          if (!(newChild fastEquals arg)) {
+            changed = true
+            newChild
+          } else {
+            arg
+          }
+        case other => other
+      }
+      case nonChild: AnyRef => nonChild
+      case null => null
+    }.toArray
+    if (changed) makeCopy(newArgs) else this
+  }
 ```
 
-##### TreeNode分为三大类
-1. UnaryNode 一元节点，即只有一个子节点。如Limit、Filter操作
-2. BinaryNode 二元节点，即有左右子节点的二叉节点。如Jion、Union操作
-3. LeafNode 叶子节点，没有子节点的节点。主要用户命令类操作，如SetCommand
-
+### makeCopy方法，反射生成节点副本
 ```
 /**
- * A [[TreeNode]] that has two children, [[left]] and [[right]].
- */
-trait BinaryNode[BaseType <: TreeNode[BaseType]] {
-  def left: BaseType
-  def right: BaseType
-
-  def children = Seq(left, right)
-}
-
-/**
- * A [[TreeNode]] with no children.
- */
-trait LeafNode[BaseType <: TreeNode[BaseType]] {
-  def children = Nil
-}
-
-/**
- * A [[TreeNode]] with a single [[child]].
- */
-trait UnaryNode[BaseType <: TreeNode[BaseType]] {
-  def child: BaseType
-  def children = child :: Nil
-}
+   * Creates a copy of this type of tree node after a transformation.
+   * Must be overridden by child classes that have constructor arguments
+   * that are not present in the productIterator.
+   * @param newArgs the new product arguments.
+   */
+  def makeCopy(newArgs: Array[AnyRef]): this.type = attachTree(this, "makeCopy") {
+    try {
+      // Skip no-arg constructors that are just there for kryo.
+      val defaultCtor = getClass.getConstructors.find(_.getParameterTypes.size != 0).head
+      if (otherCopyArgs.isEmpty) {
+        defaultCtor.newInstance(newArgs: _*).asInstanceOf[this.type]
+      } else {
+        defaultCtor.newInstance((newArgs ++ otherCopyArgs).toArray: _*).asInstanceOf[this.type]
+      }
+    } catch {
+      case e: java.lang.IllegalArgumentException =>
+        throw new TreeNodeException(
+          this, s"Failed to copy node.  Is otherCopyArgs specified correctly for $nodeName? "
+            + s"Exception message: ${e.getMessage}.")
+    }
+  }
 ```
 
-### Rule
+# Rule
 Rule的相关代码定义在sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/rules，Rule类是抽象类，调用apply方法可以进行Tree的transformation。
 
 ```
