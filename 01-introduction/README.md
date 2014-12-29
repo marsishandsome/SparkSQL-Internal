@@ -22,19 +22,3 @@
 2. 增加支持Hive 0.13，增加对fixed-precision decimal数据类型的支持。
 3. 增加[dynamically partitioned inserts](https://issues.apache.org/jira/browse/SPARK-3007)
 4. 优化了cache SchemaRDD，并重新定义了其语义，并增加了[statistics-based partition pruning](https://issues.apache.org/jira/browse/SPARK-2961)。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
