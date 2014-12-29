@@ -1,4 +1,4 @@
-# SparkSQL的使用基础
+# SparkSQL的使用
 
 SparkSQL引入了一种新的RDD——SchemaRDD，SchemaRDD由行对象（row）以及描述行对象中每列数据类型的schema组成；SchemaRDD很象传统数据库中的表。SchemaRDD可以通过RDD、Parquet文件、JSON文件、或者通过使用hiveql查询hive数据来建立。SchemaRDD除了可以和RDD一样操作外，还可以通过registerTempTable注册成临时表，然后通过SQL语句进行操作。
 

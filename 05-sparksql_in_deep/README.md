@@ -1,4 +1,4 @@
-# SparkSQL的运行架构
+# 深入SparkSQL
 
 在传统关系型数据库当中，一个简单的```select attribute from table where condition```语句，将会经过Parser生成Logical Plan，一般是一颗Tree，Optimizer会在Tree上进行优化并生成Physical Plan，交给执行器去执行，最总得到结果。
 

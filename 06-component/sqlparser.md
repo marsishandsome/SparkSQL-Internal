@@ -121,7 +121,7 @@ private lazy val cache: Parser[LogicalPlan] =
 ```
 
 
-### SqlParser解析
+### SqlParser
 SqlParser继承自AbstractSparkSQLParser，而AbstractSparkSQLParser继承自StandardTokenParsers和 PackratParsers。SqlParser中定义了SQL语言的词法和语法规则：
 1. 词法： SqlParser首先定义了一堆Keyword，然后通过反射机制把这些Keyword全部加到一个reservedWords的集合当中，最后把这些关键字加到SqlLexical中。SqlLexical中除了定义关键字以外，还定义了分隔符。
 2. 语法：sql语法的根节点是```val start: Parser[LogicalPlan]```，语法树的返回类型是```LogicalPlan```。
@@ -173,7 +173,7 @@ class SqlLexical(val keywords: Seq[String]) extends StdLexical {
 }
 ```
 
-### AbstractSparkSQLParser解析
+### AbstractSparkSQLParser
 sql真正的解析是在AbstractSparkSQLParser中进行的，解析功能的核心代码就是：```phrase(start)(new lexical.Scanner(input))```。可以看得出来，该语句就是调用phrase()函数，使用SQL语法表达式start，对词法读入器lexical读入的SQL语句进行解析，其中
 1. 词法分析器lexical定义在SqlParser中```override val lexical = new SqlLexical(reservedWords)```
 2. 语法分析器start定义在SqlParser中```protected lazy val start: Parser[LogicalPlan] =...```
