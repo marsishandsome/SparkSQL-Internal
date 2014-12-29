@@ -58,6 +58,41 @@ object CombineLimits extends Rule[LogicalPlan] {
 
 ##### NullPropagation
 Literal字面量是一个能匹配任意基本类型的类。
+```
+object Literal {
+  def apply(v: Any): Literal = v match {
+    case i: Int => Literal(i, IntegerType)
+    case l: Long => Literal(l, LongType)
+    case d: Double => Literal(d, DoubleType)
+    case f: Float => Literal(f, FloatType)
+    case b: Byte => Literal(b, ByteType)
+    case s: Short => Literal(s, ShortType)
+    case s: String => Literal(s, StringType)
+    case b: Boolean => Literal(b, BooleanType)
+    case d: BigDecimal => Literal(Decimal(d), DecimalType.Unlimited)
+    case d: Decimal => Literal(d, DecimalType.Unlimited)
+    case t: Timestamp => Literal(t, TimestampType)
+    case d: Date => Literal(d, DateType)
+    case a: Array[Byte] => Literal(a, BinaryType)
+    case null => Literal(null, NullType)
+  }
+}
+```
+
+注意Literal是一个LeafExpression，核心方法是eval，给定Row，计算表达式返回值：
+```
+case class Literal(value: Any, dataType: DataType) extends LeafExpression {
+
+  override def foldable = true
+  def nullable = value == null
+
+
+  override def toString = if (value != null) value.toString else "null"
+
+  type EvaluatedType = Any
+  override def eval(input: Row):Any = value
+}
+```
 
 NullPropagation是一个能将Expression Expressions替换为等价的Literal值的优化，并且能够避免NULL值在SQL语法树的传播。
 ```
@@ -125,6 +160,7 @@ object NullPropagation extends Rule[LogicalPlan] {
 ```
 
 ##### ConstantFolding
+常量合并是属于Expression优化的一种，对于可以直接计算的常量，不用放到物理执行里去生成对象来计算了，直接可以在计划里就计算出来：
 ```
 /**
  * Replaces [[Expression Expressions]] that can be statically evaluated with
@@ -152,6 +188,12 @@ object ConstantFolding extends Rule[LogicalPlan] {
 ```
 
 ##### LikeSimplification
+简化Like字句，如果符合下面四种情况之一：
+1. startsWith
+2. endsWith
+3. contains
+4. equalTo
+
 ```
 /**
  * Simplifies LIKE expressions that do not need full regular expressions to evaluate the condition.
@@ -180,6 +222,7 @@ object LikeSimplification extends Rule[LogicalPlan] {
 ```
 
 ##### BooleanSimplification
+这个是对布尔表达式的优化，有点像java布尔表达式中的短路判断，不过这个写的倒是很优雅。看看布尔表达式2边能不能通过只计算1边，而省去计算另一边而提高效率，称为简化布尔表达式。
 ```
 /**
  * Simplifies boolean expressions where the answer can be determined without evaluating both sides.
@@ -227,6 +270,8 @@ object BooleanSimplification extends Rule[LogicalPlan] {
 ```
 
 ##### SimplifyFilters
+如果filter总是返回true，则删除filter返回child，如果filter总是返回false，则返回empty的relation。
+
 ```
 /**
  * Removes filters that can be evaluated trivially.  This is done either by eliding the filter for
@@ -246,6 +291,8 @@ object SimplifyFilters extends Rule[LogicalPlan] {
 ```
 
 ##### SimplifyCasts
+如果Cast的类型和实际类型一致，则去除没必要的cast。
+
 ```
 /**
  * Removes [[Cast Casts]] that are unnecessary because the input is already the correct type.
@@ -258,6 +305,8 @@ object SimplifyCasts extends Rule[LogicalPlan] {
 ```
 
 ##### SimplifyCaseConversionExpressions
+去除内层没必要的大小写转换，直接返回外层的转换。
+
 ```
 /**
  * Removes the inner [[CaseConversionExpression]] that are unnecessary because
@@ -276,6 +325,8 @@ object SimplifyCaseConversionExpressions extends Rule[LogicalPlan] {
 ```
 
 ##### OptimizeIn
+将In(value, Seq[Literal])的节点转换为等价的InSet(value, HashSet[Literal])，会快很多。
+
 ```
 /**
  * Replaces [[In (value, seq[Literal])]] with optimized version[[InSet (value, HashSet[Literal])]]
@@ -293,6 +344,8 @@ object OptimizeIn extends Rule[LogicalPlan] {
 ```
 
 ##### DecimalAggregates
+计算fixed-precision Decimal类型的sum和avg的时候，先把它转换为Long类型，做计算，最后在转化为Decimal，会比较快。
+
 ```
 /**
  * Speeds up aggregates on fixed-precision decimals by executing them on unscaled Long values.
@@ -319,6 +372,8 @@ object DecimalAggregates extends Rule[LogicalPlan] {
 ```
 
 ##### UnionPushdown
+把filter和project pushdown到union下面。
+
 ```
 /**
   *  Pushes operations to either side of a Union.
@@ -368,6 +423,7 @@ object UnionPushdown extends Rule[LogicalPlan] {
 ```
 
 ##### CombineFilters
+合并两个相邻的Filter,这个和上述Combine Limit差不多。合并2个节点，就可以减少树的深度从而减少重复执行过滤的代价。
 ```
 /**
  * Combines two adjacent [[Filter]] operators into one, merging the
@@ -381,6 +437,8 @@ object CombineFilters extends Rule[LogicalPlan] {
 ```
 
 ##### PushPredicateThroughProject
+Predict push到project下面，如果predict不依赖于project。
+
 ```
 /**
  * Pushes [[Filter]] operators through [[Project]] operators, in-lining any [[Alias Aliases]]
@@ -408,6 +466,8 @@ object PushPredicateThroughProject extends Rule[LogicalPlan] {
 ```
 
 ##### PushPredicateThroughJoin
+Predict push到project下面，如果predict不依赖于join。
+
 ```
 /**
  * Pushes down [[Filter]] operators where the `condition` can be
@@ -511,6 +571,11 @@ object PushPredicateThroughJoin extends Rule[LogicalPlan] with PredicateHelper {
 ```
 
 ##### ColumnPruning
+列裁剪用的比较多，就是减少不必要select的某些列。列裁剪在3种地方可以用：
+1. 在聚合操作中，可以做列裁剪
+2. 在join操作中，左右孩子可以做列裁剪
+3. 合并相邻的Project的列
+
 ```
 /**
  * Attempts to eliminate the reading of unneeded columns from the query plan using the following
