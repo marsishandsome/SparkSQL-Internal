@@ -27,5 +27,5 @@
    * [UDF](06-component/udf.md)
    * [In-Memory Columnar Storage](06-component/in-memory_columnar_storage.md)
    * [External Data Source](06-component/external_data_source.md)
-* [总结](07-overall/README.md)
+* [推荐资料](07-overall/README.md)
 
