@@ -1,5 +1,5 @@
 # SparkSQL介绍
-2014年9月SparkSQL发布了1.1.0版本，紧接着在12月又发布了1.2.0版本。
+2014年9月SparkSQL发布了1.1.0版本，紧接着在12月又发布了1.2.0版本。SparkSQL发展速度异常迅猛，原因是将SQL类型的查询语言整合到Spark的核心RDD概念里，这样流处理，批处理，包括机器学习里都可以和SQL混合使用。
 
 ### SparkSQL1.1.0
 [(release note)](https://spark.apache.org/releases/spark-release-1-1-0.html)

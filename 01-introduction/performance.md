@@ -1,7 +1,9 @@
 #SparkSQL的性能
-摆脱了Hive限制的SparkSQL的性能在Shark的基础上又有了长足的进步。SparkSQL主要在下面几点做了性能上的优化：
+摆脱了Hive限制的SparkSQL的性能在Shark的基础上又有了长足的进步。
 
 ![](/images/SparkSQL-vs-Shark.png)
+
+SparkSQL主要在下面几点做了性能上的优化：
 
 ### 1. 内存列存储(In-Memory Columnar Storage)
 SparkSQL继承了Shark的内存列存储，内存列存储有诸多好处：
