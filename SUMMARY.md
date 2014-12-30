@@ -22,7 +22,7 @@
    * [SqlParser](06-component/sqlparser.md)
    * [Analyser](06-component/analyser.md)
    * [Optimizer](06-component/optimizer.md)
-   * [Physical Plan](06-component/physical_plan)
+   * [Physical Plan](06-component/physical_plan.md)
    * [Physical Plan to RDD](06-component/sparkplan.md)
    * [UDF](06-component/udf.md)
    * [In-Memory Columnar Storage](06-component/in-memory_columnar_storage.md)
