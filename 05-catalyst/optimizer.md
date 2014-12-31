@@ -34,10 +34,7 @@ object DefaultOptimizer extends Optimizer {
 ```
 
 ##### CombineLimits
-目前该规则无法优化```val query = sql("select * from (select * from table limit 100) limit 10 ")```这样的语句，因为CombineLimits在第一个batch里面，而且是唯一一个，也就是说它不能在其他规则的基础上在运行自己，而
-
-如果出现了2个Limit，则将2个Limit合并为一个，这个要求一个Limit是另一个Limit的grandChild。
-例如 ```,子查询里limit100,外层查询limit10，这里我们当然可以在子查询里不必查那么多，因为外层只需要10个，所以这里会合并Limit10，和Limit100 为 Limit 10。
+目前该规则无法优化```val query = sql("select * from (select * from table limit 100) limit 10 ")```这样的语句，因为CombineLimits在第一个batch里面，而且是唯一一个，也就是说它不能在其他规则的基础上再运行自己，而只能优化连续出现的两个Limit。
 ```
 /**
  * Combines two adjacent [[Limit]] operators into one, merging the
@@ -74,7 +71,7 @@ object Literal {
 }
 ```
 
-注意Literal是一个LeafExpression，核心方法是eval，给定Row，计算表达式返回值：
+注意Literal是一个LeafExpression，核心方法是eval，给定Row，计算表达式返回值。
 ```
 case class Literal(value: Any, dataType: DataType) extends LeafExpression {
 
@@ -155,7 +152,7 @@ object NullPropagation extends Rule[LogicalPlan] {
 ```
 
 ##### ConstantFolding
-常量合并是属于Expression优化的一种，对于可以直接计算的常量，不用放到物理执行里去生成对象来计算了，直接可以在计划里就计算出来：
+常量合并是属于Expression优化的一种，对于可以直接计算的常量，不用放到物理执行里去生成对象来计算了，直接可以在计划里就计算出来。
 ```
 /**
  * Replaces [[Expression Expressions]] that can be statically evaluated with
@@ -217,7 +214,7 @@ object LikeSimplification extends Rule[LogicalPlan] {
 ```
 
 ##### BooleanSimplification
-这个是对布尔表达式的优化，有点像java布尔表达式中的短路判断，不过这个写的倒是很优雅。看看布尔表达式2边能不能通过只计算1边，而省去计算另一边而提高效率，称为简化布尔表达式。
+这个是对布尔表达式的优化，有点像java布尔表达式中的短路判断。看看布尔表达式2边能不能通过只计算1边，而省去计算另一边而提高效率，称为简化布尔表达式。
 ```
 /**
  * Simplifies boolean expressions where the answer can be determined without evaluating both sides.
@@ -266,7 +263,6 @@ object BooleanSimplification extends Rule[LogicalPlan] {
 
 ##### SimplifyFilters
 如果filter总是返回true，则删除filter返回child，如果filter总是返回false，则返回empty的relation。
-
 ```
 /**
  * Removes filters that can be evaluated trivially.  This is done either by eliding the filter for
@@ -301,7 +297,6 @@ object SimplifyCasts extends Rule[LogicalPlan] {
 
 ##### SimplifyCaseConversionExpressions
 去除内层没必要的大小写转换，直接返回外层的转换。
-
 ```
 /**
  * Removes the inner [[CaseConversionExpression]] that are unnecessary because
@@ -321,7 +316,6 @@ object SimplifyCaseConversionExpressions extends Rule[LogicalPlan] {
 
 ##### OptimizeIn
 将In(value, Seq[Literal])的节点转换为等价的InSet(value, HashSet[Literal])，会快很多。
-
 ```
 /**
  * Replaces [[In (value, seq[Literal])]] with optimized version[[InSet (value, HashSet[Literal])]]
@@ -340,7 +334,6 @@ object OptimizeIn extends Rule[LogicalPlan] {
 
 ##### DecimalAggregates
 计算fixed-precision Decimal类型的sum和avg的时候，先把它转换为Long类型，做计算，最后在转化为Decimal，会比较快。
-
 ```
 /**
  * Speeds up aggregates on fixed-precision decimals by executing them on unscaled Long values.
@@ -368,7 +361,6 @@ object DecimalAggregates extends Rule[LogicalPlan] {
 
 ##### UnionPushdown
 把filter和project pushdown到union下面。
-
 ```
 /**
   *  Pushes operations to either side of a Union.
@@ -433,7 +425,6 @@ object CombineFilters extends Rule[LogicalPlan] {
 
 ##### PushPredicateThroughProject
 Predict push到project下面，如果predict不依赖于project。
-
 ```
 /**
  * Pushes [[Filter]] operators through [[Project]] operators, in-lining any [[Alias Aliases]]
@@ -462,7 +453,6 @@ object PushPredicateThroughProject extends Rule[LogicalPlan] {
 
 ##### PushPredicateThroughJoin
 Predict push到project下面，如果predict不依赖于join。
-
 ```
 /**
  * Pushes down [[Filter]] operators where the `condition` can be
@@ -640,6 +630,4 @@ object ColumnPruning extends Rule[LogicalPlan] {
     }
 }
 ```
-
-
 
