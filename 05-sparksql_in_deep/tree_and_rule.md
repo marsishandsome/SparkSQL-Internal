@@ -1,6 +1,6 @@
-# Tree
+# TreeNode
 
-在sparkSQL的运行架构中，LogicalPlan贯穿了大部分的过程，其中catalyst中的SqlParser、Analyzer、Optimizer都要对LogicalPlan进行操作。LogicalPlan继承自QueryPlan，而QueryPlan继承自TreeNode。
+Catalyst中规则的匹配和Logical Plan的转换操作，其实都是基于树的操作，LogicalPlan继承自QueryPlan，而QueryPlan本身就继承自TreeNode。
 
 ```
 abstract class LogicalPlan extends QueryPlan[LogicalPlan] with Logging
@@ -10,15 +10,14 @@ abstract class QueryPlan[PlanType <: TreeNode[PlanType]] extends TreeNode[PlanTy
 abstract class TreeNode[BaseType <: TreeNode[BaseType]]
 ```
 
-TreeNode Library是Catalyst的核心类库，语法树的构建都是由一个个TreeNode组成。在Catalyst里，这些Node都是继承自Logical Plan，可以说每一个TreeNode节点就是一个Logical Plan(包含Expression）（直接继承自TreeNode）。主要继承关系类图如下：
+TreeNode Library是Catalyst的核心类库，语法树的构建都是由一个个TreeNode组成。在Catalyst里，这些Node都是继承自Logical Plan，可以说每一个TreeNode节点就是一个Logical Plan。主要继承关系类图如下：
 
 ![](/images/tree-node.png)
 
-### 核心方法 transform 方法
-  transform该方法接受一个PartialFunction，例如Analyzer的Batch里面的Rule。
-  是会将Rule迭代应用到该节点的所有子节点，最后返回这个节点的副本。
-  如果rule没有对一个节点进行PartialFunction的操作，就返回这个节点本身。
+下面介绍一下TreeNode上的一些主要操作。
 
+### transform
+该方法接受一个PartialFunction，例如Analyzer的Batch里面的Rule。将Rule迭代应用到该节点的所有子节点，最后返回这个节点的副本。如果rule没有对一个节点进行PartialFunction的操作，就返回这个节点本身。
  ```
 /**
    * Returns a copy of this node where `rule` has been recursively applied to the tree.
@@ -32,8 +31,10 @@ TreeNode Library是Catalyst的核心类库，语法树的构建都是由一个�
   }
 ```
 
-### transformDown方法
-transform方法真正的调用是transformDown，这里提到了用先序遍历来对子节点进行递归的Rule应用。如果在对当前节点应用rule成功，修改后的节点afterRule，来对其children节点进行rule的应用。
+### transformDown & transformUp
+transform方法真正的调用是transformDown，这里用到了用先序遍历来对子节点进行递归的Rule应用。如果在对当前节点应用rule成功，修改后的节点afterRule，来对其children节点进行rule的应用。
+
+transfromUp用的是后序遍历。
 ```
  /**
    * Returns a copy of this node where `rule` has been recursively applied to it and all of its
@@ -51,9 +52,10 @@ transform方法真正的调用是transformDown，这里提到了用先序遍历�
   }
 ```
 
-### transformChildrenDown方法
-最重要的方法transformChildrenDown:
-  对children节点进行递归的调用PartialFunction，利用最终返回的newArgs来生成一个新的节点，这里调用了makeCopy()来生成节点。
+### transformChildrenDown & transformChildrenUp
+transformChildrenDown是最重要的方法，对children节点进行递归的调用PartialFunction，利用最终返回的newArgs来生成一个新的节点，这里调用了makeCopy()来生成节点。
+
+transformChildrenUp类似，只是最后调用transformUp。
  ```
   /**
    * Returns a copy of this node where `rule` has been recursively applied to all the children of
@@ -98,7 +100,8 @@ transform方法真正的调用是transformDown，这里提到了用先序遍历�
   }
 ```
 
-### makeCopy方法，反射生成节点副本
+### makeCopy
+通过反射生成节点副本。
 ```
 /**
    * Creates a copy of this type of tree node after a transformation.
@@ -123,4 +126,52 @@ transform方法真正的调用是transformDown，这里提到了用先序遍历�
     }
   }
 ```
+
+### 其他函数
+除此以外，TreeNode还支持一些集合操作函数
+
+**map**
+将函数作用到每一个结点，返回转换后的树
+```
+/**
+   * Returns a Seq containing the result of applying the given function to each
+   * node in this tree in a preorder traversal.
+   * @param f the function to be applied.
+   */
+  def map[A](f: BaseType => A): Seq[A] = {
+    val ret = new collection.mutable.ArrayBuffer[A]()
+    foreach(ret += f(_))
+    ret
+  }
+```
+
+**flatMap**
+将函数作用到每个结点，返回一个Seq
+```
+/**
+   * Returns a Seq by applying a function to all nodes in this tree and using the elements of the
+   * resulting collections.
+   */
+  def flatMap[A](f: BaseType => TraversableOnce[A]): Seq[A] = {
+    val ret = new collection.mutable.ArrayBuffer[A]()
+    foreach(ret ++= f(_))
+    ret
+  }
+```
+
+**collect**
+将函数作用到每个结点，去除没有该函数定义的结点，返回剩下的结果Seq
+```
+/**
+   * Returns a Seq containing the result of applying a partial function to all elements in this
+   * tree on which the function is defined.
+   */
+  def collect[B](pf: PartialFunction[BaseType, B]): Seq[B] = {
+    val ret = new collection.mutable.ArrayBuffer[B]()
+    val lifted = pf.lift
+    foreach(node => lifted(node).foreach(ret.+=))
+    ret
+  }
+```
+
 
