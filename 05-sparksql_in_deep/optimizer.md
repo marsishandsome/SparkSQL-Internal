@@ -1,18 +1,14 @@
 # Optimizer
-Optimizer的主要职责是将Analyzer给Resolved的Logical Plan根据不同的优化策略Batch，来对语法树进行优化。
+Optimizer的主要职责是将Analyzer输出的Resolved Logical Plan根据不同的优化策略Batch，来对语法树进行优化。Optimizer的工作方式其实类似Analyzer，因为它们都继承自RuleExecutor[LogicalPlan]，都是执行一系列的Batch操作。
 
-### Optimizer
-Optimizer这个类是在catalyst里的optimizer包下的唯一一个类，Optimizer的工作方式其实类似Analyzer，因为它们都继承自RuleExecutor[LogicalPlan]，都是执行一系列的Batch操作。
-
+### Rules介绍
 Optimizer里的batches包含了3类优化策略：
-1. Combine Limits 合并Limits
-2. ConstantFolding 常量合并
-3. Filter Pushdown 过滤器下推
-每个Batch里定义的优化伴随对象都定义在Optimizer里了。
+1. Combine Limits： 合并Limits
+2. ConstantFolding： 常量合并
+3. Decimal Optimizations： Decimal类型数据计算优化
+4. Filter Pushdown： 过滤器下推
 
 ```
-abstract class Optimizer extends RuleExecutor[LogicalPlan]
-
 object DefaultOptimizer extends Optimizer {
   val batches =
     Batch("Combine Limits", FixedPoint(100),
@@ -37,12 +33,11 @@ object DefaultOptimizer extends Optimizer {
 }
 ```
 
-### 优化策略详解
-
 ##### CombineLimits
-如果出现了2个Limit，则将2个Limit合并为一个，这个要求一个Limit是另一个Limit的grandChild。
-例如```val query = sql("select * from (select * from table limit 100) limit 10 ") ```,子查询里limit100,外层查询limit10，这里我们当然可以在子查询里不必查那么多，因为外层只需要10个，所以这里会合并Limit10，和Limit100 为 Limit 10。
+目前该规则无法优化```val query = sql("select * from (select * from table limit 100) limit 10 ")```这样的语句，因为CombineLimits在第一个batch里面，而且是唯一一个，也就是说它不能在其他规则的基础上在运行自己，而
 
+如果出现了2个Limit，则将2个Limit合并为一个，这个要求一个Limit是另一个Limit的grandChild。
+例如 ```,子查询里limit100,外层查询limit10，这里我们当然可以在子查询里不必查那么多，因为外层只需要10个，所以这里会合并Limit10，和Limit100 为 Limit 10。
 ```
 /**
  * Combines two adjacent [[Limit]] operators into one, merging the

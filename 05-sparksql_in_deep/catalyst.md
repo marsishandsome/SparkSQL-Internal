@@ -1,11 +1,11 @@
 # Analyser
 
-Analyzer位于Catalyst的analysis package下，主要职责是将Sql Parser 未能Resolved的Logical Plan 给Resolved掉。
+Analyzer的主要职责是将Sql Parser生成的Unresolved Logical Plan转化成Resolved Logical Plan。Analyzer会利用Catalog和FunctionRegistry里面注册的表格和用户定义的函数，将UnresolvedAttribute和UnresolvedRelation转换为Catalyst里全类型的对象。
 
-Analyzer会使用Catalog和FunctionRegistry将UnresolvedAttribute和UnresolvedRelation转换为catalyst里全类型的对象。在介绍Analyzer之前先介绍一下这两个模块。
+在介绍Analyzer之前先介绍一下Catalog和FunctionRegistry这两个模块。
 
 ### Catalog
-Catalog里面记录了table name到LogicalPlan的映射，提供了注册表格，查找表格等接口。
+Catalog里面记录了Table Name到Logical Plan的映射，提供了注册表格，查找表格等接口。
 
 ```
 /**
@@ -31,7 +31,7 @@ trait Catalog {
 }
 ```
 
-Catalog具体的实现是SimpleCatalog，里面是用HashMap来记录table name到LogicalPlan的映射。
+Catalog具体的实现是SimpleCatalog，里面是用HashMap来记录Table Name到Logical Plan的映射。
 ```
 class SimpleCatalog(val caseSensitive: Boolean) extends Catalog {
   val tables = new mutable.HashMap[String, LogicalPlan]()
@@ -159,114 +159,7 @@ class Analyzer(catalog: Catalog, registry: FunctionRegistry, caseSensitive: Bool
 }
 ```
 
-**Strategy** 最大的执行次数，如果执行次数在最大迭代次数之前就达到了fix point，策略就会停止，不再应用了。
-```
-/**
-   * An execution strategy for rules that indicates the maximum number of executions. If the
-   * execution reaches fix point (i.e. converge) before maxIterations, it will stop.
-   */
-  abstract class Strategy { def maxIterations: Int }
-```
-
-**Once** 执行且仅执行一次
-```
- /** A strategy that only runs once. */
-  case object Once extends Strategy { val maxIterations = 1 }
-```
-
-
-**FixedPoint** 相当于迭代次数的上限。
-```
- /** A strategy that runs until fix point or maxIterations times, whichever comes first. */
-  case class FixedPoint(maxIterations: Int) extends Strategy
-```
-
-**Rule** 理解为一种规则，这种规则会应用到Logical Plan 从而将UnResolved 转变为Resolved
-```
-abstract class Rule[TreeType <: TreeNode[_]] extends Logging {
-
-  /** Name for this rule, automatically inferred based on class name. */
-  val ruleName: String = {
-    val className = getClass.getName
-    if (className endsWith "$") className.dropRight(1) else className
-  }
-
-  def apply(plan: TreeType): TreeType
-}
-```
-
-**Batch** 批次，这个对象是由一系列Rule组成的，采用一个策略，目前有两种策略Once和FixedPoint
-```
-/** A batch of rules. */
-  protected case class Batch(name: String, strategy: Strategy, rules: Rule[TreeType]*)
-```
-
-Analyzer解析主要是根据这些Batch里面定义的策略和Rule来对Unresolved的逻辑计划进行解析的。这里Analyzer类本身并没有定义执行的方法，而实现在它的父类RuleExecutor[LogicalPlan]中，参见第四章Tree。
-
-**RuleExecutor** 执行Rule的执行环境，它会将包含了一系列的Rule的Batch进行执行，这个过程都是串行的。具体的执行方法定义在apply里，可以看到这里是一个while循环，每个batch下的rules都对当前的plan进行作用，这个过程是迭代的，直到达到Fix Point或者最大迭代次数。
-```
-abstract class RuleExecutor[TreeType <: TreeNode[_]] extends Logging {
-...
-/**
-   * Executes the batches of rules defined by the subclass. The batches are executed serially
-   * using the defined execution strategy. Within each batch, rules are also executed serially.
-   */
-  def apply(plan: TreeType): TreeType = {
-    var curPlan = plan
-
-    batches.foreach { batch =>
-      val batchStartPlan = curPlan
-      var iteration = 1
-      var lastPlan = curPlan
-      var continue = true
-
-      // Run until fix point (or the max number of iterations as specified in the strategy.
-      while (continue) {
-        curPlan = batch.rules.foldLeft(curPlan) {
-          case (plan, rule) =>
-            val result = rule(plan)
-            if (!result.fastEquals(plan)) {
-              logTrace(
-                s"""
-                  |=== Applying Rule ${rule.ruleName} ===
-                  |${sideBySide(plan.treeString, result.treeString).mkString("\n")}
-                """.stripMargin)
-            }
-
-            result
-        }
-        iteration += 1
-        if (iteration > batch.strategy.maxIterations) {
-          // Only log if this is a rule that is supposed to run more than once.
-          if (iteration != 2) {
-            logInfo(s"Max iterations (${iteration - 1}) reached for batch ${batch.name}")
-          }
-          continue = false
-        }
-
-        if (curPlan.fastEquals(lastPlan)) {
-          logTrace(
-            s"Fixed point reached for batch ${batch.name} after ${iteration - 1} iterations.")
-          continue = false
-        }
-        lastPlan = curPlan
-      }
-
-      if (!batchStartPlan.fastEquals(curPlan)) {
-        logDebug(
-          s"""
-          |=== Result of Batch ${batch.name} ===
-          |${sideBySide(plan.treeString, curPlan.treeString).mkString("\n")}
-        """.stripMargin)
-      } else {
-        logTrace(s"Batch ${batch.name} has no effect.")
-      }
-    }
-
-    curPlan
-  }
-}
-```
+Analyzer解析主要是根据这个batches里面的各种Rule来对Unresolved Logical Plan进行解析的。这里Analyzer类本身并没有定义执行的方法，而实现在它的父类RuleExecutor[LogicalPlan]中。
 
 ### Rules介绍
 在batches里面定义了4个Batch:
@@ -275,8 +168,16 @@ abstract class RuleExecutor[TreeType <: TreeNode[_]] extends Logging {
 3. Check Analysis (Once)
 4. AnalysisOperators (fixedPoint)
 
+不同的batch是顺序执行的，也就是说MultiInstanceRelations执行完了，才会执行Resolution。
+
+Once表示MultiInstanceRelations的Rule只会执行一次，fixedPoint表示Resolution里面的Rule会反复执行多次，具体几次定义在FixedPoint里面（当然如果运行Rule前后的LogicalPlan没有变化，也会提前停止执行）。
+
+Resolution这个Batch里面定义了十几个Rules，例如ResolveReferences，ResolveRelations，ResolveSortReferences,etc。这些不同的Rule会循环执行fixedPoint次，执行的顺序是依次执行，也就是说，ResolveReferences -> ResolveRelations -> ResolveSortReferences -> ResolveReferences -> ResolveRelations -> ResolveSortReferences -> ...，类似这个顺序。
+
+下面介绍一下每一个Rule具体做什么事情。
+
 ##### MultiInstanceRelation
-如果一个实例在Logical Plan里出现了多次，则会应用NewRelationInstances这条Rule
+如果一个实例在Logical Plan里出现了多次，则会应用NewRelationInstances这条Rule。
 ```
 Batch("MultiInstanceRelations", Once,
       NewRelationInstances),
@@ -322,9 +223,7 @@ object NewRelationInstances extends Rule[LogicalPlan] {
 ```
 
 ##### ResolveReferences
-将Sql parser解析出来的UnresolvedAttribute全部都转为对应的实际的catalyst.expressions.AttributeReference 。
-这里调用了logical plan 的resolveChildren方法，将属性转为NamedExepression。
-
+将Sql parser解析出来的UnresolvedAttribute全部都转为对应的实际的catalyst.expressions.AttributeReference。这里调用了Logical Plan的resolveChildren方法，将属性转为NamedExepression。
 ```
 /**
    * Replaces [[UnresolvedAttribute]]s with concrete
@@ -348,7 +247,7 @@ object NewRelationInstances extends Rule[LogicalPlan] {
 
 
 ##### ResolveRelations
-在```select * from src```中，src表parse后就是一个UnresolvedRelation节点。ResolveRelations就是把src替换成具体的LogicalPlan。而这个table name到LogicalPlan的映射是由Catalog管理的。Catalog对象里面维护了一个tableName, Logical Plan的HashMap结果。通过这个Catalog目录来寻找当前表的结构，从而从中解析出这个表的字段。
+在```select * from src```中，src表parse后就是一个UnresolvedRelation节点。ResolveRelations就是把src替换成具体的LogicalPlan。而这个table name到LogicalPlan的映射可以从Catalog里获得。
 
 ```
 /**
@@ -375,7 +274,6 @@ def lookupRelation(
 
 ##### ResolveSortReferences
 在某些SQL的定义里面，可以允许按照没有出现在select里面的attribute进行sort。这个规则是用来检测这些语法，并且自动把sort的attribute加入到select里面，并且在上次加入去到这个attribute的projection。
-
 ```
 /**
    * In many dialects of SQL is it valid to sort by attributes that are not present in the SELECT
@@ -426,7 +324,6 @@ def lookupRelation(
 
 ##### ImplicitGenerate
 如果在select语句里只有一个表达式，而且这个表达式是一个Generator（Generator是一个1条记录生成到N条记录的映射）。当在解析逻辑计划时，遇到Project节点的时候，就可以将它转换为Generate类（Generate类是将输入流应用一个函数，从而生成一个新的流）。
-
 ```
 /**
    * When a SELECT clause has only a single expression and that expression is a
@@ -442,8 +339,7 @@ def lookupRelation(
 ```
 
 ##### StarExpansion
-在Project操作符里，如果是\*符号，即select \* 语句，可以将所有的references都展开，即将select \* 中的\*展开成实际的字段。
-
+在Project操作符里，如果是\*符号，可以将所有的references都展开成实际的字段。
 ```
 /**
    * Expands any references to [[Star]] (*) in project operators.
@@ -486,9 +382,8 @@ def lookupRelation(
 }
 ```
 
-
 ##### ResolveFunctions
-这里主要是对udf进行resolve，将这些UDF都在FunctionRegistry里进行查找。
+这里主要是对URD进行resolve，将这些UDF可以从FunctionRegistry里找到。
 ```
 /**
    * Replaces [[UnresolvedFunction]]s with concrete [[catalyst.expressions.Expression Expressions]].
@@ -505,8 +400,7 @@ def lookupRelation(
 ```
 
 ##### GlobalAggregates
-全局的聚合，如果遇到了Project就返回一个Aggregate。
-
+如果遇到包含Aggregate的Project，就返回一个Aggregate。
 ```
 /**
    * Turns projections that contain aggregate expressions into aggregations.
@@ -528,8 +422,7 @@ def lookupRelation(
 ```
 
 ##### UnresolvedHavingClauseAttributes
-这条规则是出来Having子句中unresolved attributes，将这些attributes下降到下面的aggregates，并且在上面添加projection过滤。
-
+这条规则会寻找Having子句中Unresolved Attributes，将这些Attributes下降到下面的Aggregates里面，最后在最上面添加Project。
 ```
 /**
    * This rule finds expressions in HAVING clause filters that depend on
@@ -557,7 +450,7 @@ def lookupRelation(
 ```
 
 ##### TrimGroupingAliases
-去除aggreate中没有操作的alias。
+去除Aggreate中没有操作的alias。
 ```
 /**
    * Removes no-op Alias expressions from the plan.
@@ -572,8 +465,7 @@ def lookupRelation(
 
 
 ##### CheckResolution
-CheckResolution在上述规则都运行完后，会运行一次，用来检查是不是所有的节点都已经resolved了，否则会抛异常。
-
+在上述主要的优化规则都运行完后，CheckResolution会运行一次，用来检查是不是所有的节点都已经resolved了，如果不是就抛异常。
 ```
 /**
    * Makes sure all attributes and logical plans have been resolved.
@@ -597,8 +489,7 @@ CheckResolution在上述规则都运行完后，会运行一次，用来检查�
 ```
 
 ##### CheckAggregation
-该规则也只运行一次，用于检查是否存在non-aggregated attributes，否则抛异常。
-
+在上述主要的优化规则都运行完后，CheckAggregation也会运行一次，用于检查是否存在non-aggregated attributes，如果不是就抛异常。
 ```
 /**
    * Checks for non-aggregated attributes with aggregation
@@ -635,7 +526,6 @@ CheckResolution在上述规则都运行完后，会运行一次，用来检查�
 
 ##### EliminateAnalysisOperators
 将Subquery移除。
-
 ```
 /**
  * Removes [[catalyst.plans.logical.Subquery Subquery]] operators from the plan.  Subqueries are
