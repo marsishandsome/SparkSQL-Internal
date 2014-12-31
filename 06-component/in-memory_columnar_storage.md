@@ -127,15 +127,14 @@ spark.sql.defaultSizeInBytes来设置初始化的column的bufferbytes的默认�
 
 缓存主流程：
 1. 判断_cachedColumnBuffers是否为null，如果不是null，则已经Cache了当前table，重复cache不会触发cache操作，如果是null，则调用buildBuffers。
-2. child是SparkPlan，即执行hive table scan，测试我拿sbt/sbt hive/console里test里的src table为例，操作是扫描这张表。这个表有2个字的key是int, value 是string
-3. 拿到child的output, 这里的output就是 key, value2个列。
-4. 执行mapPartitions操作，对当前RDD的每个分区的数据进行操作。
-5. 对于每一个分区，迭代里面的数据生成新的Iterator。每个Iterator里面是Array[ByteBuffer]
-6. 对于child.output的每一列，都会生成一个ColumnBuilder，最后组合为一个columnBuilders是一个数组。
-7. 数组内每个CommandBuilder持有一个ByteBuffer
-8. 遍历原始分区的记录，将对于的行转为列，并将数据存到ByteBuffer内。
-9. 最后将此RDD调用cache方法，将RDD缓存。
-10. 将cached赋给_cachedColumnBuffers。
+2. child是物理执行计划SparkPlan
+3. 执行mapPartitions操作，对当前RDD的每个分区的数据进行操作。
+4. 对于每一个分区，迭代里面的数据生成新的Iterator。每个Iterator里面是CachedBatch
+5. 对于child.output的每一列，都会生成一个ColumnBuilder，最后组合为一个columnBuilders是一个数组。
+6. 数组内每个CommandBuilder持有一个ByteBuffer
+7. 遍历原始分区的记录，将对于的行转为列，并将数据存到ByteBuffer内。
+8. 最后将此RDD调用persist方法，将RDD缓存。
+9. 将cached赋给_cachedColumnBuffers。
 
 ```
 if (_cachedColumnBuffers == null) {
@@ -180,7 +179,93 @@ private def buildBuffers(): Unit = {
   }
 ```
 
-### Columnar Storage
+### ColumnBuilder
+
+columnBuilders是一个存储ColumnBuilder的数组。
+
+```
+ val columnBuilders = output.map { attribute =>
+            val columnType = ColumnType(attribute.dataType)
+            val initialBufferSize = columnType.defaultSize * batchSize
+            ColumnBuilder(columnType.typeId, initialBufferSize, attribute.name, useCompression)
+          }.toArray
+```
+
+然后初始化类型builder的时候会传入的参数：
+1. columnType.typeId 表示列的数据类型
+2. initialBufferSize ByteBuffer的初始化大小，列类型默认长度 × batchSize ，默认batchSize是1000。拿Int类型举例，initialBufferSize of IntegerType = 4 * 1000
+3. attribute.name 即字段名age,name，etc
+4. useCompression 是否开启压缩
+
+ColumnType封装了该类型的typeId和该类型的defaultSize。并且提供了extract、append\getField方法，来向buffer里追加和获取数据。
+```
+private[sql] sealed abstract class ColumnType[T <: DataType, JvmType](
+    val typeId: Int,
+    val defaultSize: Int) {
+
+  def extract(buffer: ByteBuffer): JvmType
+
+  def append(v: JvmType, buffer: ByteBuffer): Unit
+
+  def actualSize(row: Row, ordinal: Int): Int = defaultSize
+  ...
+}
+```
+
+ColumnBuilder的主要职责是：管理ByteBuffer，包括初始化buffer，添加数据到buffer内，检查剩余空间，和申请新的空间这几项主要职责。
+initialize负责初始化buffer。
+appendFrom是负责添加数据。
+ensureFreeSpace确保buffer的长度动态增加。
+
+```
+override def initialize(
+      initialSize: Int,
+      columnName: String = "",
+      useCompression: Boolean = false) = {
+
+    val size = if (initialSize == 0) DEFAULT_INITIAL_BUFFER_SIZE else initialSize
+    this.columnName = columnName
+
+    // Reserves 4 bytes for column type ID
+    buffer = ByteBuffer.allocate(4 + size * columnType.defaultSize)
+    buffer.order(ByteOrder.nativeOrder()).putInt(columnType.typeId)
+  }
+```
+
+append
+```
+override def appendFrom(row: Row, ordinal: Int): Unit = {
+    buffer = ensureFreeSpace(buffer, columnType.actualSize(row, ordinal))
+    columnType.append(row, ordinal, buffer)
+  }
+```
+
+ensureFreeSpace 主要是操作buffer，如果要追加的数据大于剩余空间，就扩大buffer。
+```
+private[columnar] def ensureFreeSpace(orig: ByteBuffer, size: Int) = {
+    if (orig.remaining >= size) {
+      orig
+    } else {
+      // grow in steps of initial size
+      val capacity = orig.capacity()
+      val newSize = capacity + size.max(capacity / 8 + 1)
+      val pos = orig.position()
+
+      ByteBuffer
+        .allocate(newSize)
+        .order(ByteOrder.nativeOrder())
+        .put(orig.array(), 0, pos)
+    }
+  }
+```
+
+build
+```
+override def build() = {
+    buffer.flip().asInstanceOf[ByteBuffer]
+  }
+```
+
 
 
 
