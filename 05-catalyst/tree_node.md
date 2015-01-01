@@ -1,6 +1,6 @@
 # TreeNode
 
-Catalyst中规则的匹配和Logical Plan的转换操作，其实都是基于树的操作，LogicalPlan继承自QueryPlan，而QueryPlan本身就继承自TreeNode。
+Catalyst中规则的匹配和Logical Plan的转换操作，其实都是基于树的操作，LogicalPlan继承自QueryPlan，而QueryPlan继承自TreeNode。
 
 ```
 abstract class LogicalPlan extends QueryPlan[LogicalPlan] with Logging

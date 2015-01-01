@@ -12,6 +12,8 @@ sql( s"""
 ```
 拿上面这句sql查询为例，它会经过一下几个优化过程。
 
+**1: Analyzer阶段 (Batch Resolution)**
+
 ```
 === Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations ===
  'Project ['name]                                'Project ['name]
@@ -20,9 +22,7 @@ sql( s"""
     'Project ['name,'age]                           'Project ['name,'age]
 !    'UnresolvedRelation None, rddTable, None        Subquery rddTable
 !                                                     LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
-```
 
-```
 === Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences ===
 !'Project ['name]                                                                               Project [name#0]
 ! 'Filter (('p.age. >= 13) && ('p.age. <= 19))                                                   Filter ((age#1 >= 13) && (age#1 <= 19))
@@ -30,9 +30,7 @@ sql( s"""
 !   'Project ['name,'age]                                                                          Project [name#0,age#1]
      Subquery rddTable                                                                              Subquery rddTable
       LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36        LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
-```
 
-```
 === Result of Batch Resolution ===
 !'Project ['name]                                Project [name#0]
 ! 'Filter (('p.age. >= 13) && ('p.age. <= 19))    Filter ((age#1 >= 13) && (age#1 <= 19))
@@ -42,6 +40,8 @@ sql( s"""
 !                                                     LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 ```
 
+**2: Analyzer阶段 (Batch AnalysisOperators)**
+
 ```
 === Applying Rule org.apache.spark.sql.catalyst.analysis.EliminateAnalysisOperators ===
  Project [name#0]                                                                               Project [name#0]
@@ -50,9 +50,7 @@ sql( s"""
 !   Project [name#0,age#1]                                                                         LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 !    Subquery rddTable
 !     LogicalRDD [name#0,age#1], MapPartitionsRDD[4]at mapPartitions at ExistingRDD.scala:36
-```
 
-```
 === Result of Batch AnalysisOperators ===
 !'Project ['name]                                Project [name#0]
 ! 'Filter (('p.age. >= 13) && ('p.age. <= 19))    Filter ((age#1 >= 13) && (age#1 <= 19))
@@ -61,24 +59,21 @@ sql( s"""
 !    'UnresolvedRelation None, rddTable, None
 ```
 
+**3: Optimizer阶段 (Batch Filter Pushdown)**
+
 ```
 === Applying Rule org.apache.spark.sql.catalyst.optimizer.PushPredicateThroughProject ===
  Project [name#0]                                                                             Project [name#0]
 ! Filter ((age#1 >= 13) && (age#1 <= 19))                                                      Project [name#0,age#1]
 !  Project [name#0,age#1]                                                                       Filter ((age#1 >= 13) && (age#1 <= 19))
     LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36      LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
-```
 
-```
 === Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
  Project [name#0]                                                                             Project [name#0]
 ! Project [name#0,age#1]                                                                       Filter ((age#1 >= 13) && (age#1 <= 19))
 !  Filter ((age#1 >= 13) && (age#1 <= 19))                                                      LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 !   LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 
-```
-
-```
 === Result of Batch Filter Pushdown ===
  Project [name#0]                                                                             Project [name#0]
   Filter ((age#1 >= 13) && (age#1 <= 19))                                                      Filter ((age#1 >= 13) && (age#1 <= 19))

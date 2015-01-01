@@ -2,7 +2,7 @@
 Optimizer的主要职责是将Analyzer输出的Resolved Logical Plan根据不同的优化策略Batch，来对语法树进行优化。Optimizer的工作方式其实类似Analyzer，因为它们都继承自RuleExecutor[LogicalPlan]，都是执行一系列的Batch操作。
 
 ### Rules介绍
-Optimizer里的batches包含了3类优化策略：
+Optimizer里的batches包含了4大类优化策略：
 1. Combine Limits： 合并Limits
 2. ConstantFolding： 常量合并
 3. Decimal Optimizations： Decimal类型数据计算优化

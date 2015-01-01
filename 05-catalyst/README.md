@@ -1,6 +1,6 @@
 # Catalyst优化器
 
-在传统关系型数据库当中，一个简单的```select attribute from table where condition```语句，将会依次经过Parser生成Logical Plan；Optimizer生成Optimized Logical Plan；最后生成Physical Plan，交给执行器去执行。SparkSQL也采用了类似的方式进行处理，下面介绍一下SparkSQL在优化过程中使用到的关键组件：**Catalyst**。
+在传统关系型数据库当中，一个简单的```select attribute from table where condition```语句，将会依次经过Parser生成Logical Pla,Optimizer生成Optimized Logical Plan，最后生成Physical Plan，交给执行器去执行。SparkSQL也采用了类似的方式进行处理，下面介绍一下SparkSQL的优化器：**Catalyst**。
 
 先来看一下Catalyst在整个sql执行流程中所处的位置：
 
@@ -19,6 +19,7 @@ Catalyst在整个流程中处于中段位置，它主要有两个任务
 
 这两个任务正好说明了Catalyst名字的由来，即Catalog + Analyst。
 
+（本文基于spark1.2.0)
 
 
 

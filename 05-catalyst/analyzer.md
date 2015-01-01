@@ -383,7 +383,7 @@ def lookupRelation(
 ```
 
 ##### ResolveFunctions
-这里主要是对URD进行resolve，将这些UDF可以从FunctionRegistry里找到。
+这里主要是对UDF进行resolve，将这些UDF可以从FunctionRegistry里找到。
 ```
 /**
    * Replaces [[UnresolvedFunction]]s with concrete [[catalyst.expressions.Expression Expressions]].

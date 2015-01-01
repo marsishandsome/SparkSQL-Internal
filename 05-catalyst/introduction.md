@@ -33,7 +33,7 @@ Catalyst的做法是，**每一条优化规则只做最简单的修改，不同�
 ![](/images/planning-in-detail.png)
 
 1. 首先在Logical Plan上寻找Filter Push Down的匹配条件，即Filter下面是Project
-2. 然后判定过滤条件，即Filter是否可以不需要通过Project就可以计算
+2. 然后判断过滤条件，即Filter是否可以不需要通过Project就可以计算
 3. 最后做修改，即交换Filter和Project
 
 利用Scala的```Case Class``` 和 ```match```语法来实现Catalyst的优化规则是非常简单的，例如Filter Push Down规则可以用下面几句代码实现：
@@ -91,7 +91,7 @@ Project [name#0]
    LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 ```
 其中
-1. UnresolvedRelation被映射成了具体的LogicalRDD，具体的流程是根据rddTable从Catalog里面找到对应的LogicalPlan，并进行替换。
+1. UnresolvedRelation被映射成了具体的LogicalRDD，而table name到Logical Plan的映射被保持在Catalog
 2. UnresolvedAttribute被映射成AttributeReference
 
 #####Optimized Logical Plan
@@ -118,7 +118,7 @@ Project [name#0]
 ```
 
 ### 总结
-SparkSQL首先会生成Unresolved Logical Plan，Catalyst里面定义了一些规则。在优化的过程当中，Catalyst会检测输入的执行计划当中有没有符合条件的子树，如果有的话就会触发某个特定的优化规则。
+SparkSQL首先会生成Unresolved Logical Plan，Catalyst里面定义了一些规则。在优化的过程当中，Catalyst会根据规则检测输入的执行计划当中有没有符合条件的子树，如果有的话就会触发某个特定的优化规则。
 
 
 
