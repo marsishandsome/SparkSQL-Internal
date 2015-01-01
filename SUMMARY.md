@@ -24,8 +24,6 @@
    * [总结](05-catalyst/overall.md)
 * [SparkSQL组件解析](06-component/README.md)
    * [SqlParser](06-component/sqlparser.md)
-   * [Analyser](06-component/analyser.md)
-   * [Optimizer](06-component/optimizer.md)
    * [Physical Plan](06-component/physical_plan.md)
    * [Physical Plan to RDD](06-component/sparkplan.md)
    * [UDF](06-component/udf.md)

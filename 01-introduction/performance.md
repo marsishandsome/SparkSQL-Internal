@@ -18,7 +18,7 @@ SparkSQL1.2中把每个列又分成多个batch，这样就可以避免在加载l
 
 ![](/images/column-store2.png)
 
-### 2. 字节码生成技术 (bytecode generation，即CG)
+### 2. Code Generation
 在数据库查询中有一个昂贵的操作是查询语句中的表达式，主要是由于JVM的内存模型引起的。比如如下一个查询：
 ```
 SELECT a + b FROM table
@@ -49,7 +49,7 @@ CG优化的实现主要还是依靠scala2.10的reflection和Quasiquotes。CG的�
 
 ![](/images/code-generation2.png)
 
-### 3. 外部数据源Predicte pushdown
+### 3. 外部数据源Predicate pushdown
 SparkSQL1.2.0可以在读取外部数据以后马上进行filter操作，以减少网络传输的数据量；对于Parquet和ORC类型的数据，SparkSQL甚至可以在读取数据的时候就进行某些filter操作，以减少磁盘IO。
 
 ![](/images/predicate-pushdown1.png)
