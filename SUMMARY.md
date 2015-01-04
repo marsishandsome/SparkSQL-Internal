@@ -12,7 +12,7 @@
    * [Cache Table](02-use_of_sparksql/cache.md)
    * [外部数据源](02-use_of_sparksql/external_data_source.md)
 * [SparkSQL调优](03-performance-turning/README.md)
-* [SparkSQL运行过程](04-context/README.md)
+* [SparkSQL的运行过程](04-context/README.md)
    * [SqlContext的运行过程](04-context/sqlcontext.md)
    * [HiveContext的运行过程](04-context/hivecontext.md)
 * [Catalyst优化器](05-catalyst/README.md)
