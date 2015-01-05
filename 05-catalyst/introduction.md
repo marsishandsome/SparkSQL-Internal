@@ -11,15 +11,18 @@ select name from(
 ```
 
 最简单就是不做优化，直接一对一将Logical Plan映射为Physical Plan。
+
 ![](/images/naive-planning.png)
 
 而最直接的方法就是就按照下图的方式进行优化，这种方法的难点在于：很难写一个通用的框架支持不同情况的优化方法。
+
 ![](/images/hand-write-planning.png)
 
 Catalyst的做法是，**每一条优化规则只做最简单的修改，不同的规则互相协作，依次循环地对Logical Plan进行优化，最后形成一个稳定的Optimized Logical Plan**。如下图所示，对于最原始的的Logical Plan
 1. 先使用Filter Push Down规则，将Filter和Project进行交换
 2. 然后使用Combine Projection规则，将两个Project合并
 3. 最后生成物理计划
+
 ![](/images/catalyst-planning.png)
 
 

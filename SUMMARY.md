@@ -25,9 +25,9 @@
 * [SparkSQL组件解析](06-component/README.md)
    * [SqlParser](06-component/sqlparser.md)
    * [Physical Plan](06-component/physical_plan.md)
-   * [Physical Plan to RDD](06-component/sparkplan.md)
    * [UDF](06-component/udf.md)
    * [In-Memory Columnar Storage](06-component/in-memory_columnar_storage.md)
    * [External Data Source](06-component/external_data_source.md)
+   * [Code Generation](06-component/code_generation.md)
 * [推荐资料](07-overall/README.md)
 

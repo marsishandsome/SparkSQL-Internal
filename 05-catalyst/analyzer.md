@@ -179,33 +179,13 @@ Resolution这个Batch里面定义了十几个Rules，例如ResolveReferences，R
 ##### MultiInstanceRelation
 如果一个实例在Logical Plan里出现了多次，则会应用NewRelationInstances这条Rule。
 ```
-Batch("MultiInstanceRelations", Once,
-      NewRelationInstances),
-```
-
-```
-/**
- * A trait that should be mixed into query operators where an single instance might appear multiple
- * times in a logical query plan.  It is invalid to have multiple copies of the same attribute
- * produced by distinct operators in a query tree as this breaks the guarantee that expression
- * ids, which are used to differentiate attributes, are unique.
- *
- * Before analysis, all operators that include this trait will be asked to produce a new version
- * of itself with globally unique expression ids.
- */
-trait MultiInstanceRelation {
-  def newInstance(): this.type
-}
-```
-
-```
 /**
  * If any MultiInstanceRelation appears more than once in the query plan then the plan is updated so
  * that each instance has unique expression ids for the attributes produced.
  */
 object NewRelationInstances extends Rule[LogicalPlan] {
   def apply(plan: LogicalPlan): LogicalPlan = {
-    ////将logical plan应用partial function得到所有MultiInstanceRelation的plan的集合
+    //将logical plan应用partial function得到所有MultiInstanceRelation的plan的集合
     val localRelations = plan collect { case l: MultiInstanceRelation => l}
 
     val multiAppearance = localRelations

@@ -10,7 +10,7 @@ sql( s"""
         |WHERE p.age >= 13 AND p.age <= 19
         |""".stripMargin).queryExecution
 ```
-拿上面这句sql查询为例，它会经过一下几个优化过程。
+拿上面这句sql查询为例，它会经过以下几个优化过程。
 
 **1: Analyzer阶段 (Batch Resolution)**
 
@@ -81,4 +81,5 @@ sql( s"""
 !   LogicalRDD [name#0,age#1], MapPartitionsRDD[4] at mapPartitions at ExistingRDD.scala:36
 ```
 
+Catalyst优化器里面的各种规则互相配合，最后把一个Unresolved Logical Plan优化为一个Optimized Logical Plan。
 
