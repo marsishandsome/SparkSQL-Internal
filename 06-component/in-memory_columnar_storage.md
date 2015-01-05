@@ -95,16 +95,22 @@ SparkSQL中有三种方法触发cache：
 而在Spark1.2.0之前，cache table的默认语义是lazy的，所以需要主动触发action才会真正执行cache操作。
 
 ### InMemoryRelation
- InMemoryRelation继承自LogicalPlan。_cachedColumnBuffers这个类型为RDD[Array[ByteBuffer]]的私有字段。这个封装就是面向列的存储ByteBuffer。相较于plain java object存储记录，用ByteBuffer能显著的提高存储效率，减少内存占用。并且按列查询的速度会非常快。
+ InMemoryRelation继承自LogicalPlan。_cachedColumnBuffers这个类型为RDD[CachedBatch]的私有字段。CachedBatch是Array[Array[Byte]]的封装。
+ ```
+ case class CachedBatch(buffers: Array[Array[Byte]], stats: Row)
+ ```
+
+![](/images/column-store3.png)
 
 构造一个InMemoryRelation需要该Relation
 1. output Attribute
 2. 是否需要useCoompression来压缩，默认为false
 3. 一次处理的多少行数据batchSize
-4. child 即SparkPlan
-5. table名
-6. _cachedColumnBuffers最终将table放入内存的存储句柄，是一个RDD[Array[ByteBuffer]
-7. _statistics是统计信息
+4. storageLevel 缓存到什么地方
+5. child 即SparkPlan
+6. table名
+7. _cachedColumnBuffers最终将table放入内存的存储句柄，是一个RDD[CachedBatch]
+8. _statistics是统计信息
 
 ```
 private[sql] case class InMemoryRelation(
@@ -191,13 +197,13 @@ columnBuilders是一个存储ColumnBuilder的数组。
           }.toArray
 ```
 
-然后初始化类型builder的时候会传入的参数：
+初始化ColumnBuilder的时候会传入的参数：
 1. columnType.typeId 表示列的数据类型
-2. initialBufferSize ByteBuffer的初始化大小，列类型默认长度 × batchSize ，默认batchSize是1000。拿Int类型举例，initialBufferSize of IntegerType = 4 * 1000
+2. initialBufferSize ByteBuffer的初始化大小，列类型默认长度 \* batchSize ，默认batchSize是1000。拿Int类型举例，initialBufferSize of IntegerType = 4 \* 1000
 3. attribute.name 即字段名age,name，etc
 4. useCompression 是否开启压缩
 
-ColumnType封装了该类型的typeId和该类型的defaultSize。并且提供了extract、append\getField方法，来向buffer里追加和获取数据。
+ColumnType封装了该类型的typeId和该类型的defaultSize。并且提供了extract、append、getField方法，来向buffer里追加和获取数据。
 ```
 private[sql] sealed abstract class ColumnType[T <: DataType, JvmType](
     val typeId: Int,
@@ -213,10 +219,8 @@ private[sql] sealed abstract class ColumnType[T <: DataType, JvmType](
 ```
 
 ColumnBuilder的主要职责是：管理ByteBuffer，包括初始化buffer，添加数据到buffer内，检查剩余空间，和申请新的空间这几项主要职责。
-initialize负责初始化buffer。
-appendFrom是负责添加数据。
-ensureFreeSpace确保buffer的长度动态增加。
 
+initialize负责初始化buffer。
 ```
 override def initialize(
       initialSize: Int,
@@ -232,7 +236,7 @@ override def initialize(
   }
 ```
 
-append
+appendFrom是负责添加数据。
 ```
 override def appendFrom(row: Row, ordinal: Int): Unit = {
     buffer = ensureFreeSpace(buffer, columnType.actualSize(row, ordinal))
@@ -240,7 +244,7 @@ override def appendFrom(row: Row, ordinal: Int): Unit = {
   }
 ```
 
-ensureFreeSpace 主要是操作buffer，如果要追加的数据大于剩余空间，就扩大buffer。
+ensureFreeSpace主要是操作buffer，如果要追加的数据大于剩余空间，就扩大buffer。
 ```
 private[columnar] def ensureFreeSpace(orig: ByteBuffer, size: Int) = {
     if (orig.remaining >= size) {
@@ -258,14 +262,5 @@ private[columnar] def ensureFreeSpace(orig: ByteBuffer, size: Int) = {
     }
   }
 ```
-
-build
-```
-override def build() = {
-    buffer.flip().asInstanceOf[ByteBuffer]
-  }
-```
-
-
 
 

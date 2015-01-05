@@ -302,19 +302,25 @@ trait HashJoin {
   protected def hashJoin(streamIter: Iterator[Row], hashedRelation: HashedRelation): Iterator[Row] =
   {
     new Iterator[Row] {
+      //left数据的当前行
       private[this] var currentStreamedRow: Row = _
+      //right中key等于当前left数据的所有行
       private[this] var currentHashMatches: CompactBuffer[Row] = _
+      //currentHashMatches访问到的当前Index
       private[this] var currentMatchPosition: Int = -1
 
       // Mutable per row objects.
+      //使用mutable的row对象，减少GC压力
       private[this] val joinRow = new JoinedRow2
 
       private[this] val joinKeys = streamSideKeyGenerator()
 
+      //先访问currentHashMatches，如果currentHashMatches没有数据了，从stream中取下一个
       override final def hasNext: Boolean =
         (currentMatchPosition != -1 && currentMatchPosition < currentHashMatches.size) ||
           (streamIter.hasNext && fetchNext())
 
+      //从currentHashMatches中取下一个
       override final def next() = {
         val ret = buildSide match {
           case BuildRight => joinRow(currentStreamedRow, currentHashMatches(currentMatchPosition))
@@ -324,19 +330,14 @@ trait HashJoin {
         ret
       }
 
-      /**
-       * Searches the streamed iterator for the next row that has at least one match in hashtable.
-       *
-       * @return true if the search is successful, and false if the streamed iterator runs out of
-       *         tuples.
-       */
       private final def fetchNext(): Boolean = {
         currentHashMatches = null
         currentMatchPosition = -1
 
         while (currentHashMatches == null && streamIter.hasNext) {
-          currentStreamedRow = streamIter.next()
+          currentStreamedRow = streamIter.next() //从stream中取下一个
           if (!joinKeys(currentStreamedRow).anyNull) {
+            //从hash map中取出所有key=joinKeys.currentValue的行
             currentHashMatches = hashedRelation.get(joinKeys.currentValue)
           }
         }
