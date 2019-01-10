@@ -29,8 +29,6 @@
 ### Spark深入研究
 [Spark Internals by JerryLead](https://github.com/JerryLead/SparkInternals/blob/master/markdown/0-Introduction.md)
 
-[Spark亚太研究院决胜大数据时代100期公益大讲堂 by 王家林](http://edu.51cto.com/course/course_id-1659.html)
-
 ### Spark论文
 [Spark: Cluster Computing with Working Sets](http://people.csail.mit.edu/matei/papers/2010/hotcloud_spark.pdf) Matei Zaharia
 
@@ -39,4 +37,3 @@
 [Discretized Streams: An Efficient and Fault-Tolerant Model for Stream Processing on Large Clusters](http://www.cs.berkeley.edu/~matei/papers/2012/hotcloud_spark_streaming.pdf) Matei Zaharia
 
 [Shark: SQL and Rich Analytics at Scale](http://www.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-214.pdf) Reynold Shi Xin, Matei Zaharia
-
