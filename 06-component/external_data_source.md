@@ -55,6 +55,7 @@ baseRelationToSchemaRDD方法
 1. 首先把baseRelation包装成LogicalRelation(baseRelation)
 2. 然后调用logicalPlanToSparkQuery
 3. 最后被包装成 SchemaRDD(SqlContext, LogicalPlan(baseRelation))
+
 ```
 implicit def baseRelationToSchemaRDD(baseRelation: BaseRelation): SchemaRDD = {
     logicalPlanToSparkQuery(LogicalRelation(baseRelation))
@@ -62,7 +63,6 @@ implicit def baseRelationToSchemaRDD(baseRelation: BaseRelation): SchemaRDD = {
 
 implicit def logicalPlanToSparkQuery(plan: LogicalPlan): SchemaRDD = new SchemaRDD(this, plan)
 ```
-
 ##### ExecutedCommand (Physical Plan)
 CreateTableUsing这个Logical Plan最后会被转换为ExecutedCommand的Physcial Plan。执行ExecutedCommand的时候，会调用CreateTableUsing的run函数，从而触发resolver类的加载以及SchemaRDD的注册。
 ```
