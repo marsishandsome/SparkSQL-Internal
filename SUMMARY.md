@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](Introduction.md)
+* [Introduction](README.md)
 * [SparkSQL介绍](01-introduction/README.md)
    * [SparkSQL的发展历程](01-introduction/history.md)
    * [SparkSQL的性能](01-introduction/performance.md)
