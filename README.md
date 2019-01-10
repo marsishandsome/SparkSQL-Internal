@@ -15,5 +15,6 @@
 
 [第七章](07-overall/README.md)将推荐一些学习Spark的参考资料。
 
-# 其他版本
-[Gitbook 网页版](http://marsishandsome.github.io/SparkSQL-Internal/)
+# 相关链接
+- [Gitbook 网页版](http://marsishandsome.github.io/SparkSQL-Internal/)
+- [源代码](https://github.com/marsishandsome/SparkSQL-Internal)
