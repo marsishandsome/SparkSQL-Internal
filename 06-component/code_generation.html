@@ -1,0 +1,934 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Code Generation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../07-overall/" />
+    
+    
+    <link rel="prev" href="external_data_source.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-catalyst/">
+            
+                <a href="../05-catalyst/">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-catalyst/introduction.html">
+            
+                <a href="../05-catalyst/introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-catalyst/tree_node.html">
+            
+                <a href="../05-catalyst/tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-catalyst/rule.html">
+            
+                <a href="../05-catalyst/rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-catalyst/analyzer.html">
+            
+                <a href="../05-catalyst/analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-catalyst/optimizer.html">
+            
+                <a href="../05-catalyst/optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-catalyst/overall.html">
+            
+                <a href="../05-catalyst/overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="sqlparser.html">
+            
+                <a href="sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="physical_plan.html">
+            
+                <a href="physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="udf.html">
+            
+                <a href="udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="in-memory_columnar_storage.html">
+            
+                <a href="in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="external_data_source.html">
+            
+                <a href="external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.6" data-path="code_generation.html">
+            
+                <a href="code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Code Generation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="code-generation">Code Generation</h1>
+<p>SparkSQL&#x5229;&#x7528;Scala&#x63D0;&#x4F9B;&#x7684;Reflection&#x548C;Quasiquotes&#x673A;&#x5236;&#x6765;&#x5B9E;&#x73B0;Code Generation&#x3002;</p>
+<h3 id="scala-reflection">Scala Reflection</h3>
+<p>Java&#x672C;&#x8EAB;&#x5C31;&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x4E86;Reflection&#x529F;&#x80FD;&#xFF0C;&#x5728;Scala2.10&#x4E4B;&#x524D;&#xFF0C;Scala&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x7684;Reflection&#x673A;&#x5236;&#xFF0C;Scala2.10&#x5728;Java Reflection&#x57FA;&#x7840;&#x4E0A;&#x53C8;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x66F4;&#x52A0;powerful&#x7684;Reflection&#x673A;&#x5236;&#x3002;Scala&#x4E2D;&#x7684;Reflection&#x5206;&#x4E3A;&#x4E24;&#x5927;&#x7C7B;&#xFF1A;Runtime Reflection&#x548C;Compile-time Reflection&#x3002;</p>
+<h5 id="runtime-reflection">Runtime Reflection</h5>
+<p>Runtime Reflection&#x4E3B;&#x8981;&#x5305;&#x62EC;</p>
+<ol>
+<li>&#x52A8;&#x6001;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&#x52A8;&#x6001;&#x65B0;&#x5EFA;&#x5BF9;&#x8C61;</li>
+<li>&#x52A8;&#x6001;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;</li>
+</ol>
+<p>&#x8FD9;&#x90E8;&#x5206;&#x548C;Java&#x63D0;&#x4F9B;&#x7684;Reflection&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#x3002;</p>
+<h5 id="compile-time-reflection">Compile-time Reflection</h5>
+<p>Scala&#x7684;Compile-time Reflection&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x4FEE;&#x6539;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;meta-programming&#x3002;Complie-time Reflection&#x662F;&#x901A;&#x8FC7;macros&#x5B9E;&#x73B0;&#x7684;&#xFF0C;macros&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x4FEE;&#x6539;&#x81EA;&#x5DF1;&#x7684;&#x8BED;&#x6CD5;&#x6811;&#x3002;</p>
+<h5 id="abstract-syntax-tree">Abstract Syntax Tree</h5>
+<p>Scala&#x4F7F;&#x7528;Abstract Syntax Tree&#x6765;&#x8868;&#x793A;Scala&#x7A0B;&#x5E8F;&#xFF0C;Scala&#x7684;Reflection&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x64CD;&#x4F5C;AST:</p>
+<ol>
+<li>reify&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x53D8;&#x6210;&#x4E00;&#x4E2A;AST</li>
+<li>&#x5728;Compile-time&#xFF0C;&#x901A;&#x8FC7;macros&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;AST</li>
+<li>&#x5728;Runtime&#xFF0C;&#x901A;&#x8FC7;toolboxes&#x4E5F;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;AST</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x679C;&#x5728;Runtime&#x5229;&#x7528;toolboxes&#x64CD;&#x4F5C;AST</p>
+<ol>
+<li>&#x5728;Runtime&#x5229;&#x7528;ToolBox&#x7684;parse&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x53D8;&#x4E86;AST</li>
+<li>&#x7136;&#x540E;&#x901A;&#x8FC7;ToolBox&#x7684;eval&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x751F;&#x6210;&#x7684;AST&#x8FDB;&#x884C;&#x6C42;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x8FD4;&#x56DE;&#x503C;f&#xFF0C;f&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;+1&#x64CD;&#x4F5C;&#x7684;&#x51FD;&#x6570;</li>
+<li>&#x6700;&#x540E;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;f</li>
+</ol>
+<pre><code>import scala.tools.reflect.ToolBox
+
+object HelloToolBox {
+  def main(args: Array[String]): Unit = {
+    val toolBox = scala.reflect.runtime.universe.
+      runtimeMirror(getClass.getClassLoader).mkToolBox()
+
+    val code =
+      &quot;&quot;&quot;
+        val f = {x: Int =&gt; x + 1}
+        f
+      &quot;&quot;&quot;
+
+    val tree = toolBox.parse(code)
+    println(tree)
+
+    val func = toolBox.eval(tree)
+    val result = func.asInstanceOf[Int =&gt; Int](1)
+    println(result)
+
+  }
+}
+</code></pre><p>&#x7A0B;&#x5E8F;&#x7684;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code>{
+  val f = ((x: Int) =&gt; x.$plus(1));
+  f
+}
+2
+</code></pre><h3 id="scala-quasiquotes">Scala Quasiquotes</h3>
+<p>Quasiquotes&#x662F;Scala&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;AST&#x7684;&#x5E93;&#xFF0C;&#x5F53;&#x628A;&#x4EE3;&#x7801;&#x653E;&#x5230;<code>q&quot;...&quot;</code>&#x91CC;&#x9762;&#x65F6;&#xFF0C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;AST&#x3002;</p>
+<pre><code>scala&gt; val tree = q&quot;i am { a quasiquote }&quot;
+tree: universe.Tree = i.am(a.quasiquote)
+</code></pre><p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5229;&#x7528;Quasiquotes&#x6765;&#x5B9E;&#x73B0;Code Generation:</p>
+<pre><code>import scala.reflect.runtime.currentMirror
+import scala.tools.reflect.ToolBox
+
+object HelloQuasiquotes {
+
+  def main(args: Array[String]): Unit = {
+    val universe: scala.reflect.runtime.universe.type = scala.reflect.runtime.universe
+    import universe._
+
+    val toolbox = currentMirror.mkToolBox()
+    val tree = q&quot;&quot;&quot;
+              val f = {x: Int =&gt; x + 1}
+              f
+             &quot;&quot;&quot;
+
+    println(showCode(tree))
+
+    val func = toolbox.eval(tree)
+    val result = func.asInstanceOf[Int =&gt; Int](1)
+    println(result)
+  }
+}
+</code></pre><p>&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code>{
+  val f = ((x: Int) =&gt; x.+(1));
+  f
+}
+2
+</code></pre><h3 id="sparksql-code-generation">SparkSQL Code Generation</h3>
+<p>SparkSQL&#x4F7F;&#x7528;Quasiquotes&#x6765;&#x5B9E;&#x73B0;Code Genration&#x3002;Quasiquotes&#x662F;Scala 2.11&#x7684;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;Scala 2.10&#x6765;&#x7F16;&#x8BD1;Spark&#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;<a href="http://docs.scala-lang.org/overviews/macros/paradise.html" target="_blank">macro paradise compiler plugin</a>&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;quasiquotes&#x3002;</p>
+<h5 id="codegenerator">CodeGenerator</h5>
+<p>CodeGenerator&#x662F;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;</p>
+<ol>
+<li>expressionEvaluator&#xFF1A;&#x628A;&#x4E00;&#x4E2A;Expression&#x53D8;&#x6210;EvaluatedExpression&#xFF0C;&#x5373;AST</li>
+<li>toolBox: &#x53EF;&#x4EE5;&#x5728;&#x8FD4;&#x56DE;&#x7684;AST&#x4E0A;&#x6C42;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x52A8;&#x6001;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x8C03;&#x7528;&#x5165;&#x53E3;</li>
+</ol>
+<pre><code>abstract class CodeGenerator[InType &lt;: AnyRef, OutType &lt;: AnyRef] extends Logging {
+  import scala.reflect.runtime.{universe =&gt; ru}
+  import scala.reflect.runtime.universe._
+  import scala.tools.reflect.ToolBox
+
+  protected val toolBox = runtimeMirror(getClass.getClassLoader).mkToolBox()
+
+  def expressionEvaluator(e: Expression): EvaluatedExpression = {
+    ...
+  }
+  ...
+}
+</code></pre><p>EvaluatedExpression&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x597D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5728;Row&#x4E0A;&#x6C42;&#x503C;&#xFF0C;EvaluatedEpression&#x5305;&#x62EC;</p>
+<ol>
+<li>code&#xFF1A;AST&#x7684;List&#xFF0C;&#x7528;&#x6765;&#x6C42;&#x503C;&#x7684;&#x4EE3;&#x7801;</li>
+<li>nullTerm&#xFF1A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x8868;&#x793A;&#x6700;&#x540E;&#x7684;&#x503C;&#x662F;&#x5426;&#x662F;null</li>
+<li>primitiveTerm&#xFF1A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x8868;&#x793A;&#x6700;&#x540E;&#x7684;&#x503C;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#xFF0C;&#x65E0;&#x6548;&#x5982;&#x679C;nullTerm=true</li>
+<li>objectTerm&#xFF1A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x8868;&#x793A;&#x6700;&#x540E;&#x7684;&#x503C;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x578B;</li>
+</ol>
+<pre><code>  protected case class EvaluatedExpression(
+      code: Seq[Tree],
+      nullTerm: TermName,
+      primitiveTerm: TermName,
+      objectTerm: TermName)
+</code></pre><p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E00;&#x4E0B;Code Generation&#x7684;&#x5173;&#x952E;&#x51FD;&#x6570;expressionEvaluator&#x3002;</p>
+<ol>
+<li>&#x8C03;&#x7528;freshName&#x4E3A;primitiveTerm&#x3001;nullTerm&#x3001;objectTerm&#x751F;&#x6210;&#x53D8;&#x91CF;&#x540D;</li>
+<li>&#x8C03;&#x7528;primitiveEvaluation&#xFF0C;&#x628A;Expression&#x53D8;&#x6210;Seq[Tree]&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5931;&#x8D25;</li>
+<li>&#x5982;&#x679C;primitiveEvaluation&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x751F;&#x6210;&#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x6C42;&#x503C;&#x7684;&#x4EE3;&#x7801;</li>
+<li>&#x8FD4;&#x56DE;EvaluatedExpression</li>
+</ol>
+<pre><code>def expressionEvaluator(e: Expression): EvaluatedExpression = {
+    val primitiveTerm = freshName(&quot;primitiveTerm&quot;)
+    val nullTerm = freshName(&quot;nullTerm&quot;)
+    val objectTerm = freshName(&quot;objectTerm&quot;)
+    val primitiveEvaluation: PartialFunction[Expression, Seq[Tree]] = {...}
+    val code: Seq[Tree] =
+      primitiveEvaluation.lift.apply(e).getOrElse {
+        log.debug(s&quot;No rules to generate $e&quot;)
+        val tree = reify { e }
+        q&quot;&quot;&quot;
+          val $objectTerm = $tree.eval(i)
+          val $nullTerm = $objectTerm == null
+          val $primitiveTerm = $objectTerm.asInstanceOf[${termForType(e.dataType)}]
+         &quot;&quot;&quot;.children
+      }
+      ...
+    EvaluatedExpression(code ++ debugCode, nullTerm, primitiveTerm, objectTerm)
+}
+</code></pre><p>primitiveEvaluation&#x662F;&#x4E00;&#x4E2A;PartialFunction&#xFF0C;&#x628A;Expression&#x53D8;&#x6210;Seq[Tree]&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5206;&#x6790;&#x4E00;&#x4E0B;And&#x662F;&#x5982;&#x4F55;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x7684;&#xFF1A;</p>
+<ol>
+<li>&#x5206;&#x522B;&#x751F;&#x6210;e1&#x548C;e2&#x7684;AST</li>
+<li>&#x5206;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#x5224;&#x65AD;And&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E3A;null&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x4E3A;primitive</li>
+<li>&#x8FD4;&#x56DE;e1&#x3001;e2&#x548C;add&#x7684;&#x4EE3;&#x7801;</li>
+</ol>
+<pre><code>val primitiveEvaluation: PartialFunction[Expression, Seq[Tree]] = {
+    ...
+    case And(e1, e2) =&gt;
+        val eval1 = expressionEvaluator(e1)
+        val eval2 = expressionEvaluator(e2)
+
+        eval1.code ++ eval2.code ++
+        q&quot;&quot;&quot;
+          var $nullTerm = false
+          var $primitiveTerm: ${termForType(BooleanType)} = false
+
+          if ((!${eval1.nullTerm} &amp;&amp; !${eval1.primitiveTerm}) ||
+              (!${eval2.nullTerm} &amp;&amp; !${eval2.primitiveTerm})) {
+            $nullTerm = false
+            $primitiveTerm = false
+          } else if (${eval1.nullTerm} || ${eval2.nullTerm} ) {
+            $nullTerm = true
+          } else {
+            $nullTerm = false
+            $primitiveTerm = true
+          }
+         &quot;&quot;&quot;.children
+  ...
+}
+</code></pre><p>Add&#x7684;&#x4EE3;&#x7801;&#x770B;&#x4E0A;&#x53BB;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x56E0;&#x4E3A;&#x628A;(e1, e2)&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x6210;&#x4E86;class Evaluate2&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x5176;evaluate&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>case Add(e1, e2) =&gt;      (e1, e2) evaluate { case (eval1, eval2) =&gt; q&quot;$eval1 + $eval2&quot; }
+</code></pre><p>evaluate&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;function&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Seq[Tree]&#x3002;function&#x63A5;&#x6536;&#x4E24;&#x4E2A;scala reflaction&#x4E2D;&#x7684;TermName&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;AST&#x3002;</p>
+<ol>
+<li>evaluate&#x65B9;&#x9996;&#x5148;&#x8C03;&#x7528;expressionEvaluator&#xFF0C;&#x5206;&#x522B;&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;AST</li>
+<li>&#x7136;&#x540E;&#x751F;&#x6210;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;function&#x7684;AST&#xFF0C;&#x53C2;&#x6570;&#x4E3A;1&#x4E2D;&#x5F97;&#x5230;&#x7684;primitiveTerm</li>
+<li>&#x751F;&#x6210;function&#x4EE3;&#x7801;&#x7684;nullTerm</li>
+<li>&#x751F;&#x6210;function&#x4EE3;&#x7801;&#x7684;primitiveTerm&#xFF0C;&#x5982;&#x679C;&#x662F;null&#x7684;&#x8BDD;&#x8FD4;&#x56DE;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;</li>
+</ol>
+<pre><code>implicit class Evaluate2(expressions: (Expression, Expression)) {
+    def evaluate(f: (TermName, TermName) =&gt; Tree): Seq[Tree] =
+        evaluateAs(expressions._1.dataType)(f)
+
+      def evaluateAs(resultType: DataType)(f: (TermName, TermName) =&gt; Tree): Seq[Tree] = {
+        // TODO: Right now some timestamp tests fail if we enforce this...
+        if (expressions._1.dataType != expressions._2.dataType) {
+          log.warn(s&quot;${expressions._1.dataType} != ${expressions._2.dataType}&quot;)
+        }
+
+        val eval1 = expressionEvaluator(expressions._1)
+        val eval2 = expressionEvaluator(expressions._2)
+        val resultCode = f(eval1.primitiveTerm, eval2.primitiveTerm)
+
+        eval1.code ++ eval2.code ++
+        q&quot;&quot;&quot;
+          val $nullTerm = ${eval1.nullTerm} || ${eval2.nullTerm}
+          val $primitiveTerm: ${termForType(resultType)} =
+            if($nullTerm) {
+              ${defaultPrimitive(resultType)}
+            } else {
+              $resultCode.asInstanceOf[${termForType(resultType)}]
+            }
+        &quot;&quot;&quot;.children : Seq[Tree]
+      }
+    }
+    ...
+}
+</code></pre><p>&#x6765;&#x770B;&#x4E00;&#x4E0B;Code Generation&#x751F;&#x6210;&#x51FA;&#x6765;&#x7684;Add&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>(() =&gt; {
+  final class $anon extends org.apache.spark.sql.catalyst.expressions.MutableProjection {
+    def &lt;init&gt;() = {
+      super.&lt;init&gt;();
+      ()
+    };
+    private[this] var mutableRow: org.apache.spark.sql.catalyst.expressions.MutableRow = new org.apache.spark.sql.catalyst.expressions.GenericMutableRow(1);
+    def target(row: org.apache.spark.sql.catalyst.expressions.MutableRow): org.apache.spark.sql.catalyst.expressions.MutableProjection = {
+      mutableRow = row;
+      this
+    };
+    def currentValue: org.apache.spark.sql.catalyst.expressions.Row = mutableRow;
+    def apply(i: org.apache.spark.sql.catalyst.expressions.Row): org.apache.spark.sql.catalyst.expressions.Row = {
+      val nullTerm$4: Boolean = i.isNullAt(0);
+      val primitiveTerm$3: org.apache.spark.sql.catalyst.types.IntegerType.JvmType = if (nullTerm$4)
+        -1
+      else
+        i.getInt(0);
+      ();
+      val nullTerm$7: Boolean = i.isNullAt(1);
+      val primitiveTerm$6: org.apache.spark.sql.catalyst.types.IntegerType.JvmType = if (nullTerm$7)
+        -1
+      else
+        i.getInt(1);
+      ();
+      val nullTerm$1 = nullTerm$4.$bar$bar(nullTerm$7);
+      val primitiveTerm$0: org.apache.spark.sql.catalyst.types.IntegerType.JvmType = if (nullTerm$1)
+        -1
+      else
+        primitiveTerm$3.$plus(primitiveTerm$6).asInstanceOf[org.apache.spark.sql.catalyst.types.IntegerType.JvmType];
+      ();
+      if (nullTerm$1)
+        mutableRow.setNullAt(0)
+      else
+        mutableRow.setInt(0, primitiveTerm$0);
+      mutableRow
+    }
+  };
+  new $anon()
+})
+</code></pre><p>&#x6709;&#x56DB;&#x4E2A;&#x7C7B;&#x7EE7;&#x627F;&#x4E86;CodeGenrator</p>
+<ol>
+<li>GenerateProjection</li>
+<li>GenerateMutableProjection</li>
+<li>GenerateOrdering</li>
+<li>GeneratePredicate</li>
+</ol>
+<h5 id="generatepredicate">GeneratePredicate</h5>
+<p>&#x4E0B;&#x9762;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;GeneratePredicate&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;create&#x51FD;&#x6570;&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x6BB5;&#x51FD;&#x6570;&#x4EE3;&#x7801;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x5165;&#x662F;Row&#xFF08;&#x5373;&#x4E00;&#x884C;&#x6570;&#x636E;&#xFF09;&#xFF0C;&#x8F93;&#x51FA;&#x662F;Boolean&#xFF08;&#x5373;&#x8BE5;&#x884C;&#x662F;&#x5426;&#x88AB;&#x8FC7;&#x6EE4;&#xFF09;&#x3002;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x8C03;&#x7528;expressionEvaluator&#x65B9;&#x6CD5;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;Expression&#x7684;AST</li>
+<li>&#x7136;&#x540E;&#x751F;&#x6210;&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x51FD;&#x6570;&#x9996;&#x5148;&#x8C03;&#x7528;1&#x4E2D;&#x6240;&#x5F97;&#x5230;&#x7684;AST&#xFF0C;&#x5982;&#x679C;1&#x4E2D;AST&#x7684;nullTerm=true&#xFF0C;&#x5219;&#x8FD4;&#x56DE;false&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;1&#x4E2D;AST&#x7684;&#x5B9E;&#x9645;&#x8FD4;&#x56DE;&#x503C;primitiveTerm</li>
+<li>&#x6700;&#x540E;&#x8C03;&#x7528;toolBox&#x7684;eval&#x51FD;&#x6570;&#xFF0C;&#x83B7;&#x5F97;AST&#x4E2D;function&#x7684;&#x5B9E;&#x4F8B;&#x5165;&#x53E3;&#x5730;&#x5740;</li>
+</ol>
+<pre><code>object GeneratePredicate extends CodeGenerator[Expression, (Row) =&gt; Boolean] {
+  import scala.reflect.runtime.{universe =&gt; ru}
+  import scala.reflect.runtime.universe._
+
+  protected def canonicalize(in: Expression): Expression = ExpressionCanonicalizer(in)
+
+  protected def bind(in: Expression, inputSchema: Seq[Attribute]): Expression =
+    BindReferences.bindReference(in, inputSchema)
+
+  protected def create(predicate: Expression): ((Row) =&gt; Boolean) = {
+    val cEval = expressionEvaluator(predicate)
+
+    val code =
+      q&quot;&quot;&quot;
+        (i: $rowType) =&gt; {
+          ..${cEval.code}
+          if (${cEval.nullTerm}) false else ${cEval.primitiveTerm}
+        }
+      &quot;&quot;&quot;
+    toolBox.eval(code).asInstanceOf[Row =&gt; Boolean]
+  }
+}
+</code></pre><h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
+<p><a href="http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html" target="_blank">http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html</a></p>
+<p><a href="http://docs.scala-lang.org/overviews/quasiquotes/intro.html" target="_blank">http://docs.scala-lang.org/overviews/quasiquotes/intro.html</a></p>
+<p><a href="http://docs.scala-lang.org/overviews/quasiquotes/setup.html" target="_blank">http://docs.scala-lang.org/overviews/quasiquotes/setup.html</a></p>
+<p><a href="http://docs.scala-lang.org/overviews/macros/paradise.html" target="_blank">http://docs.scala-lang.org/overviews/macros/paradise.html</a></p>
+<p><a href="http://www.infoq.com/cn/news/2013/01/scala-macros" target="_blank">http://www.infoq.com/cn/news/2013/01/scala-macros</a></p>
+<p><a href="https://databricks.com/blog/2014/06/02/exciting-performance-improvements-on-the-horizon-for-spark-sql.html" target="_blank">https://databricks.com/blog/2014/06/02/exciting-performance-improvements-on-the-horizon-for-spark-sql.html</a></p>
+<p><a href="https://gist.github.com/marmbrus/9efb31d2b5154aea6652" target="_blank">https://gist.github.com/marmbrus/9efb31d2b5154aea6652</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="external_data_source.html" class="navigation navigation-prev " aria-label="Previous page: External Data Source">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../07-overall/" class="navigation navigation-next " aria-label="Next page: 推荐资料">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Code Generation","level":"1.7.6","depth":2,"next":{"title":"推荐资料","level":"1.8","depth":1,"path":"07-overall/README.md","ref":"07-overall/README.md","articles":[]},"previous":{"title":"External Data Source","level":"1.7.5","depth":2,"path":"06-component/external_data_source.md","ref":"06-component/external_data_source.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-component/code_generation.md","mtime":"2019-01-10T10:05:49.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

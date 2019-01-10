@@ -1,0 +1,1413 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Physical Plan · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="udf.html" />
+    
+    
+    <link rel="prev" href="sqlparser.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-catalyst/">
+            
+                <a href="../05-catalyst/">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-catalyst/introduction.html">
+            
+                <a href="../05-catalyst/introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-catalyst/tree_node.html">
+            
+                <a href="../05-catalyst/tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-catalyst/rule.html">
+            
+                <a href="../05-catalyst/rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-catalyst/analyzer.html">
+            
+                <a href="../05-catalyst/analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-catalyst/optimizer.html">
+            
+                <a href="../05-catalyst/optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-catalyst/overall.html">
+            
+                <a href="../05-catalyst/overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="sqlparser.html">
+            
+                <a href="sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.2" data-path="physical_plan.html">
+            
+                <a href="physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="udf.html">
+            
+                <a href="udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="in-memory_columnar_storage.html">
+            
+                <a href="in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="external_data_source.html">
+            
+                <a href="external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="code_generation.html">
+            
+                <a href="code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Physical Plan</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="physical-plan">Physical Plan</h1>
+<p>&#x7269;&#x7406;&#x8BA1;&#x5212;&#x662F;Spark SQL&#x6267;&#x884C;Spark job&#x7684;&#x524D;&#x7F6E;&#xFF0C;&#x4E5F;&#x662F;&#x6700;&#x540E;&#x4E00;&#x9053;&#x8BA1;&#x5212;&#x3002;</p>
+<h3 id="sparkplanner">SparkPlanner</h3>
+<p>Optimizer&#x63A5;&#x53D7;&#x8F93;&#x5165;&#x7684;Analyzed Logical Plan&#x540E;&#xFF0C;&#x4F1A;&#x7531;SparkPlanner&#x6765;&#x5BF9;Optimized Logical Plan&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x751F;&#x6210;Physical Plan&#x3002;</p>
+<pre><code>protected abstract class QueryExecution {
+    lazy val analyzed = ExtractPythonUdfs(analyzer(logical))
+    lazy val withCachedData = useCachedData(analyzed)
+    lazy val optimizedPlan = optimizer(withCachedData)
+    lazy val sparkPlan = {
+      SparkPlan.currentContext.set(self)
+      planner(optimizedPlan).next()
+    }
+    ...
+}
+</code></pre><p>SparkPlanner&#x7684;apply&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Iterator[PhysicalPlan]&#x3002;SparkPlanner&#x7EE7;&#x627F;&#x4E86;SparkStrategies&#xFF0C;SparkStrategies&#x7EE7;&#x627F;&#x4E86;QueryPlanner&#x3002;SparkStrategies&#x5305;&#x542B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7279;&#x5B9A;&#x7684;Strategies&#xFF0C;&#x8FD9;&#x4E9B;Strategies&#x662F;&#x7EE7;&#x627F;&#x81EA;QueryPlanner&#x4E2D;&#x5B9A;&#x4E49;&#x7684;Strategy&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;Logical Plan&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x7684;Physical Plan&#x3002;</p>
+<pre><code>protected[sql] class SparkPlanner extends SparkStrategies {
+    ...
+    val strategies: Seq[Strategy] =
+      extraStrategies ++ (
+      CommandStrategy(self) ::
+      DataSourceStrategy ::
+      TakeOrdered ::
+      HashAggregation ::
+      LeftSemiJoin ::
+      HashJoin ::
+      InMemoryScans ::
+      ParquetOperations ::
+      BasicOperators ::
+      CartesianProduct ::
+      BroadcastNestedLoopJoin :: Nil)
+    ...
+}
+</code></pre><p>QueryPlanner &#x662F;SparkPlanner&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5173;&#x952E;&#x70B9;&#xFF0C;&#x5982;Strategy&#xFF0C;planLater&#x548C;apply&#x3002;</p>
+<pre><code>abstract class QueryPlanner[PhysicalPlan &lt;: TreeNode[PhysicalPlan]] {
+  /** A list of execution strategies that can be used by the planner */
+  def strategies: Seq[GenericStrategy[PhysicalPlan]]
+
+  /**
+   * Returns a placeholder for a physical plan that executes `plan`. This placeholder will be
+   * filled in automatically by the QueryPlanner using the other execution strategies that are
+   * available.
+   */
+  protected def planLater(plan: LogicalPlan) = apply(plan).next()
+
+  def apply(plan: LogicalPlan): Iterator[PhysicalPlan] = {
+    // Obviously a lot to do here still...
+    val iter = strategies.view.flatMap(_(plan)).toIterator
+    assert(iter.hasNext, s&quot;No plan for $plan&quot;)
+    iter
+  }
+}
+</code></pre><h3 id="prepareforexecution">prepareForExecution</h3>
+<p>Spark Plan&#x662F;Catalyst&#x91CC;&#x7ECF;&#x8FC7;&#x6240;&#x6709;Strategies apply &#x7684;&#x6700;&#x7EC8;&#x7684;&#x7269;&#x7406;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x7684;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x7528;&#x6765;&#x6267;&#x884C;spark job&#x7684;&#x3002;</p>
+<pre><code>  lazy val executedPlan: SparkPlan = prepareForExecution(sparkPlan)
+</code></pre><p>prepareForExecution&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;RuleExecutor[SparkPlan]&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x7684;Rule&#x5C31;&#x662F;SparkPlan&#x4E86;&#x3002;</p>
+<pre><code>  protected[sql] val prepareForExecution = new RuleExecutor[SparkPlan] {
+    val batches =
+      Batch(&quot;Add exchange&quot;, Once, AddExchange(self)) :: Nil
+  }
+</code></pre><p>prepareForExecution&#x91CC;&#x9762;&#x53EA;&#x6709;&#x4E00;&#x6761;&#x89C4;&#x5219;&#xFF1A;AddExchange&#x3002;&#x4E3B;&#x8981;&#x5DE5;&#x4F5C;&#x662F;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x4E0D;&#x5339;&#x914D;&#x7684;partition&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x517C;&#x5BB9;&#x5C31;&#x589E;&#x52A0;&#x4E00;&#x4E2A;Exchange&#x8282;&#x70B9;&#xFF0C;&#x7528;&#x6765;&#x91CD;&#x65B0;&#x5206;&#x533A;&#x3002;</p>
+<pre><code>private[sql] case class AddExchange(sqlContext: SQLContext) extends Rule[SparkPlan] {
+  ...
+  def apply(plan: SparkPlan): SparkPlan = plan.transformUp {
+    case operator: SparkPlan =&gt;
+      // Check if every child&apos;s outputPartitioning satisfies the corresponding
+      // required data distribution.
+      def meetsRequirements =
+        !operator.requiredChildDistribution.zip(operator.children).map {
+          case (required, child) =&gt;
+            val valid = child.outputPartitioning.satisfies(required)
+            logDebug(
+              s&quot;${if (valid) &quot;Valid&quot; else &quot;Invalid&quot;} distribution,&quot; +
+                s&quot;required: $required current: ${child.outputPartitioning}&quot;)
+            valid
+        }.exists(!_)
+
+      // Check if outputPartitionings of children are compatible with each other.
+      // It is possible that every child satisfies its required data distribution
+      // but two children have incompatible outputPartitionings. For example,
+      // A dataset is range partitioned by &quot;a.asc&quot; (RangePartitioning) and another
+      // dataset is hash partitioned by &quot;a&quot; (HashPartitioning). Tuples in these two
+      // datasets are both clustered by &quot;a&quot;, but these two outputPartitionings are not
+      // compatible.
+      // TODO: ASSUMES TRANSITIVITY?
+      def compatible =
+        !operator.children
+          .map(_.outputPartitioning)
+          .sliding(2)
+          .map {
+            case Seq(a) =&gt; true
+            case Seq(a,b) =&gt; a compatibleWith b
+          }.exists(!_)
+
+      // Check if the partitioning we want to ensure is the same as the child&apos;s output
+      // partitioning. If so, we do not need to add the Exchange operator.
+      def addExchangeIfNecessary(partitioning: Partitioning, child: SparkPlan) =
+        if (child.outputPartitioning != partitioning) Exchange(partitioning, child) else child
+
+      if (meetsRequirements &amp;&amp; compatible) {
+        operator
+      } else {
+        // At least one child does not satisfies its required data distribution or
+        // at least one child&apos;s outputPartitioning is not compatible with another child&apos;s
+        // outputPartitioning. In this case, we need to add Exchange operators.
+        val repartitionedChildren = operator.requiredChildDistribution.zip(operator.children).map {
+          case (AllTuples, child) =&gt;
+            addExchangeIfNecessary(SinglePartition, child)
+          case (ClusteredDistribution(clustering), child) =&gt;
+            addExchangeIfNecessary(HashPartitioning(clustering, numPartitions), child)
+          case (OrderedDistribution(ordering), child) =&gt;
+            addExchangeIfNecessary(RangePartitioning(ordering, numPartitions), child)
+          case (UnspecifiedDistribution, child) =&gt; child
+          case (dist, _) =&gt; sys.error(s&quot;Don&apos;t know how to ensure $dist&quot;)
+        }
+        operator.withNewChildren(repartitionedChildren)
+      }
+  }
+}
+</code></pre><h3 id="spark-plan">Spark Plan</h3>
+<p>Spark Plan&#x662F;SparkSQL&#x4E2D;&#x7684;Physical Plan&#x3002;&#x5B83;&#x7EE7;&#x627F;&#x81EA;Query Plan[Spark Plan]&#xFF0C;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;partition&#xFF0C;requiredChildDistribution&#x4EE5;&#x53CA;spark sql&#x542F;&#x52A8;&#x6267;&#x884C;&#x7684;execute&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>abstract class SparkPlan extends QueryPlan[SparkPlan] with Logging with Serializable {
+  self: Product =&gt;
+
+  /** Specifies how data is partitioned across different nodes in the cluster. */
+  def outputPartitioning: Partitioning = UnknownPartitioning(0) // TODO: WRONG WIDTH!
+
+  /** Specifies any partition requirements on the input data for this operator. */
+  def requiredChildDistribution: Seq[Distribution] =
+    Seq.fill(children.size)(UnspecifiedDistribution)
+
+  /**
+   * Runs this query returning the result as an RDD.
+   */
+  def execute(): RDD[Row]
+  ...
+}
+</code></pre><p>&#x76EE;&#x524D;SparkSQL&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E0B;&#x5341;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x7684;Spark Plan&#xFF0C;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x51E0;&#x4E2A;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;Spark Plan&#x3002;</p>
+<p><img src="../images/spark-plan.png" alt=""></p>
+<h5 id="physicalrdd">PhysicalRDD</h5>
+<p>&#x5F53;&#x5411;SqlContext&#x6CE8;&#x518C;&#x4E00;&#x4E2A;SchemaRDD&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;PhysicalRDD&#xFF0C;&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;RDD&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x518D;&#x53BB;&#x8BA1;&#x7B97;&#x3002;</p>
+<pre><code>case class PhysicalRDD(output: Seq[Attribute], rdd: RDD[Row]) extends LeafNode {
+  override def execute() = rdd
+}
+</code></pre><h5 id="inmemorycolumnartablescan">InMemoryColumnarTableScan</h5>
+<p>&#x5F53;&#x4F7F;&#x7528;cache&#x65F6;&#xFF0C;&#x5C31;&#x7528;&#x751F;&#x6210;InMemoryColumnarTableScan&#xFF0C;&#x5185;&#x5B58;&#x5217;&#x5B58;&#x50A8;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x7C7B;&#x91CC;&#x9762;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<pre><code>private[sql] case class InMemoryColumnarTableScan(
+    attributes: Seq[Attribute],
+    predicates: Seq[Expression],
+    relation: InMemoryRelation)
+  extends LeafNode {
+  ...
+}
+</code></pre><h5 id="parquettablescan">ParquetTableScan</h5>
+<p>&#x8BFB;&#x53D6;Parquet&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code>case class ParquetTableScan(
+    attributes: Seq[Attribute],
+    relation: ParquetRelation,
+    columnPruningPred: Seq[Expression])
+  extends LeafNode {
+  ...
+}
+</code></pre><h5 id="cachetablecommand">CacheTableCommand</h5>
+<p>Cache&#x7684;&#x7269;&#x7406;&#x6267;&#x884C;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code>case class CacheTableCommand(
+    tableName: String,
+    plan: Option[LogicalPlan],
+    isLazy: Boolean)
+  extends LeafNode with Command {
+
+  override protected lazy val sideEffectResult = {
+    import sqlContext._
+
+    plan.foreach(_.registerTempTable(tableName))
+    cacheTable(tableName)
+
+    if (!isLazy) {
+      // Performs eager caching
+      table(tableName).count()
+    }
+
+    Seq.empty[Row]
+  }
+
+  override def output: Seq[Attribute] = Seq.empty
+}
+</code></pre><h5 id="executedcommand">ExecutedCommand</h5>
+<p>&#x6267;&#x884C;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;RunnableCommand&#xFF0C;&#x8FD4;&#x56DE;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>case class ExecutedCommand(cmd: RunnableCommand) extends SparkPlan {
+  /**
+   * A concrete command should override this lazy field to wrap up any side effects caused by the
+   * command or any other computation that should be evaluated exactly once. The value of this field
+   * can be used as the contents of the corresponding RDD generated from the physical plan of this
+   * command.
+   *
+   * The `execute()` method of all the physical command classes should reference `sideEffectResult`
+   * so that the command can be executed eagerly right after the command query is created.
+   */
+  protected[sql] lazy val sideEffectResult: Seq[Row] = cmd.run(sqlContext)
+
+  override def output = cmd.output
+
+  override def children = Nil
+
+  override def executeCollect(): Array[Row] = sideEffectResult.toArray
+
+  override def execute(): RDD[Row] = sqlContext.sparkContext.parallelize(sideEffectResult, 1)
+}
+</code></pre><h5 id="hashjoin">HashJoin</h5>
+<p>Join&#x64CD;&#x4F5C;&#x4E3B;&#x8981;&#x5305;&#x542B;BroadcastHashJoin&#x3001;LeftSemiJoinHash&#x3001;ShuffledHashJoin&#x5747;&#x5B9E;&#x73B0;&#x4E86;HashJoin&#x8FD9;&#x4E2A;trait&#x3002;</p>
+<p>HashJoin&#x8FD9;&#x4E2A;trait&#x7684;&#x4E3B;&#x8981;&#x6210;&#x5458;&#x6709;&#xFF1A;</p>
+<ul>
+<li>buildSide&#x662F;&#x5DE6;&#x8FDE;&#x63A5;&#x8FD8;&#x662F;&#x53F3;&#x8FDE;&#x63A5;&#xFF0C;&#x6709;&#x4E00;&#x79CD;&#x57FA;&#x51C6;&#x7684;&#x610F;&#x601D;&#x3002;</li>
+<li>leftKeys&#x662F;&#x5DE6;&#x5B69;&#x5B50;&#x7684;expressions, rightKeys&#x662F;&#x53F3;&#x5B69;&#x5B50;&#x7684;expressions&#x3002;</li>
+<li>left&#x662F;&#x5DE6;&#x5B69;&#x5B50;&#x7269;&#x7406;&#x8BA1;&#x5212;&#xFF0C;right&#x662F;&#x53F3;&#x5B69;&#x5B50;&#x7269;&#x7406;&#x8BA1;&#x5212;&#x3002;</li>
+<li>buildSideKeyGenerator&#x662F;&#x4E00;&#x4E2A;Projection&#x662F;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;Row&#x5BF9;&#x8C61;&#x6765;&#x8BA1;&#x7B97;buildSide&#x7684;Expression&#x7684;&#x3002;</li>
+<li>streamSideKeyGenerator&#x662F;&#x4E00;&#x4E2A;MutableProjection&#x662F;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;Row&#x5BF9;&#x8C61;&#x6765;&#x8BA1;&#x7B97;streamSide&#x7684;Expression&#x7684;&#x3002;</li>
+<li>&#x8FD9;&#x91CC;buildSide&#x5982;&#x679C;&#x662F;left&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;buildSide&#x662F;&#x5DE6;&#x8868;&#xFF0C;&#x90A3;&#x4E48;&#x53BB;&#x8FDE;&#x63A5;&#x8FD9;&#x4E2A;&#x5DE6;&#x8868;&#x7684;&#x53F3;&#x8868;&#x5C31;&#x662F;streamSide&#x3002;</li>
+</ul>
+<p>HashJoin&#x5173;&#x952E;&#x7684;&#x64CD;&#x4F5C;&#x662F;joinIterators&#xFF0C;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;join&#x4E24;&#x4E2A;&#x8868;&#xFF0C;&#x628A;&#x6BCF;&#x4E2A;&#x8868;&#x770B;&#x7740;Iterators[Row].
+&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x904D;&#x5386;buildSide&#xFF0C;&#x8BA1;&#x7B97;buildKeys&#x7136;&#x540E;&#x5229;&#x7528;&#x4E00;&#x4E2A;HashMap&#xFF0C;&#x5F62;&#x6210; (buildKeys, Iterators[Row])&#x7684;&#x683C;&#x5F0F;&#x3002;</li>
+<li>&#x904D;&#x5386;StreamedSide&#xFF0C;&#x8BA1;&#x7B97;streamedKey&#xFF0C;&#x53BB;HashMap&#x91CC;&#x9762;&#x53BB;&#x5339;&#x914D;key&#xFF0C;&#x6765;&#x8FDB;&#x884C;join</li>
+<li>&#x6700;&#x540E;&#x751F;&#x6210;&#x4E00;&#x4E2A;joinRow&#xFF0C;&#x8FD9;&#x4E2A;&#x5C06;&#x4E24;&#x4E2A;row&#x5BF9;&#x63A5;&#x3002;</li>
+</ol>
+<pre><code>trait HashJoin {
+  self: SparkPlan =&gt;
+
+  val leftKeys: Seq[Expression]
+  val rightKeys: Seq[Expression]
+  val buildSide: BuildSide
+  val left: SparkPlan
+  val right: SparkPlan
+
+  protected lazy val (buildPlan, streamedPlan) = buildSide match {
+    case BuildLeft =&gt; (left, right)
+    case BuildRight =&gt; (right, left)
+  }
+
+  protected lazy val (buildKeys, streamedKeys) = buildSide match {
+    case BuildLeft =&gt; (leftKeys, rightKeys)
+    case BuildRight =&gt; (rightKeys, leftKeys)
+  }
+
+  override def output = left.output ++ right.output
+
+  @transient protected lazy val buildSideKeyGenerator: Projection =
+    newProjection(buildKeys, buildPlan.output)
+
+  @transient protected lazy val streamSideKeyGenerator: () =&gt; MutableProjection =
+    newMutableProjection(streamedKeys, streamedPlan.output)
+
+  protected def hashJoin(streamIter: Iterator[Row], hashedRelation: HashedRelation): Iterator[Row] =
+  {
+    new Iterator[Row] {
+      //left&#x6570;&#x636E;&#x7684;&#x5F53;&#x524D;&#x884C;
+      private[this] var currentStreamedRow: Row = _
+      //right&#x4E2D;key&#x7B49;&#x4E8E;&#x5F53;&#x524D;left&#x6570;&#x636E;&#x7684;&#x6240;&#x6709;&#x884C;
+      private[this] var currentHashMatches: CompactBuffer[Row] = _
+      //currentHashMatches&#x8BBF;&#x95EE;&#x5230;&#x7684;&#x5F53;&#x524D;Index
+      private[this] var currentMatchPosition: Int = -1
+
+      // Mutable per row objects.
+      //&#x4F7F;&#x7528;mutable&#x7684;row&#x5BF9;&#x8C61;&#xFF0C;&#x51CF;&#x5C11;GC&#x538B;&#x529B;
+      private[this] val joinRow = new JoinedRow2
+
+      private[this] val joinKeys = streamSideKeyGenerator()
+
+      //&#x5148;&#x8BBF;&#x95EE;currentHashMatches&#xFF0C;&#x5982;&#x679C;currentHashMatches&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4E86;&#xFF0C;&#x4ECE;stream&#x4E2D;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;
+      override final def hasNext: Boolean =
+        (currentMatchPosition != -1 &amp;&amp; currentMatchPosition &lt; currentHashMatches.size) ||
+          (streamIter.hasNext &amp;&amp; fetchNext())
+
+      //&#x4ECE;currentHashMatches&#x4E2D;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;
+      override final def next() = {
+        val ret = buildSide match {
+          case BuildRight =&gt; joinRow(currentStreamedRow, currentHashMatches(currentMatchPosition))
+          case BuildLeft =&gt; joinRow(currentHashMatches(currentMatchPosition), currentStreamedRow)
+        }
+        currentMatchPosition += 1
+        ret
+      }
+
+      private final def fetchNext(): Boolean = {
+        currentHashMatches = null
+        currentMatchPosition = -1
+
+        while (currentHashMatches == null &amp;&amp; streamIter.hasNext) {
+          currentStreamedRow = streamIter.next() //&#x4ECE;stream&#x4E2D;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;
+          if (!joinKeys(currentStreamedRow).anyNull) {
+            //&#x4ECE;hash map&#x4E2D;&#x53D6;&#x51FA;&#x6240;&#x6709;key=joinKeys.currentValue&#x7684;&#x884C;
+            currentHashMatches = hashedRelation.get(joinKeys.currentValue)
+          }
+        }
+
+        if (currentHashMatches == null) {
+          false
+        } else {
+          currentMatchPosition = 0
+          true
+        }
+      }
+    }
+  }
+}
+</code></pre><h5 id="hashouterjoin">HashOuterJoin</h5>
+<p>&#x4F7F;&#x7528;Shuffle+HashMap&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;Outer Join&#x3002;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;</p>
+<ol>
+<li>&#x8C03;&#x7528;zipPartitions&#x5C06;&#x4E24;&#x4E2A;rdd&#x5BF9;&#x5E94;&#x7684;partition&#x6570;&#x636E;&#x653E;&#x5230;&#x4E00;&#x8D77;</li>
+<li>&#x5728;&#x6BCF;&#x4E2A;partition&#x4E2D;&#xFF0C;&#x5BF9;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x5206;&#x522B;&#x5EFA;&#x7ACB;&#x4E24;&#x4E2A;HashMap</li>
+<li>&#x6839;&#x636E;Outer Join&#x7684;&#x7C7B;&#x578B;(left, right, full)&#xFF0C;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;iterator</li>
+</ol>
+<pre><code>case class HashOuterJoin(
+    leftKeys: Seq[Expression],
+    rightKeys: Seq[Expression],
+    joinType: JoinType,
+    condition: Option[Expression],
+    left: SparkPlan,
+    right: SparkPlan) extends BinaryNode {
+    ...
+    override def execute() = {
+    left.execute().zipPartitions(right.execute()) { (leftIter, rightIter) =&gt;
+      // TODO this probably can be replaced by external sort (sort merged join?)
+      // Build HashMap for current partition in left relation
+      val leftHashTable = buildHashTable(leftIter, newProjection(leftKeys, left.output))
+      // Build HashMap for current partition in right relation
+      val rightHashTable = buildHashTable(rightIter, newProjection(rightKeys, right.output))
+      val boundCondition =
+        condition.map(newPredicate(_, left.output ++ right.output)).getOrElse((row: Row) =&gt; true)
+      joinType match {
+        case LeftOuter =&gt; leftHashTable.keysIterator.flatMap { key =&gt;
+          leftOuterIterator(key, leftHashTable.getOrElse(key, EMPTY_LIST),
+            rightHashTable.getOrElse(key, EMPTY_LIST))
+        }
+        case RightOuter =&gt; rightHashTable.keysIterator.flatMap { key =&gt;
+          rightOuterIterator(key, leftHashTable.getOrElse(key, EMPTY_LIST),
+            rightHashTable.getOrElse(key, EMPTY_LIST))
+        }
+        case FullOuter =&gt; (leftHashTable.keySet ++ rightHashTable.keySet).iterator.flatMap { key =&gt;
+          fullOuterIterator(key,
+            leftHashTable.getOrElse(key, EMPTY_LIST),
+            rightHashTable.getOrElse(key, EMPTY_LIST))
+        }
+        case x =&gt; throw new Exception(s&quot;HashOuterJoin should not take $x as the JoinType&quot;)
+      }
+    }
+  }
+}
+</code></pre><h5 id="leftsemijoinhash">LeftSemiJoinHash</h5>
+<p>&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x7684;join keys&#x653E;&#x5230;hash set&#x4E2D;&#xFF0C;&#x904D;&#x5386;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x4ECE;hash set&#x4E2D;&#x67E5;&#x627E;join key&#x3002;</p>
+<pre><code>case class LeftSemiJoinHash(
+    leftKeys: Seq[Expression],
+    rightKeys: Seq[Expression],
+    left: SparkPlan,
+    right: SparkPlan) extends BinaryNode with HashJoin {
+
+  override val buildSide = BuildRight
+
+  override def requiredChildDistribution =
+    ClusteredDistribution(leftKeys) :: ClusteredDistribution(rightKeys) :: Nil
+
+  override def output = left.output
+
+  override def execute() = {
+    buildPlan.execute().zipPartitions(streamedPlan.execute()) { (buildIter, streamIter) =&gt;
+      val hashSet = new java.util.HashSet[Row]()
+      var currentRow: Row = null
+
+      // Create a Hash set of buildKeys
+      while (buildIter.hasNext) {
+        currentRow = buildIter.next()
+        val rowKey = buildSideKeyGenerator(currentRow)
+        if (!rowKey.anyNull) {
+          val keyExists = hashSet.contains(rowKey)
+          if (!keyExists) {
+            hashSet.add(rowKey)
+          }
+        }
+      }
+
+      val joinKeys = streamSideKeyGenerator()
+      streamIter.filter(current =&gt; {
+        !joinKeys(current).anyNull &amp;&amp; hashSet.contains(joinKeys.currentValue)
+      })
+    }
+  }
+}
+</code></pre><h5 id="shuffledhashjoin">ShuffledHashJoin</h5>
+<p>&#x5148;Shuffle&#x6570;&#x636E;&#xFF0C;&#x518D;&#x901A;&#x8FC7;hash join&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;inner join&#x3002;</p>
+<pre><code>case class ShuffledHashJoin(
+    leftKeys: Seq[Expression],
+    rightKeys: Seq[Expression],
+    buildSide: BuildSide,
+    left: SparkPlan,
+    right: SparkPlan)
+  extends BinaryNode with HashJoin {
+
+  override def outputPartitioning: Partitioning = left.outputPartitioning
+
+  override def requiredChildDistribution =
+    ClusteredDistribution(leftKeys) :: ClusteredDistribution(rightKeys) :: Nil
+
+  override def execute() = {
+    buildPlan.execute().zipPartitions(streamedPlan.execute()) { (buildIter, streamIter) =&gt;
+      val hashed = HashedRelation(buildIter, buildSideKeyGenerator)
+      hashJoin(streamIter, hashed)
+    }
+  }
+}
+</code></pre><h5 id="broadcasthashjoin">BroadcastHashJoin</h5>
+<p>&#x5C06;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6570;&#x636E;broadcast&#x51FA;&#x53BB;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x6BCF;&#x4E2A;partition&#x8FDB;&#x884C;hash join&#x3002;</p>
+<pre><code>case class BroadcastHashJoin(
+    leftKeys: Seq[Expression],
+    rightKeys: Seq[Expression],
+    buildSide: BuildSide,
+    left: SparkPlan,
+    right: SparkPlan)
+  extends BinaryNode with HashJoin {
+
+  override def outputPartitioning: Partitioning = streamedPlan.outputPartitioning
+
+  override def requiredChildDistribution =
+    UnspecifiedDistribution :: UnspecifiedDistribution :: Nil
+
+  @transient
+  private val broadcastFuture = future {
+    // Note that we use .execute().collect() because we don&apos;t want to convert data to Scala types
+    val input: Array[Row] = buildPlan.execute().map(_.copy()).collect()
+    val hashed = HashedRelation(input.iterator, buildSideKeyGenerator, input.length)
+    sparkContext.broadcast(hashed)
+  }
+
+  override def execute() = {
+    val broadcastRelation = Await.result(broadcastFuture, 5.minute)
+
+    streamedPlan.execute().mapPartitions { streamedIter =&gt;
+      hashJoin(streamedIter, broadcastRelation.value)
+    }
+  }
+}
+</code></pre><h5 id="&#x76F4;&#x63A5;&#x8C03;&#x7528;rdd&#x51FD;&#x6570;">&#x76F4;&#x63A5;&#x8C03;&#x7528;rdd&#x51FD;&#x6570;</h5>
+<ul>
+<li>Intersect&#xFF1A;rdd.intersection</li>
+<li>Except&#xFF1A;rdd.subtract</li>
+<li>Sample&#xFF1A;rdd.sample</li>
+<li>TakeOrdered&#xFF1A;rdd.takeOrdered</li>
+</ul>
+<h5 id="&#x76F4;&#x63A5;&#x8C03;&#x7528;sparkcontext&#x7684;&#x51FD;&#x6570;">&#x76F4;&#x63A5;&#x8C03;&#x7528;SparkContext&#x7684;&#x51FD;&#x6570;</h5>
+<ul>
+<li>Union&#xFF1A;sparkContext.union</li>
+</ul>
+<h5 id="&#x5728;rddmappartitions&#x4E2D;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x8BA1;&#x7B97;">&#x5728;rdd.mapPartitions&#x4E2D;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x8BA1;&#x7B97;</h5>
+<ul>
+<li>Distinct&#xFF1A;&#x4F7F;&#x7528;HashSet&#x7C7B;</li>
+<li>Sort: &#x8C03;&#x7528;SeqLike&#x7684;sort&#x51FD;&#x6570;</li>
+<li>Filter&#xFF1A;&#x8C03;&#x7528;iterator&#x7684;filter&#x51FD;&#x6570;</li>
+<li>ExternalSorter&#xFF1A;&#x4F7F;&#x7528;ExternalSorter&#x7C7B;</li>
+<li>Project&#xFF1A;&#x8C03;&#x7528;iterator&#x7684;filter&#x51FD;&#x6570;</li>
+</ul>
+<h3 id="strategies">Strategies</h3>
+<p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5728;&#x751F;&#x6210;&#x7269;&#x7406;&#x8BA1;&#x5212;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x5341;&#x51E0;&#x79CD;strategy&#x3002;</p>
+<h5 id="commandstrategy">CommandStrategy</h5>
+<p>CommandStrategy&#x662F;&#x4E13;&#x95E8;&#x9488;&#x5BF9;Command&#x7C7B;&#x578B;&#x7684;Logical Plan&#xFF0C;&#x5373;set key = value &#x3001; explain sql&#x3001; cache table &#x8FD9;&#x7C7B;&#x64CD;&#x4F5C;</p>
+<ol>
+<li>RunnableCommand&#xFF1A;&#x6267;&#x884C;&#x7EE7;&#x627F;&#x81EA;RunnableCommand&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x5C06;Seq[Row]&#x8F6C;&#x5316;&#x4E3A;RDD&#x3002;</li>
+<li>SetCommand&#xFF1A;&#x8BBE;&#x7F6E;SparkContext&#x7684;&#x53C2;&#x6570;</li>
+<li>ExplainCommand&#xFF1A;&#x5229;&#x7528;executed Plan&#x6253;&#x5370;&#x51FA;tree string</li>
+<li>CacheTableCommand&#xFF1A;&#x5C06;RDD&#x4EE5;&#x5217;&#x5F0F;&#x65B9;&#x5F0F;&#x7F13;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x4E2D;</li>
+<li>UncacheTableCommand&#xFF1A;&#x5C06;&#x7F13;&#x5B58;&#x7684;RDD&#x6E05;&#x9664;</li>
+</ol>
+<pre><code>case class CommandStrategy(context: SQLContext) extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case r: RunnableCommand =&gt; ExecutedCommand(r) :: Nil
+      case logical.SetCommand(kv) =&gt;
+        Seq(execution.SetCommand(kv, plan.output)(context))
+      case logical.ExplainCommand(logicalPlan, extended) =&gt;
+        Seq(execution.ExplainCommand(logicalPlan, plan.output, extended)(context))
+      case logical.CacheTableCommand(tableName, optPlan, isLazy) =&gt;
+        Seq(execution.CacheTableCommand(tableName, optPlan, isLazy))
+      case logical.UncacheTableCommand(tableName) =&gt;
+        Seq(execution.UncacheTableCommand(tableName))
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="datasourcestrategy">DataSourceStrategy</h5>
+<p>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;BaseRelation&#x751F;&#x4EA7;&#x4E0D;&#x540C;&#x7684;PhysicalRDD&#x3002;&#x652F;&#x6301;4&#x79CD;BaseRelation:</p>
+<ol>
+<li>TableScan&#xFF1A;&#x9ED8;&#x8BA4;&#x7684;Scan&#x7B56;&#x7565;</li>
+<li>PrunedScan&#xFF1A;&#x5217;&#x88C1;&#x526A;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x5217;&#x4E0D;&#x4F1A;&#x4ECE;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#x52A0;&#x8F7D;</li>
+<li>PrunedFilterScan&#xFF1A;&#x5728;&#x5217;&#x88C1;&#x526A;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x5165;Filter&#xFF0C;&#x5728;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x4E5F;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x65F6;&#x505A;Filter</li>
+<li>CatalystScan&#xFF1A;Catalyst&#x7684;&#x652F;&#x6301;&#x4F20;&#x5165;expressions&#x6765;&#x8FDB;&#x884C;Scan&#xFF0C;&#x652F;&#x6301;&#x5217;&#x88C1;&#x526A;&#x548C;Filter&#x3002;</li>
+</ol>
+<pre><code>private[sql] object DataSourceStrategy extends Strategy {
+  def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+    case PhysicalOperation(projectList, filters, l @ LogicalRelation(t: CatalystScan)) =&gt;
+      pruneFilterProjectRaw(
+        l,
+        projectList,
+        filters,
+        (a, f) =&gt; t.buildScan(a, f)) :: Nil
+
+    case PhysicalOperation(projectList, filters, l @ LogicalRelation(t: PrunedFilteredScan)) =&gt;
+      pruneFilterProject(
+        l,
+        projectList,
+        filters,
+        (a, f) =&gt; t.buildScan(a, f)) :: Nil
+
+    case PhysicalOperation(projectList, filters, l @ LogicalRelation(t: PrunedScan)) =&gt;
+      pruneFilterProject(
+        l,
+        projectList,
+        filters,
+        (a, _) =&gt; t.buildScan(a)) :: Nil
+
+    case l @ LogicalRelation(t: TableScan) =&gt;
+      execution.PhysicalRDD(l.output, t.buildScan()) :: Nil
+
+    case _ =&gt; Nil
+  }
+...
+}
+</code></pre><h5 id="takeordered">TakeOrdered</h5>
+<p>&#x5982;&#x679C;&#x6709;Limit&#x548C;Sort&#x64CD;&#x4F5C;&#x5C06;&#x4F1A;&#x4F7F;&#x7528;TakeOrdered&#x7B56;&#x7565;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;TakeOrdered&#x7684;Spark Plan&#x3002;</p>
+<pre><code> object TakeOrdered extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case logical.Limit(IntegerLiteral(limit), logical.Sort(order, child)) =&gt;
+        execution.TakeOrdered(limit, order, planLater(child)) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="hashaggregation">HashAggregation</h5>
+<p>&#x805A;&#x5408;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x6620;&#x5C04;&#x4E3A;RDD&#x7684;shuffle&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code>object HashAggregation extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      // Aggregations that can be performed in two phases, before and after the shuffle.
+
+      // Cases where all aggregates can be codegened.
+      case PartialAggregation(
+             namedGroupingAttributes,
+             rewrittenAggregateExpressions,
+             groupingExpressions,
+             partialComputation,
+             child)
+             if canBeCodeGened(
+                  allAggregates(partialComputation) ++
+                  allAggregates(rewrittenAggregateExpressions)) &amp;&amp;
+               codegenEnabled =&gt;
+          execution.GeneratedAggregate(
+            partial = false,
+            namedGroupingAttributes,
+            rewrittenAggregateExpressions,
+            execution.GeneratedAggregate(
+              partial = true,
+              groupingExpressions,
+              partialComputation,
+              planLater(child))) :: Nil
+
+      // Cases where some aggregate can not be codegened
+      case PartialAggregation(
+             namedGroupingAttributes,
+             rewrittenAggregateExpressions,
+             groupingExpressions,
+             partialComputation,
+             child) =&gt;
+        execution.Aggregate(
+          partial = false,
+          namedGroupingAttributes,
+          rewrittenAggregateExpressions,
+          execution.Aggregate(
+            partial = true,
+            groupingExpressions,
+            partialComputation,
+            planLater(child))) :: Nil
+
+      case _ =&gt; Nil
+    }
+    ...
+  }
+</code></pre><h5 id="leftsemijoin">LeftSemiJoin</h5>
+<p>&#x5982;&#x679C;Logical Plan&#x91CC;&#x7684;Join&#x662F;joinType&#x4E3A;LeftSemi&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x79CD;&#x7B56;&#x7565;&#xFF0C;&#x8FD9;&#x91CC;ExtractEquiJoinKeys&#x662F;&#x4E00;&#x4E2A;pattern&#x5B9A;&#x4E49;&#x5728;patterns.scala&#x91CC;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x505A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x7528;&#x7684;&#x3002;&#x8FD9;&#x91CC;&#x5339;&#x914D;&#x53EA;&#x8981;&#x662F;&#x7B49;&#x503C;&#x7684;join&#x64CD;&#x4F5C;&#xFF0C;&#x90FD;&#x4F1A;&#x5C01;&#x88C5;&#x4E3A;ExtractEquiJoinKeys&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4F1A;&#x89E3;&#x6790;&#x5F53;&#x524D;join&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;(joinType, rightKeys, leftKeys, condition, leftChild, rightChild)&#x7684;&#x683C;&#x5F0F;&#x3002;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;execution.LeftSemiJoinHash&#x8FD9;&#x4E2A;Spark Plan&#x3002;</p>
+<pre><code>object LeftSemiJoin extends Strategy with PredicateHelper {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      // Find left semi joins where at least some predicates can be evaluated by matching join keys
+      case ExtractEquiJoinKeys(LeftSemi, leftKeys, rightKeys, condition, left, right) =&gt;
+        val semiJoin = joins.LeftSemiJoinHash(
+          leftKeys, rightKeys, planLater(left), planLater(right))
+        condition.map(Filter(_, semiJoin)).getOrElse(semiJoin) :: Nil
+      // no predicate can be evaluated by matching hash keys
+      case logical.Join(left, right, LeftSemi, condition) =&gt;
+        joins.LeftSemiJoinBNL(planLater(left), planLater(right), condition) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="hashjoin">HashJoin</h5>
+<p>HashJoin&#x662F;&#x6211;&#x4EEC;&#x6700;&#x89C1;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;innerJoin&#x7C7B;&#x578B;&#xFF0C;&#x91CC;&#x9762;&#x63D0;&#x4F9B;&#x4E86;2&#x79CD;Spark Plan&#xFF1A;BroadcastHashJoin &#x548C; ShuffledHashJoin&#x3002;
+BroadcastHashJoin&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x4E00;&#x79CD;&#x5E7F;&#x64AD;&#x53D8;&#x91CF;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;spark.sql.join.broadcastTables&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x8868;&#x5C31;&#x4F1A;&#x7528;spark&#x7684;Broadcast Variables&#x65B9;&#x5F0F;&#x5148;&#x5C06;&#x4E00;&#x5F20;&#x8868;&#x7ED9;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x5E7F;&#x64AD;&#x5230;&#x5404;&#x4E2A;&#x673A;&#x5668;&#x4E2D;&#x3002;ShuffledHashJoin&#x662F;&#x4E00;&#x79CD;&#x6700;&#x4F20;&#x7EDF;&#x7684;&#x9ED8;&#x8BA4;&#x7684;join&#x65B9;&#x5F0F;&#xFF0C;&#x4F1A;&#x6839;&#x636E;shuffle key&#x8FDB;&#x884C;shuffle&#x7684;hash join&#x3002;</p>
+<pre><code>object HashJoin extends Strategy with PredicateHelper {
+
+    private[this] def makeBroadcastHashJoin(
+        leftKeys: Seq[Expression],
+        rightKeys: Seq[Expression],
+        left: LogicalPlan,
+        right: LogicalPlan,
+        condition: Option[Expression],
+        side: joins.BuildSide) = {
+      val broadcastHashJoin = execution.joins.BroadcastHashJoin(
+        leftKeys, rightKeys, side, planLater(left), planLater(right))
+      condition.map(Filter(_, broadcastHashJoin)).getOrElse(broadcastHashJoin) :: Nil
+    }
+
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case ExtractEquiJoinKeys(Inner, leftKeys, rightKeys, condition, left, right)
+        if sqlContext.autoBroadcastJoinThreshold &gt; 0 &amp;&amp;
+           right.statistics.sizeInBytes &lt;= sqlContext.autoBroadcastJoinThreshold =&gt;
+        makeBroadcastHashJoin(leftKeys, rightKeys, left, right, condition, joins.BuildRight)
+
+      case ExtractEquiJoinKeys(Inner, leftKeys, rightKeys, condition, left, right)
+        if sqlContext.autoBroadcastJoinThreshold &gt; 0 &amp;&amp;
+           left.statistics.sizeInBytes &lt;= sqlContext.autoBroadcastJoinThreshold =&gt;
+          makeBroadcastHashJoin(leftKeys, rightKeys, left, right, condition, joins.BuildLeft)
+
+      case ExtractEquiJoinKeys(Inner, leftKeys, rightKeys, condition, left, right) =&gt;
+        val buildSide =
+          if (right.statistics.sizeInBytes &lt;= left.statistics.sizeInBytes) {
+            joins.BuildRight
+          } else {
+            joins.BuildLeft
+          }
+        val hashJoin = joins.ShuffledHashJoin(
+          leftKeys, rightKeys, buildSide, planLater(left), planLater(right))
+        condition.map(Filter(_, hashJoin)).getOrElse(hashJoin) :: Nil
+
+      case ExtractEquiJoinKeys(joinType, leftKeys, rightKeys, condition, left, right) =&gt;
+        joins.HashOuterJoin(
+          leftKeys, rightKeys, joinType, condition, planLater(left), planLater(right)) :: Nil
+
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="inmemoryscans">InMemoryScans</h5>
+<p>InMemoryScans&#x4E3B;&#x8981;&#x662F;&#x5BF9;InMemoryRelation&#x8FD9;&#x4E2A;Logical Plan&#x64CD;&#x4F5C;&#x3002;&#x8C03;&#x7528;&#x7684;&#x5176;&#x5B9E;&#x662F;Spark Planner&#x91CC;&#x7684;pruneFilterProject&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>object InMemoryScans extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case PhysicalOperation(projectList, filters, mem: InMemoryRelation) =&gt;
+        pruneFilterProject(
+          projectList,
+          filters,
+          identity[Seq[Expression]], // All filters still need to be evaluated.
+          InMemoryColumnarTableScan(_,  filters, mem)) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="parquetoperations">ParquetOperations</h5>
+<p>&#x652F;&#x6301;ParquetOperations&#x7684;&#x8BFB;&#x5199;&#xFF0C;&#x63D2;&#x5165;Table&#x7B49;&#x3002;</p>
+<pre><code>object ParquetOperations extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      // TODO: need to support writing to other types of files.  Unify the below code paths.
+      case logical.WriteToFile(path, child) =&gt;
+        val relation =
+          ParquetRelation.create(path, child, sparkContext.hadoopConfiguration, sqlContext)
+        // Note: overwrite=false because otherwise the metadata we just created will be deleted
+        InsertIntoParquetTable(relation, planLater(child), overwrite = false) :: Nil
+      case logical.InsertIntoTable(table: ParquetRelation, partition, child, overwrite) =&gt;
+        InsertIntoParquetTable(table, planLater(child), overwrite) :: Nil
+      case PhysicalOperation(projectList, filters: Seq[Expression], relation: ParquetRelation) =&gt;
+        val prunePushedDownFilters =
+          if (sqlContext.parquetFilterPushDown) {
+            (predicates: Seq[Expression]) =&gt; {
+              // Note: filters cannot be pushed down to Parquet if they contain more complex
+              // expressions than simple &quot;Attribute cmp Literal&quot; comparisons. Here we remove all
+              // filters that have been pushed down. Note that a predicate such as &quot;(A AND B) OR C&quot;
+              // can result in &quot;A OR C&quot; being pushed down. Here we are conservative in the sense
+              // that even if &quot;A&quot; was pushed and we check for &quot;A AND B&quot; we still want to keep
+              // &quot;A AND B&quot; in the higher-level filter, not just &quot;B&quot;.
+              predicates.map(p =&gt; p -&gt; ParquetFilters.createFilter(p)).collect {
+                case (predicate, None) =&gt; predicate
+              }
+            }
+          } else {
+            identity[Seq[Expression]] _
+          }
+        pruneFilterProject(
+          projectList,
+          filters,
+          prunePushedDownFilters,
+          ParquetTableScan(
+            _,
+            relation,
+            if (sqlContext.parquetFilterPushDown) filters else Nil)) :: Nil
+
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="basicoperators">BasicOperators</h5>
+<p>&#x6240;&#x6709;&#x5B9A;&#x4E49;&#x5728;org.apache.spark.sql.execution&#x91CC;&#x7684;&#x57FA;&#x672C;&#x7684;Spark Plan&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x5728;org.apache.spark.sql.execution&#x5305;&#x4E0B;basicOperators.scala&#x5185;&#x3002;&#x6709;Project&#x3001;Filter&#x3001;Sample&#x3001;Union&#x3001;Limit&#x3001;TakeOrdered&#x3001;Sort&#x3001;ExistingRdd&#x3002;&#x8FD9;&#x4E9B;&#x662F;&#x57FA;&#x672C;&#x5143;&#x7D20;&#xFF0C;&#x5B9E;&#x73B0;&#x90FD;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;RDD&#x91CC;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<pre><code>// Can we automate these &apos;pass through&apos; operations?
+  object BasicOperators extends Strategy {
+    def numPartitions = self.numPartitions
+
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case logical.Distinct(child) =&gt;
+        execution.Distinct(partial = false,
+          execution.Distinct(partial = true, planLater(child))) :: Nil
+
+      case logical.Sort(sortExprs, child) if sqlContext.externalSortEnabled =&gt;
+        execution.ExternalSort(sortExprs, global = true, planLater(child)):: Nil
+      case logical.Sort(sortExprs, child) =&gt;
+        execution.Sort(sortExprs, global = true, planLater(child)):: Nil
+
+      case logical.SortPartitions(sortExprs, child) =&gt;
+        // This sort only sorts tuples within a partition. Its requiredDistribution will be
+        // an UnspecifiedDistribution.
+        execution.Sort(sortExprs, global = false, planLater(child)) :: Nil
+      case logical.Project(projectList, child) =&gt;
+        execution.Project(projectList, planLater(child)) :: Nil
+      case logical.Filter(condition, child) =&gt;
+        execution.Filter(condition, planLater(child)) :: Nil
+      case logical.Aggregate(group, agg, child) =&gt;
+        execution.Aggregate(partial = false, group, agg, planLater(child)) :: Nil
+      case logical.Sample(fraction, withReplacement, seed, child) =&gt;
+        execution.Sample(fraction, withReplacement, seed, planLater(child)) :: Nil
+      case SparkLogicalPlan(alreadyPlanned) =&gt; alreadyPlanned :: Nil
+      case logical.LocalRelation(output, data) =&gt;
+        val nPartitions = if (data.isEmpty) 1 else numPartitions
+        PhysicalRDD(
+          output,
+          RDDConversions.productToRowRdd(sparkContext.parallelize(data, nPartitions),
+            StructType.fromAttributes(output))) :: Nil
+      case logical.Limit(IntegerLiteral(limit), child) =&gt;
+        execution.Limit(limit, planLater(child)) :: Nil
+      case Unions(unionChildren) =&gt;
+        execution.Union(unionChildren.map(planLater)) :: Nil
+      case logical.Except(left, right) =&gt;
+        execution.Except(planLater(left), planLater(right)) :: Nil
+      case logical.Intersect(left, right) =&gt;
+        execution.Intersect(planLater(left), planLater(right)) :: Nil
+      case logical.Generate(generator, join, outer, _, child) =&gt;
+        execution.Generate(generator, join = join, outer = outer, planLater(child)) :: Nil
+      case logical.NoRelation =&gt;
+        execution.PhysicalRDD(Nil, singleRowRdd) :: Nil
+      case logical.Repartition(expressions, child) =&gt;
+        execution.Exchange(HashPartitioning(expressions, numPartitions), planLater(child)) :: Nil
+      case e @ EvaluatePython(udf, child, _) =&gt;
+        BatchPythonEvaluation(udf, e.output, planLater(child)) :: Nil
+      case LogicalRDD(output, rdd) =&gt; PhysicalRDD(output, rdd) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="cartesianproduct">CartesianProduct</h5>
+<p>&#x7B1B;&#x5361;&#x5C14;&#x79EF;&#x7684;Join&#xFF0C;&#x6709;&#x5F85;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x7684;Join&#x3002;&#x4E3B;&#x8981;&#x662F;&#x5229;&#x7528;RDD&#x7684;cartesian&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<pre><code>object CartesianProduct extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case logical.Join(left, right, _, None) =&gt;
+        execution.joins.CartesianProduct(planLater(left), planLater(right)) :: Nil
+      case logical.Join(left, right, Inner, Some(condition)) =&gt;
+        execution.Filter(condition,
+          execution.joins.CartesianProduct(planLater(left), planLater(right))) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre><h5 id="broadcastnestedloopjoin">BroadcastNestedLoopJoin</h5>
+<p>BroadcastNestedLoopJoin&#x53EF;&#x7528;&#x4E8E;Left Outer&#xFF0C; Right Outer&#xFF0C; Full Outer&#x8FD9;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;join&#xFF0C;Hash Join&#x4EC5;&#x4EC5;&#x7528;&#x4E8E;InnerJoin&#x3002;</p>
+<pre><code>object BroadcastNestedLoopJoin extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+      case logical.Join(left, right, joinType, condition) =&gt;
+        val buildSide =
+          if (right.statistics.sizeInBytes &lt;= left.statistics.sizeInBytes) {
+            joins.BuildRight
+          } else {
+            joins.BuildLeft
+          }
+        joins.BroadcastNestedLoopJoin(
+          planLater(left), planLater(right), buildSide, joinType, condition) :: Nil
+      case _ =&gt; Nil
+    }
+  }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sqlparser.html" class="navigation navigation-prev " aria-label="Previous page: SqlParser">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="udf.html" class="navigation navigation-next " aria-label="Next page: UDF">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Physical Plan","level":"1.7.2","depth":2,"next":{"title":"UDF","level":"1.7.3","depth":2,"path":"06-component/udf.md","ref":"06-component/udf.md","articles":[]},"previous":{"title":"SqlParser","level":"1.7.1","depth":2,"path":"06-component/sqlparser.md","ref":"06-component/sqlparser.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-component/physical_plan.md","mtime":"2019-01-10T10:05:49.629Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

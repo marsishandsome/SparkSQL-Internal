@@ -1,0 +1,780 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TreeNode · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rule.html" />
+    
+    
+    <link rel="prev" href="introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="tree_node.html">
+            
+                <a href="tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="rule.html">
+            
+                <a href="rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="analyzer.html">
+            
+                <a href="analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="optimizer.html">
+            
+                <a href="optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="overall.html">
+            
+                <a href="overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06-component/">
+            
+                <a href="../06-component/">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06-component/sqlparser.html">
+            
+                <a href="../06-component/sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06-component/physical_plan.html">
+            
+                <a href="../06-component/physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06-component/udf.html">
+            
+                <a href="../06-component/udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06-component/in-memory_columnar_storage.html">
+            
+                <a href="../06-component/in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../06-component/external_data_source.html">
+            
+                <a href="../06-component/external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../06-component/code_generation.html">
+            
+                <a href="../06-component/code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >TreeNode</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="treenode">TreeNode</h1>
+<p>Catalyst&#x4E2D;&#x89C4;&#x5219;&#x7684;&#x5339;&#x914D;&#x548C;Logical Plan&#x7684;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x6811;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;LogicalPlan&#x7EE7;&#x627F;&#x81EA;QueryPlan&#xFF0C;&#x800C;QueryPlan&#x7EE7;&#x627F;&#x81EA;TreeNode&#x3002;</p>
+<pre><code>abstract class LogicalPlan extends QueryPlan[LogicalPlan] with Logging
+
+abstract class QueryPlan[PlanType &lt;: TreeNode[PlanType]] extends TreeNode[PlanType]
+
+abstract class TreeNode[BaseType &lt;: TreeNode[BaseType]]
+</code></pre><p>TreeNode Library&#x662F;Catalyst&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x5E93;&#xFF0C;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x6784;&#x5EFA;&#x90FD;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x4E2A;TreeNode&#x7EC4;&#x6210;&#x3002;&#x5728;Catalyst&#x91CC;&#xFF0C;&#x8FD9;&#x4E9B;Node&#x90FD;&#x662F;&#x7EE7;&#x627F;&#x81EA;Logical Plan&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x6BCF;&#x4E00;&#x4E2A;TreeNode&#x8282;&#x70B9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;Logical Plan&#x3002;&#x4E3B;&#x8981;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x7C7B;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../images/tree-node.png" alt=""></p>
+<p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;TreeNode&#x4E0A;&#x7684;&#x4E00;&#x4E9B;&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="transform">transform</h3>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;PartialFunction&#xFF0C;&#x4F8B;&#x5982;Analyzer&#x7684;Batch&#x91CC;&#x9762;&#x7684;Rule&#x3002;&#x5C06;Rule&#x8FED;&#x4EE3;&#x5E94;&#x7528;&#x5230;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x526F;&#x672C;&#x3002;&#x5982;&#x679C;rule&#x6CA1;&#x6709;&#x5BF9;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x8FDB;&#x884C;PartialFunction&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x672C;&#x8EAB;&#x3002;</p>
+<pre><code>/**
+   * Returns a copy of this node where `rule` has been recursively applied to the tree.
+   * When `rule` does not apply to a given node it is left unchanged.
+   * Users should not expect a specific directionality. If a specific directionality is needed,
+   * transformDown or transformUp should be used.
+   * @param rule the function use to transform this nodes children
+   */
+  def transform(rule: PartialFunction[BaseType, BaseType]): BaseType = {
+    transformDown(rule)
+  }
+</code></pre><h3 id="transformdown--transformup">transformDown &amp; transformUp</h3>
+<p>transform&#x65B9;&#x6CD5;&#x771F;&#x6B63;&#x7684;&#x8C03;&#x7528;&#x662F;transformDown&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86;&#x7528;&#x5148;&#x5E8F;&#x904D;&#x5386;&#x6765;&#x5BF9;&#x5B50;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x7684;Rule&#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x5728;&#x5BF9;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5E94;&#x7528;rule&#x6210;&#x529F;&#xFF0C;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8282;&#x70B9;afterRule&#xFF0C;&#x6765;&#x5BF9;&#x5176;children&#x8282;&#x70B9;&#x8FDB;&#x884C;rule&#x7684;&#x5E94;&#x7528;&#x3002;</p>
+<p>transfromUp&#x7528;&#x7684;&#x662F;&#x540E;&#x5E8F;&#x904D;&#x5386;&#x3002;</p>
+<pre><code> /**
+   * Returns a copy of this node where `rule` has been recursively applied to it and all of its
+   * children (pre-order). When `rule` does not apply to a given node it is left unchanged.
+   * @param rule the function used to transform this nodes children
+   */
+  def transformDown(rule: PartialFunction[BaseType, BaseType]): BaseType = {
+    val afterRule = rule.applyOrElse(this, identity[BaseType])
+    // Check if unchanged and then possibly return old copy to avoid gc churn.
+    if (this fastEquals afterRule) {
+      transformChildrenDown(rule)
+    } else {
+      afterRule.transformChildrenDown(rule)
+    }
+  }
+</code></pre><h3 id="transformchildrendown--transformchildrenup">transformChildrenDown &amp; transformChildrenUp</h3>
+<p>transformChildrenDown&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5BF9;children&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x7684;&#x8C03;&#x7528;PartialFunction&#xFF0C;&#x5229;&#x7528;&#x6700;&#x7EC8;&#x8FD4;&#x56DE;&#x7684;newArgs&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;makeCopy()&#x6765;&#x751F;&#x6210;&#x8282;&#x70B9;&#x3002;</p>
+<p>transformChildrenUp&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x6700;&#x540E;&#x8C03;&#x7528;transformUp&#x3002;</p>
+<pre><code>  /**
+   * Returns a copy of this node where `rule` has been recursively applied to all the children of
+   * this node.  When `rule` does not apply to a given node it is left unchanged.
+   * @param rule the function used to transform this nodes children
+   */
+  def transformChildrenDown(rule: PartialFunction[BaseType, BaseType]): this.type = {
+    var changed = false
+    val newArgs = productIterator.map {
+      case arg: TreeNode[_] if children contains arg =&gt;
+        val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+        if (!(newChild fastEquals arg)) {
+          changed = true
+          newChild
+        } else {
+          arg
+        }
+      case Some(arg: TreeNode[_]) if children contains arg =&gt;
+        val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+        if (!(newChild fastEquals arg)) {
+          changed = true
+          Some(newChild)
+        } else {
+          Some(arg)
+        }
+      case m: Map[_,_] =&gt; m
+      case args: Traversable[_] =&gt; args.map {
+        case arg: TreeNode[_] if children contains arg =&gt;
+          val newChild = arg.asInstanceOf[BaseType].transformDown(rule)
+          if (!(newChild fastEquals arg)) {
+            changed = true
+            newChild
+          } else {
+            arg
+          }
+        case other =&gt; other
+      }
+      case nonChild: AnyRef =&gt; nonChild
+      case null =&gt; null
+    }.toArray
+    if (changed) makeCopy(newArgs) else this
+  }
+</code></pre><h3 id="makecopy">makeCopy</h3>
+<p>&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x751F;&#x6210;&#x8282;&#x70B9;&#x526F;&#x672C;&#x3002;</p>
+<pre><code>/**
+   * Creates a copy of this type of tree node after a transformation.
+   * Must be overridden by child classes that have constructor arguments
+   * that are not present in the productIterator.
+   * @param newArgs the new product arguments.
+   */
+  def makeCopy(newArgs: Array[AnyRef]): this.type = attachTree(this, &quot;makeCopy&quot;) {
+    try {
+      // Skip no-arg constructors that are just there for kryo.
+      val defaultCtor = getClass.getConstructors.find(_.getParameterTypes.size != 0).head
+      if (otherCopyArgs.isEmpty) {
+        defaultCtor.newInstance(newArgs: _*).asInstanceOf[this.type]
+      } else {
+        defaultCtor.newInstance((newArgs ++ otherCopyArgs).toArray: _*).asInstanceOf[this.type]
+      }
+    } catch {
+      case e: java.lang.IllegalArgumentException =&gt;
+        throw new TreeNodeException(
+          this, s&quot;Failed to copy node.  Is otherCopyArgs specified correctly for $nodeName? &quot;
+            + s&quot;Exception message: ${e.getMessage}.&quot;)
+    }
+  }
+</code></pre><h3 id="&#x5176;&#x4ED6;&#x51FD;&#x6570;">&#x5176;&#x4ED6;&#x51FD;&#x6570;</h3>
+<p>&#x9664;&#x6B64;&#x4EE5;&#x5916;&#xFF0C;TreeNode&#x8FD8;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x96C6;&#x5408;&#x64CD;&#x4F5C;&#x51FD;&#x6570;</p>
+<p><strong>map</strong>
+&#x5C06;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x8FD4;&#x56DE;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x6811;</p>
+<pre><code>/**
+   * Returns a Seq containing the result of applying the given function to each
+   * node in this tree in a preorder traversal.
+   * @param f the function to be applied.
+   */
+  def map[A](f: BaseType =&gt; A): Seq[A] = {
+    val ret = new collection.mutable.ArrayBuffer[A]()
+    foreach(ret += f(_))
+    ret
+  }
+</code></pre><p><strong>flatMap</strong>
+&#x5C06;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x5230;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Seq</p>
+<pre><code>/**
+   * Returns a Seq by applying a function to all nodes in this tree and using the elements of the
+   * resulting collections.
+   */
+  def flatMap[A](f: BaseType =&gt; TraversableOnce[A]): Seq[A] = {
+    val ret = new collection.mutable.ArrayBuffer[A]()
+    foreach(ret ++= f(_))
+    ret
+  }
+</code></pre><p><strong>collect</strong>
+&#x5C06;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x5230;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x53BB;&#x9664;&#x6CA1;&#x6709;&#x8BE5;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x8FD4;&#x56DE;&#x5269;&#x4E0B;&#x7684;&#x7ED3;&#x679C;Seq</p>
+<pre><code>/**
+   * Returns a Seq containing the result of applying a partial function to all elements in this
+   * tree on which the function is defined.
+   */
+  def collect[B](pf: PartialFunction[BaseType, B]): Seq[B] = {
+    val ret = new collection.mutable.ArrayBuffer[B]()
+    val lifted = pf.lift
+    foreach(node =&gt; lifted(node).foreach(ret.+=))
+    ret
+  }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page: Catalyst介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="rule.html" class="navigation navigation-next " aria-label="Next page: Rule">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TreeNode","level":"1.6.2","depth":2,"next":{"title":"Rule","level":"1.6.3","depth":2,"path":"05-catalyst/rule.md","ref":"05-catalyst/rule.md","articles":[]},"previous":{"title":"Catalyst介绍","level":"1.6.1","depth":2,"path":"05-catalyst/introduction.md","ref":"05-catalyst/introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"05-catalyst/tree_node.md","mtime":"2019-01-10T10:05:49.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

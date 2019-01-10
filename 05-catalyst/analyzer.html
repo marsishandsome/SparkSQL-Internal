@@ -1,0 +1,1082 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Analyzer · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="optimizer.html" />
+    
+    
+    <link rel="prev" href="rule.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="tree_node.html">
+            
+                <a href="tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="rule.html">
+            
+                <a href="rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="analyzer.html">
+            
+                <a href="analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="optimizer.html">
+            
+                <a href="optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="overall.html">
+            
+                <a href="overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06-component/">
+            
+                <a href="../06-component/">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06-component/sqlparser.html">
+            
+                <a href="../06-component/sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06-component/physical_plan.html">
+            
+                <a href="../06-component/physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06-component/udf.html">
+            
+                <a href="../06-component/udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06-component/in-memory_columnar_storage.html">
+            
+                <a href="../06-component/in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../06-component/external_data_source.html">
+            
+                <a href="../06-component/external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../06-component/code_generation.html">
+            
+                <a href="../06-component/code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Analyzer</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="analyser">Analyser</h1>
+<p>Analyzer&#x7684;&#x4E3B;&#x8981;&#x804C;&#x8D23;&#x662F;&#x5C06;Sql Parser&#x751F;&#x6210;&#x7684;Unresolved Logical Plan&#x8F6C;&#x5316;&#x6210;Resolved Logical Plan&#x3002;Analyzer&#x4F1A;&#x5229;&#x7528;Catalog&#x548C;FunctionRegistry&#x91CC;&#x9762;&#x6CE8;&#x518C;&#x7684;&#x8868;&#x683C;&#x548C;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5C06;UnresolvedAttribute&#x548C;UnresolvedRelation&#x8F6C;&#x6362;&#x4E3A;Catalyst&#x91CC;&#x5168;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5728;&#x4ECB;&#x7ECD;Analyzer&#x4E4B;&#x524D;&#x5148;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;Catalog&#x548C;FunctionRegistry&#x8FD9;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x3002;</p>
+<h3 id="catalog">Catalog</h3>
+<p>Catalog&#x91CC;&#x9762;&#x8BB0;&#x5F55;&#x4E86;Table Name&#x5230;Logical Plan&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x6CE8;&#x518C;&#x8868;&#x683C;&#xFF0C;&#x67E5;&#x627E;&#x8868;&#x683C;&#x7B49;&#x63A5;&#x53E3;&#x3002;</p>
+<pre><code>/**
+ * An interface for looking up relations by name.  Used by an [[Analyzer]].
+ */
+trait Catalog {
+
+  def caseSensitive: Boolean
+
+  def tableExists(db: Option[String], tableName: String): Boolean
+
+  def lookupRelation(
+    databaseName: Option[String],
+    tableName: String,
+    alias: Option[String] = None): LogicalPlan
+
+  def registerTable(databaseName: Option[String], tableName: String, plan: LogicalPlan): Unit
+
+  def unregisterTable(databaseName: Option[String], tableName: String): Unit
+
+  def unregisterAllTables(): Unit
+  ...
+}
+</code></pre><p>Catalog&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x662F;SimpleCatalog&#xFF0C;&#x91CC;&#x9762;&#x662F;&#x7528;HashMap&#x6765;&#x8BB0;&#x5F55;Table Name&#x5230;Logical Plan&#x7684;&#x6620;&#x5C04;&#x3002;</p>
+<pre><code>class SimpleCatalog(val caseSensitive: Boolean) extends Catalog {
+  val tables = new mutable.HashMap[String, LogicalPlan]()
+
+  override def registerTable(
+      databaseName: Option[String],
+      tableName: String,
+      plan: LogicalPlan): Unit = {
+    val (dbName, tblName) = processDatabaseAndTableName(databaseName, tableName)
+    tables += ((tblName, plan))
+  }
+
+  override def unregisterTable(
+      databaseName: Option[String],
+      tableName: String) = {
+    val (dbName, tblName) = processDatabaseAndTableName(databaseName, tableName)
+    tables -= tblName
+  }
+
+  override def unregisterAllTables() = {
+    tables.clear()
+  }
+
+  override def tableExists(db: Option[String], tableName: String): Boolean = {
+    val (dbName, tblName) = processDatabaseAndTableName(db, tableName)
+    tables.get(tblName) match {
+      case Some(_) =&gt; true
+      case None =&gt; false
+    }
+  }
+
+  override def lookupRelation(
+      databaseName: Option[String],
+      tableName: String,
+      alias: Option[String] = None): LogicalPlan = {
+    val (dbName, tblName) = processDatabaseAndTableName(databaseName, tableName)
+    val table = tables.getOrElse(tblName, sys.error(s&quot;Table Not Found: $tableName&quot;))
+    val tableWithQualifiers = Subquery(tblName, table)
+
+    // If an alias was specified by the lookup, wrap the plan in a subquery so that attributes are
+    // properly qualified with this alias.
+    alias.map(a =&gt; Subquery(a, tableWithQualifiers)).getOrElse(tableWithQualifiers)
+  }
+}
+</code></pre><h3 id="functionregistry">FunctionRegistry</h3>
+<p>FunctionRegistry&#x8BB0;&#x5F55;&#x4E86;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x540D;&#x5230;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x6CE8;&#x518C;&#x51FD;&#x6570;&#xFF0C;&#x67E5;&#x627E;&#x51FD;&#x6570;&#x7B49;&#x63A5;&#x53E3;&#x3002;
+FunctionBuilder&#x88AB;&#x5B9A;&#x4E49;&#x6210;&#x4E3A; <code>Seq[Expression] =&gt; Expression</code>&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x8F93;&#x5165;&#x591A;&#x4E2A;Expression&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;Expression&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>/** A catalog for looking up user defined functions, used by an [[Analyzer]]. */
+trait FunctionRegistry {
+  type FunctionBuilder = Seq[Expression] =&gt; Expression
+
+  def registerFunction(name: String, builder: FunctionBuilder): Unit
+
+  def lookupFunction(name: String, children: Seq[Expression]): Expression
+}
+</code></pre><p>FunctionRegistry&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x662F;SimpleFunctionRegistry&#xFF0C;&#x91CC;&#x9762;&#x7528;HashMap&#x6765;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x540D;&#x5230;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6620;&#x5C04;&#x3002;</p>
+<pre><code>class SimpleFunctionRegistry extends FunctionRegistry {
+  val functionBuilders = new mutable.HashMap[String, FunctionBuilder]()
+
+  def registerFunction(name: String, builder: FunctionBuilder) = {
+    functionBuilders.put(name, builder)
+  }
+
+  override def lookupFunction(name: String, children: Seq[Expression]): Expression = {
+    functionBuilders(name)(children)
+  }
+}
+</code></pre><h3 id="analyzer">Analyzer</h3>
+<p>Analyzer&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;fixedPoint&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;Seq[Batch]&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>/**
+ * Provides a logical query plan analyzer, which translates [[UnresolvedAttribute]]s and
+ * [[UnresolvedRelation]]s into fully typed objects using information in a schema [[Catalog]] and
+ * a [[FunctionRegistry]].
+ */
+class Analyzer(catalog: Catalog, registry: FunctionRegistry, caseSensitive: Boolean)
+  extends RuleExecutor[LogicalPlan] with HiveTypeCoercion {
+
+  val resolver = if (caseSensitive) caseSensitiveResolution else caseInsensitiveResolution
+
+  // TODO: pass this in as a parameter.
+  val fixedPoint = FixedPoint(100)
+
+  /**
+   * Override to provide additional rules for the &quot;Resolution&quot; batch.
+   */
+  val extendedRules: Seq[Rule[LogicalPlan]] = Nil
+
+  lazy val batches: Seq[Batch] = Seq(
+    Batch(&quot;MultiInstanceRelations&quot;, Once,
+      NewRelationInstances),
+    Batch(&quot;Resolution&quot;, fixedPoint,
+      ResolveReferences ::
+      ResolveRelations ::
+      ResolveSortReferences ::
+      NewRelationInstances ::
+      ImplicitGenerate ::
+      StarExpansion ::
+      ResolveFunctions ::
+      GlobalAggregates ::
+      UnresolvedHavingClauseAttributes ::
+      TrimGroupingAliases ::
+      typeCoercionRules ++
+      extendedRules : _*),
+    Batch(&quot;Check Analysis&quot;, Once,
+      CheckResolution,
+      CheckAggregation),
+    Batch(&quot;AnalysisOperators&quot;, fixedPoint,
+      EliminateAnalysisOperators)
+  )
+  ...
+}
+</code></pre><p>Analyzer&#x89E3;&#x6790;&#x4E3B;&#x8981;&#x662F;&#x6839;&#x636E;&#x8FD9;&#x4E2A;batches&#x91CC;&#x9762;&#x7684;&#x5404;&#x79CD;Rule&#x6765;&#x5BF9;Unresolved Logical Plan&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x7684;&#x3002;&#x8FD9;&#x91CC;Analyzer&#x7C7B;&#x672C;&#x8EAB;&#x5E76;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5B9E;&#x73B0;&#x5728;&#x5B83;&#x7684;&#x7236;&#x7C7B;RuleExecutor[LogicalPlan]&#x4E2D;&#x3002;</p>
+<h3 id="rules&#x4ECB;&#x7ECD;">Rules&#x4ECB;&#x7ECD;</h3>
+<p>&#x5728;batches&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;4&#x4E2A;Batch:</p>
+<ol>
+<li>MultiInstanceRelations (Once)</li>
+<li>Resolution (fixedPoint)</li>
+<li>Check Analysis (Once)</li>
+<li>AnalysisOperators (fixedPoint)</li>
+</ol>
+<p>&#x4E0D;&#x540C;&#x7684;batch&#x662F;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;MultiInstanceRelations&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x624D;&#x4F1A;&#x6267;&#x884C;Resolution&#x3002;</p>
+<p>Once&#x8868;&#x793A;MultiInstanceRelations&#x7684;Rule&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;fixedPoint&#x8868;&#x793A;Resolution&#x91CC;&#x9762;&#x7684;Rule&#x4F1A;&#x53CD;&#x590D;&#x6267;&#x884C;&#x591A;&#x6B21;&#xFF0C;&#x5177;&#x4F53;&#x51E0;&#x6B21;&#x5B9A;&#x4E49;&#x5728;FixedPoint&#x91CC;&#x9762;&#xFF08;&#x5F53;&#x7136;&#x5982;&#x679C;&#x8FD0;&#x884C;Rule&#x524D;&#x540E;&#x7684;LogicalPlan&#x6CA1;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x4E5F;&#x4F1A;&#x63D0;&#x524D;&#x505C;&#x6B62;&#x6267;&#x884C;&#xFF09;&#x3002;</p>
+<p>Resolution&#x8FD9;&#x4E2A;Batch&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x5341;&#x51E0;&#x4E2A;Rules&#xFF0C;&#x4F8B;&#x5982;ResolveReferences&#xFF0C;ResolveRelations&#xFF0C;ResolveSortReferences,etc&#x3002;&#x8FD9;&#x4E9B;&#x4E0D;&#x540C;&#x7684;Rule&#x4F1A;&#x5FAA;&#x73AF;&#x6267;&#x884C;fixedPoint&#x6B21;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;ResolveReferences -&gt; ResolveRelations -&gt; ResolveSortReferences -&gt; ResolveReferences -&gt; ResolveRelations -&gt; ResolveSortReferences -&gt; ...&#xFF0C;&#x7C7B;&#x4F3C;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x6BCF;&#x4E00;&#x4E2A;Rule&#x5177;&#x4F53;&#x505A;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#x3002;</p>
+<h5 id="multiinstancerelation">MultiInstanceRelation</h5>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5728;Logical Plan&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x591A;&#x6B21;&#xFF0C;&#x5219;&#x4F1A;&#x5E94;&#x7528;NewRelationInstances&#x8FD9;&#x6761;Rule&#x3002;</p>
+<pre><code>/**
+ * If any MultiInstanceRelation appears more than once in the query plan then the plan is updated so
+ * that each instance has unique expression ids for the attributes produced.
+ */
+object NewRelationInstances extends Rule[LogicalPlan] {
+  def apply(plan: LogicalPlan): LogicalPlan = {
+    //&#x5C06;logical plan&#x5E94;&#x7528;partial function&#x5F97;&#x5230;&#x6240;&#x6709;MultiInstanceRelation&#x7684;plan&#x7684;&#x96C6;&#x5408;
+    val localRelations = plan collect { case l: MultiInstanceRelation =&gt; l}
+
+    val multiAppearance = localRelations
+      .groupBy(identity[MultiInstanceRelation]) //group by&#x64CD;&#x4F5C;
+      .filter { case (_, ls) =&gt; ls.size &gt; 1 } //&#x5982;&#x679C;&#x53EA;&#x53D6;size&#x5927;&#x4E8E;1&#x7684;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x64CD;&#x4F5C;
+      .map(_._1)
+      .toSet
+
+    //&#x66F4;&#x65B0;plan&#xFF0C;&#x4F7F;&#x5F97;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;expId&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;
+    plan transform {
+      case l: MultiInstanceRelation if multiAppearance contains l =&gt; l.newInstance
+    }
+  }
+}
+</code></pre><h5 id="resolvereferences">ResolveReferences</h5>
+<p>&#x5C06;Sql parser&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;UnresolvedAttribute&#x5168;&#x90E8;&#x90FD;&#x8F6C;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x9645;&#x7684;catalyst.expressions.AttributeReference&#x3002;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;Logical Plan&#x7684;resolveChildren&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x5C5E;&#x6027;&#x8F6C;&#x4E3A;NamedExepression&#x3002;</p>
+<pre><code>/**
+   * Replaces [[UnresolvedAttribute]]s with concrete
+   * [[catalyst.expressions.AttributeReference AttributeReferences]] from a logical plan node&apos;s
+   * children.
+   */
+  object ResolveReferences extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transformUp {
+      case q: LogicalPlan if q.childrenResolved =&gt;
+        logTrace(s&quot;Attempting to resolve ${q.simpleString}&quot;)
+        q transformExpressions {
+          case u @ UnresolvedAttribute(name) =&gt;
+            // Leave unchanged if resolution fails.  Hopefully will be resolved next round.
+            val result = q.resolveChildren(name, resolver).getOrElse(u)
+            logDebug(s&quot;Resolving $u to $result&quot;)
+            result
+        }
+    }
+  }
+</code></pre><h5 id="resolverelations">ResolveRelations</h5>
+<p>&#x5728;<code>select * from src</code>&#x4E2D;&#xFF0C;src&#x8868;parse&#x540E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;UnresolvedRelation&#x8282;&#x70B9;&#x3002;ResolveRelations&#x5C31;&#x662F;&#x628A;src&#x66FF;&#x6362;&#x6210;&#x5177;&#x4F53;&#x7684;LogicalPlan&#x3002;&#x800C;&#x8FD9;&#x4E2A;table name&#x5230;LogicalPlan&#x7684;&#x6620;&#x5C04;&#x53EF;&#x4EE5;&#x4ECE;Catalog&#x91CC;&#x83B7;&#x5F97;&#x3002;</p>
+<pre><code>/**
+   * Replaces [[UnresolvedRelation]]s with concrete relations from the catalog.
+   */
+  object ResolveRelations extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      case i @ InsertIntoTable(UnresolvedRelation(databaseName, name, alias), _, _, _) =&gt;
+        i.copy(
+          table = EliminateAnalysisOperators(catalog.lookupRelation(databaseName, name, alias)))
+      case UnresolvedRelation(databaseName, name, alias) =&gt;
+        catalog.lookupRelation(databaseName, name, alias)
+    }
+  }
+</code></pre><pre><code>def lookupRelation(
+    databaseName: Option[String],
+    tableName: String,
+    alias: Option[String] = None): LogicalPlan
+</code></pre><h5 id="resolvesortreferences">ResolveSortReferences</h5>
+<p>&#x5728;&#x67D0;&#x4E9B;SQL&#x7684;&#x5B9A;&#x4E49;&#x91CC;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x5141;&#x8BB8;&#x6309;&#x7167;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x5728;select&#x91CC;&#x9762;&#x7684;attribute&#x8FDB;&#x884C;sort&#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x662F;&#x7528;&#x6765;&#x68C0;&#x6D4B;&#x8FD9;&#x4E9B;&#x8BED;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x52A8;&#x628A;sort&#x7684;attribute&#x52A0;&#x5165;&#x5230;select&#x91CC;&#x9762;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E0A;&#x6B21;&#x52A0;&#x5165;&#x53BB;&#x5230;&#x8FD9;&#x4E2A;attribute&#x7684;projection&#x3002;</p>
+<pre><code>/**
+   * In many dialects of SQL is it valid to sort by attributes that are not present in the SELECT
+   * clause.  This rule detects such queries and adds the required attributes to the original
+   * projection, so that they will be available during sorting. Another projection is added to
+   * remove these attributes after sorting.
+   */
+  object ResolveSortReferences extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transformUp {
+      case s @ Sort(ordering, p @ Project(projectList, child)) if !s.resolved &amp;&amp; p.resolved =&gt;
+        val unresolved = ordering.flatMap(_.collect { case UnresolvedAttribute(name) =&gt; name })
+        val resolved = unresolved.flatMap(child.resolve(_, resolver))
+        val requiredAttributes = AttributeSet(resolved.collect { case a: Attribute =&gt; a })
+
+        val missingInProject = requiredAttributes -- p.output
+        if (missingInProject.nonEmpty) {
+          // Add missing attributes and then project them away after the sort.
+          Project(projectList.map(_.toAttribute),
+            Sort(ordering,
+              Project(projectList ++ missingInProject, child)))
+        } else {
+          logDebug(s&quot;Failed to find $missingInProject in ${p.output.mkString(&quot;, &quot;)}&quot;)
+          s // Nothing we can do here. Return original plan.
+        }
+      case s @ Sort(ordering, a @ Aggregate(grouping, aggs, child)) if !s.resolved &amp;&amp; a.resolved =&gt;
+        val unresolved = ordering.flatMap(_.collect { case UnresolvedAttribute(name) =&gt; name })
+        // A small hack to create an object that will allow us to resolve any references that
+        // refer to named expressions that are present in the grouping expressions.
+        val groupingRelation = LocalRelation(
+          grouping.collect { case ne: NamedExpression =&gt; ne.toAttribute }
+        )
+
+        logDebug(s&quot;Grouping expressions: $groupingRelation&quot;)
+        val resolved = unresolved.flatMap(groupingRelation.resolve(_, resolver))
+        val missingInAggs = resolved.filterNot(a.outputSet.contains)
+        logDebug(s&quot;Resolved: $resolved Missing in aggs: $missingInAggs&quot;)
+        if (missingInAggs.nonEmpty) {
+          // Add missing grouping exprs and then project them away after the sort.
+          Project(a.output,
+            Sort(ordering,
+              Aggregate(grouping, aggs ++ missingInAggs, child)))
+        } else {
+          s // Nothing we can do here. Return original plan.
+        }
+    }
+  }
+</code></pre><h5 id="implicitgenerate">ImplicitGenerate</h5>
+<p>&#x5982;&#x679C;&#x5728;select&#x8BED;&#x53E5;&#x91CC;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x4E00;&#x4E2A;Generator&#xFF08;Generator&#x662F;&#x4E00;&#x4E2A;1&#x6761;&#x8BB0;&#x5F55;&#x751F;&#x6210;&#x5230;N&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x6620;&#x5C04;&#xFF09;&#x3002;&#x5F53;&#x5728;&#x89E3;&#x6790;&#x903B;&#x8F91;&#x8BA1;&#x5212;&#x65F6;&#xFF0C;&#x9047;&#x5230;Project&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x8F6C;&#x6362;&#x4E3A;Generate&#x7C7B;&#xFF08;Generate&#x7C7B;&#x662F;&#x5C06;&#x8F93;&#x5165;&#x6D41;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D41;&#xFF09;&#x3002;</p>
+<pre><code>/**
+   * When a SELECT clause has only a single expression and that expression is a
+   * [[catalyst.expressions.Generator Generator]] we convert the
+   * [[catalyst.plans.logical.Project Project]] to a [[catalyst.plans.logical.Generate Generate]].
+   */
+  object ImplicitGenerate extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      case Project(Seq(Alias(g: Generator, _)), child) =&gt;
+        Generate(g, join = false, outer = false, None, child)
+    }
+  }
+</code></pre><h5 id="starexpansion">StarExpansion</h5>
+<p>&#x5728;Project&#x64CD;&#x4F5C;&#x7B26;&#x91CC;&#xFF0C;&#x5982;&#x679C;&#x662F;*&#x7B26;&#x53F7;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x7684;references&#x90FD;&#x5C55;&#x5F00;&#x6210;&#x5B9E;&#x9645;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre><code>/**
+   * Expands any references to [[Star]] (*) in project operators.
+   */
+  object StarExpansion extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      // Wait until children are resolved
+      case p: LogicalPlan if !p.childrenResolved =&gt; p
+      // If the projection list contains Stars, expand it.
+      case p @ Project(projectList, child) if containsStar(projectList) =&gt;
+        Project(
+          projectList.flatMap {
+            case s: Star =&gt; s.expand(child.output, resolver)
+            case o =&gt; o :: Nil
+          },
+          child)
+      case t: ScriptTransformation if containsStar(t.input) =&gt;
+        t.copy(
+          input = t.input.flatMap {
+            case s: Star =&gt; s.expand(t.child.output, resolver)
+            case o =&gt; o :: Nil
+          }
+        )
+      // If the aggregate function argument contains Stars, expand it.
+      case a: Aggregate if containsStar(a.aggregateExpressions) =&gt;
+        a.copy(
+          aggregateExpressions = a.aggregateExpressions.flatMap {
+            case s: Star =&gt; s.expand(a.child.output, resolver)
+            case o =&gt; o :: Nil
+          }
+        )
+    }
+
+    /**
+     * Returns true if `exprs` contains a [[Star]].
+     */
+    protected def containsStar(exprs: Seq[Expression]): Boolean =
+      exprs.collect { case _: Star =&gt; true }.nonEmpty
+  }
+}
+</code></pre><h5 id="resolvefunctions">ResolveFunctions</h5>
+<p>&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x5BF9;UDF&#x8FDB;&#x884C;resolve&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;UDF&#x53EF;&#x4EE5;&#x4ECE;FunctionRegistry&#x91CC;&#x627E;&#x5230;&#x3002;</p>
+<pre><code>/**
+   * Replaces [[UnresolvedFunction]]s with concrete [[catalyst.expressions.Expression Expressions]].
+   */
+  object ResolveFunctions extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      case q: LogicalPlan =&gt;
+        q transformExpressions {
+          case u @ UnresolvedFunction(name, children) if u.childrenResolved =&gt;
+            registry.lookupFunction(name, children)
+        }
+    }
+  }
+</code></pre><h5 id="globalaggregates">GlobalAggregates</h5>
+<p>&#x5982;&#x679C;&#x9047;&#x5230;&#x5305;&#x542B;Aggregate&#x7684;Project&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Aggregate&#x3002;</p>
+<pre><code>/**
+   * Turns projections that contain aggregate expressions into aggregations.
+   */
+  object GlobalAggregates extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      case Project(projectList, child) if containsAggregates(projectList) =&gt;
+        Aggregate(Nil, projectList, child)
+    }
+
+    def containsAggregates(exprs: Seq[Expression]): Boolean = {
+      exprs.foreach(_.foreach {
+        case agg: AggregateExpression =&gt; return true
+        case _ =&gt;
+      })
+      false
+    }
+  }
+</code></pre><h5 id="unresolvedhavingclauseattributes">UnresolvedHavingClauseAttributes</h5>
+<p>&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x4F1A;&#x5BFB;&#x627E;Having&#x5B50;&#x53E5;&#x4E2D;Unresolved Attributes&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;Attributes&#x4E0B;&#x964D;&#x5230;&#x4E0B;&#x9762;&#x7684;Aggregates&#x91CC;&#x9762;&#xFF0C;&#x6700;&#x540E;&#x5728;&#x6700;&#x4E0A;&#x9762;&#x6DFB;&#x52A0;Project&#x3002;</p>
+<pre><code>/**
+   * This rule finds expressions in HAVING clause filters that depend on
+   * unresolved attributes.  It pushes these expressions down to the underlying
+   * aggregates and then projects them away above the filter.
+   */
+  object UnresolvedHavingClauseAttributes extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transformUp {
+      case filter @ Filter(havingCondition, aggregate @ Aggregate(_, originalAggExprs, _))
+          if aggregate.resolved &amp;&amp; containsAggregate(havingCondition) =&gt; {
+        val evaluatedCondition = Alias(havingCondition,  &quot;havingCondition&quot;)()
+        val aggExprsWithHaving = evaluatedCondition +: originalAggExprs
+
+        Project(aggregate.output,
+          Filter(evaluatedCondition.toAttribute,
+            aggregate.copy(aggregateExpressions = aggExprsWithHaving)))
+      }
+    }
+
+    protected def containsAggregate(condition: Expression): Boolean =
+      condition
+        .collect { case ae: AggregateExpression =&gt; ae }
+        .nonEmpty
+  }
+</code></pre><h5 id="trimgroupingaliases">TrimGroupingAliases</h5>
+<p>&#x53BB;&#x9664;Aggreate&#x4E2D;&#x6CA1;&#x6709;&#x64CD;&#x4F5C;&#x7684;alias&#x3002;</p>
+<pre><code>/**
+   * Removes no-op Alias expressions from the plan.
+   */
+  object TrimGroupingAliases extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+      case Aggregate(groups, aggs, child) =&gt;
+        Aggregate(groups.map(_.transform { case Alias(c, _) =&gt; c }), aggs, child)
+    }
+  }
+</code></pre><h5 id="checkresolution">CheckResolution</h5>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x4E3B;&#x8981;&#x7684;&#x4F18;&#x5316;&#x89C4;&#x5219;&#x90FD;&#x8FD0;&#x884C;&#x5B8C;&#x540E;&#xFF0C;CheckResolution&#x4F1A;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x7528;&#x6765;&#x68C0;&#x67E5;&#x662F;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x8282;&#x70B9;&#x90FD;&#x5DF2;&#x7ECF;resolved&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x5C31;&#x629B;&#x5F02;&#x5E38;&#x3002;</p>
+<pre><code>/**
+   * Makes sure all attributes and logical plans have been resolved.
+   */
+  object CheckResolution extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = {
+      plan.transform {
+        case p if p.expressions.exists(!_.resolved) =&gt;
+          throw new TreeNodeException(p,
+            s&quot;Unresolved attributes: ${p.expressions.filterNot(_.resolved).mkString(&quot;,&quot;)}&quot;)
+        case p if !p.resolved &amp;&amp; p.childrenResolved =&gt;
+          throw new TreeNodeException(p, &quot;Unresolved plan found&quot;)
+      } match {
+        // As a backstop, use the root node to check that the entire plan tree is resolved.
+        case p if !p.resolved =&gt;
+          throw new TreeNodeException(p, &quot;Unresolved plan in tree&quot;)
+        case p =&gt; p
+      }
+    }
+  }
+</code></pre><h5 id="checkaggregation">CheckAggregation</h5>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x4E3B;&#x8981;&#x7684;&#x4F18;&#x5316;&#x89C4;&#x5219;&#x90FD;&#x8FD0;&#x884C;&#x5B8C;&#x540E;&#xFF0C;CheckAggregation&#x4E5F;&#x4F1A;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5B58;&#x5728;non-aggregated attributes&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x5C31;&#x629B;&#x5F02;&#x5E38;&#x3002;</p>
+<pre><code>/**
+   * Checks for non-aggregated attributes with aggregation
+   */
+  object CheckAggregation extends Rule[LogicalPlan] {
+    def apply(plan: LogicalPlan): LogicalPlan = {
+      plan.transform {
+        case aggregatePlan @ Aggregate(groupingExprs, aggregateExprs, child) =&gt;
+          def isValidAggregateExpression(expr: Expression): Boolean = expr match {
+            case _: AggregateExpression =&gt; true
+            case e: Attribute =&gt; groupingExprs.contains(e)
+            case e if groupingExprs.contains(e) =&gt; true
+            case e if e.references.isEmpty =&gt; true
+            case e =&gt; e.children.forall(isValidAggregateExpression)
+          }
+
+          aggregateExprs.find { e =&gt;
+            !isValidAggregateExpression(e.transform {
+              // Should trim aliases around `GetField`s. These aliases are introduced while
+              // resolving struct field accesses, because `GetField` is not a `NamedExpression`.
+              // (Should we just turn `GetField` into a `NamedExpression`?)
+              case Alias(g: GetField, _) =&gt; g
+            })
+          }.foreach { e =&gt;
+            throw new TreeNodeException(plan, s&quot;Expression not in GROUP BY: $e&quot;)
+          }
+
+          aggregatePlan
+      }
+    }
+  }
+</code></pre><h5 id="eliminateanalysisoperators">EliminateAnalysisOperators</h5>
+<p>&#x5C06;Subquery&#x79FB;&#x9664;&#x3002;</p>
+<pre><code>/**
+ * Removes [[catalyst.plans.logical.Subquery Subquery]] operators from the plan.  Subqueries are
+ * only required to provide scoping information for attributes and can be removed once analysis is
+ * complete.
+ */
+object EliminateAnalysisOperators extends Rule[LogicalPlan] {
+  def apply(plan: LogicalPlan): LogicalPlan = plan transform {
+    case Subquery(_, child) =&gt; child
+  }
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rule.html" class="navigation navigation-prev " aria-label="Previous page: Rule">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="optimizer.html" class="navigation navigation-next " aria-label="Next page: Optimizer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Analyzer","level":"1.6.4","depth":2,"next":{"title":"Optimizer","level":"1.6.5","depth":2,"path":"05-catalyst/optimizer.md","ref":"05-catalyst/optimizer.md","articles":[]},"previous":{"title":"Rule","level":"1.6.3","depth":2,"path":"05-catalyst/rule.md","ref":"05-catalyst/rule.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"05-catalyst/analyzer.md","mtime":"2019-01-10T10:05:49.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,658 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SparkSQL介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="history.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-catalyst/">
+            
+                <a href="../05-catalyst/">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-catalyst/introduction.html">
+            
+                <a href="../05-catalyst/introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-catalyst/tree_node.html">
+            
+                <a href="../05-catalyst/tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-catalyst/rule.html">
+            
+                <a href="../05-catalyst/rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-catalyst/analyzer.html">
+            
+                <a href="../05-catalyst/analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-catalyst/optimizer.html">
+            
+                <a href="../05-catalyst/optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-catalyst/overall.html">
+            
+                <a href="../05-catalyst/overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06-component/">
+            
+                <a href="../06-component/">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06-component/sqlparser.html">
+            
+                <a href="../06-component/sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06-component/physical_plan.html">
+            
+                <a href="../06-component/physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06-component/udf.html">
+            
+                <a href="../06-component/udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06-component/in-memory_columnar_storage.html">
+            
+                <a href="../06-component/in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../06-component/external_data_source.html">
+            
+                <a href="../06-component/external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../06-component/code_generation.html">
+            
+                <a href="../06-component/code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SparkSQL介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sparksql&#x4ECB;&#x7ECD;">SparkSQL&#x4ECB;&#x7ECD;</h1>
+<p>2014&#x5E74;9&#x6708;SparkSQL&#x53D1;&#x5E03;&#x4E86;1.1.0&#x7248;&#x672C;&#xFF0C;&#x7D27;&#x63A5;&#x7740;&#x5728;12&#x6708;&#x53C8;&#x53D1;&#x5E03;&#x4E86;1.2.0&#x7248;&#x672C;&#x3002;SparkSQL&#x53D1;&#x5C55;&#x901F;&#x5EA6;&#x5F02;&#x5E38;&#x8FC5;&#x731B;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x5C06;SQL&#x7C7B;&#x578B;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x6574;&#x5408;&#x5230;Spark&#x7684;&#x6838;&#x5FC3;RDD&#x6982;&#x5FF5;&#x91CC;&#xFF0C;&#x8FD9;&#x6837;&#x6D41;&#x5904;&#x7406;&#xFF0C;&#x6279;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x91CC;&#x90FD;&#x53EF;&#x4EE5;&#x548C;SQL&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="sparksql110">SparkSQL1.1.0</h3>
+<p><a href="https://spark.apache.org/releases/spark-release-1-1-0.html" target="_blank">(release note)</a></p>
+<p>&#x7248;&#x672C;&#x4E3B;&#x8981;&#x7684;&#x53D8;&#x52A8;&#x6709;&#xFF1A;</p>
+<ol>
+<li>&#x589E;&#x52A0;&#x4E86;JDBC/ODBC Server (ThriftServer)&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FDE;&#x63A5;&#x5230;SparkSQL&#x5E76;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x7684;&#x8868;&#x548C;&#x7F13;&#x5B58;&#x8868;&#x3002;</li>
+<li>&#x589E;&#x52A0;&#x4E86;&#x5BF9;JSON&#x6587;&#x4EF6;&#x7684;&#x652F;&#x6301;</li>
+<li>&#x589E;&#x52A0;&#x4E86;&#x5BF9;parquet&#x6587;&#x4EF6;&#x7684;&#x672C;&#x5730;&#x4F18;&#x5316;</li>
+<li>&#x589E;&#x52A0;&#x4E86;&#x652F;&#x6301;&#x5C06;python&#x3001;scala&#x3001;java&#x7684;lambda&#x51FD;&#x6570;&#x6CE8;&#x518C;&#x6210;UDF&#xFF0C;&#x5E76;&#x80FD;&#x5728;SQL&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x5F15;&#x5165;&#x4E86;&#x52A8;&#x6001;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;&#x6280;&#x672F;&#xFF08;bytecode generation&#xFF0C;&#x5373;CG&#xFF09;&#xFF0C;&#x660E;&#x663E;&#x5730;&#x63D0;&#x5347;&#x4E86;&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;&#x67E5;&#x8BE2;&#x7684;&#x901F;&#x7387;&#x3002;</li>
+<li>&#x7EDF;&#x4E00;API&#x63A5;&#x53E3;&#xFF0C;&#x5982;sql()&#x3001;SchemaRDD&#x751F;&#x6210;&#x7B49;&#x3002;</li>
+</ol>
+<h3 id="sparksql120">SparkSQL1.2.0</h3>
+<p><a href="https://spark.apache.org/releases/spark-release-1-2-0.html" target="_blank">(release note)</a></p>
+<p>&#x7248;&#x672C;&#x4E3B;&#x8981;&#x7684;&#x53D8;&#x52A8;&#x6709;&#xFF1A;</p>
+<ol>
+<li>&#x589E;&#x52A0;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x6570;&#x636E;&#x7684;&#x65B0;API&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;API&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6CE8;&#x518C;&#x4E3A;&#x4E34;&#x65F6;&#x8868;&#x683C;&#xFF0C;&#x5E76;&#x4E14;&#x652F;&#x6301;predicte pushdown&#x65B9;&#x5F0F;&#x7684;&#x4F18;&#x5316;&#xFF0C;Spark&#x539F;&#x751F;&#x652F;&#x6301;Parquet&#x548C;JSON&#x683C;&#x5F0F;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x8BFB;&#x53D6;&#x5176;&#x4ED6;&#x683C;&#x6570;&#x636E;&#x7684;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x589E;&#x52A0;&#x652F;&#x6301;Hive 0.13&#xFF0C;&#x589E;&#x52A0;&#x5BF9;fixed-precision decimal&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x652F;&#x6301;&#x3002;</li>
+<li>&#x589E;&#x52A0;<a href="https://issues.apache.org/jira/browse/SPARK-3007" target="_blank">dynamically partitioned inserts</a></li>
+<li>&#x4F18;&#x5316;&#x4E86;cache SchemaRDD&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x4E86;&#x5176;&#x8BED;&#x4E49;&#xFF0C;&#x5E76;&#x589E;&#x52A0;&#x4E86;<a href="https://issues.apache.org/jira/browse/SPARK-2961" target="_blank">statistics-based partition pruning</a>&#x3002;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="history.html" class="navigation navigation-next " aria-label="Next page: SparkSQL的发展历程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SparkSQL介绍","level":"1.2","depth":1,"next":{"title":"SparkSQL的发展历程","level":"1.2.1","depth":2,"path":"01-introduction/history.md","ref":"01-introduction/history.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01-introduction/README.md","mtime":"2019-01-10T10:05:49.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

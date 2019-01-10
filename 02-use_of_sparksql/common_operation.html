@@ -1,0 +1,705 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>常用操作 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cache.html" />
+    
+    
+    <link rel="prev" href="usage.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="sqlcontext.html">
+            
+                <a href="sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="hivecontext.html">
+            
+                <a href="hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="common_operation.html">
+            
+                <a href="common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="external_data_source.html">
+            
+                <a href="external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-catalyst/">
+            
+                <a href="../05-catalyst/">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-catalyst/introduction.html">
+            
+                <a href="../05-catalyst/introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-catalyst/tree_node.html">
+            
+                <a href="../05-catalyst/tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-catalyst/rule.html">
+            
+                <a href="../05-catalyst/rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-catalyst/analyzer.html">
+            
+                <a href="../05-catalyst/analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-catalyst/optimizer.html">
+            
+                <a href="../05-catalyst/optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-catalyst/overall.html">
+            
+                <a href="../05-catalyst/overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06-component/">
+            
+                <a href="../06-component/">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06-component/sqlparser.html">
+            
+                <a href="../06-component/sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06-component/physical_plan.html">
+            
+                <a href="../06-component/physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06-component/udf.html">
+            
+                <a href="../06-component/udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06-component/in-memory_columnar_storage.html">
+            
+                <a href="../06-component/in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../06-component/external_data_source.html">
+            
+                <a href="../06-component/external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../06-component/code_generation.html">
+            
+                <a href="../06-component/code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >常用操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E38;&#x7528;&#x64CD;&#x4F5C;">&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h1>
+<p> &#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;hive/console&#x7684;&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x548C;&#x8FD0;&#x884C;&#x8BA1;&#x5212;&#x76F8;&#x5173;&#x7684;&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x64CD;&#x4F5C;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8868;people&#x548C;&#x67E5;&#x8BE2;query&#x3002;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x9010;&#x884C;&#x8FD0;&#x884C;</p>
+<pre><code>import org.apache.spark.sql.hive.HiveContext
+
+case class Person(name:String, age:Int, state:String)
+
+val hiveContext = new HiveContext(sc)
+import hiveContext._
+
+sc.parallelize(
+Person(&quot;Michael&quot;,29,&quot;CA&quot;)::
+Person(&quot;Andy&quot;,30,&quot;NY&quot;)::
+Person(&quot;Justin&quot;,19,&quot;CA&quot;)::
+Person(&quot;Justin&quot;,25,&quot;CA&quot;)::Nil).
+registerTempTable(&quot;people&quot;)
+
+val query= sql(&quot;select * from people&quot;)
+</code></pre><h3 id="&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;schema">&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;schema</h3>
+<pre><code>query.printSchema
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>root
+ |-- name: string (nullable = true)
+ |-- age: integer (nullable = false)
+ |-- state: string (nullable = true)
+</code></pre><h3 id="&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;&#x6574;&#x4E2A;&#x8FD0;&#x884C;&#x8BA1;&#x5212;">&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;&#x6574;&#x4E2A;&#x8FD0;&#x884C;&#x8BA1;&#x5212;</h3>
+<pre><code>query.queryExecution
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>== Parsed Logical Plan ==
+&apos;Project [*]
+ &apos;UnresolvedRelation None, people, None
+
+== Analyzed Logical Plan ==
+Project [name#0,age#1,state#2]
+ LogicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+
+== Optimized Logical Plan ==
+LogicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+
+== Physical Plan ==
+PhysicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+
+Code Generation: false
+== RDD ==
+</code></pre><h3 id="&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;unresolved-logicalplan">&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;Unresolved LogicalPlan</h3>
+<pre><code>query.queryExecution.logical
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>&apos;Project [*]
+ &apos;UnresolvedRelation None, people, None
+</code></pre><h3 id="&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;analyzed-logicalplan">&#x67E5;&#x770B;&#x67E5;&#x8BE2;&#x7684;analyzed LogicalPlan</h3>
+<pre><code>query.queryExecution.analyzed
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>Project [name#0,age#1,state#2]
+ LogicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+</code></pre><h3 id="&#x67E5;&#x770B;&#x4F18;&#x5316;&#x540E;&#x7684;logicalplan">&#x67E5;&#x770B;&#x4F18;&#x5316;&#x540E;&#x7684;LogicalPlan</h3>
+<pre><code>query.queryExecution.optimizedPlan
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>LogicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+</code></pre><h3 id="&#x67E5;&#x770B;&#x7269;&#x7406;&#x8BA1;&#x5212;">&#x67E5;&#x770B;&#x7269;&#x7406;&#x8BA1;&#x5212;</h3>
+<pre><code>query.queryExecution.sparkPlan
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>PhysicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36
+</code></pre><h3 id="&#x67E5;&#x770B;rdd&#x7684;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;">&#x67E5;&#x770B;RDD&#x7684;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;</h3>
+<pre><code>query.toDebugString
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>== Query Plan ==
+== Physical Plan ==
+PhysicalRDD [name#0,age#1,state#2], MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36 []
+ |  MapPartitionsRDD[1] at mapPartitions at ExistingRDD.scala:36 []
+ |  ParallelCollectionRDD[0] at parallelize at &lt;console&gt;:21 []
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="usage.html" class="navigation navigation-prev " aria-label="Previous page: SparkSQL的三种使用方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cache.html" class="navigation navigation-next " aria-label="Next page: Cache Table">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"常用操作","level":"1.3.4","depth":2,"next":{"title":"Cache Table","level":"1.3.5","depth":2,"path":"02-use_of_sparksql/cache.md","ref":"02-use_of_sparksql/cache.md","articles":[]},"previous":{"title":"SparkSQL的三种使用方式","level":"1.3.3","depth":2,"path":"02-use_of_sparksql/usage.md","ref":"02-use_of_sparksql/usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-use_of_sparksql/common_operation.md","mtime":"2019-01-10T10:05:49.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

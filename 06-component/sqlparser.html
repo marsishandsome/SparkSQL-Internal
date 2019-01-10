@@ -1,0 +1,858 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SqlParser · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="physical_plan.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-introduction/">
+            
+                <a href="../01-introduction/">
+            
+                    
+                    SparkSQL介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-introduction/history.html">
+            
+                <a href="../01-introduction/history.html">
+            
+                    
+                    SparkSQL的发展历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-introduction/performance.html">
+            
+                <a href="../01-introduction/performance.html">
+            
+                    
+                    SparkSQL的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-use_of_sparksql/">
+            
+                <a href="../02-use_of_sparksql/">
+            
+                    
+                    SparkSQL的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-use_of_sparksql/sqlcontext.html">
+            
+                <a href="../02-use_of_sparksql/sqlcontext.html">
+            
+                    
+                    SqlContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-use_of_sparksql/hivecontext.html">
+            
+                <a href="../02-use_of_sparksql/hivecontext.html">
+            
+                    
+                    HiveContext的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-use_of_sparksql/usage.html">
+            
+                <a href="../02-use_of_sparksql/usage.html">
+            
+                    
+                    SparkSQL的三种使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-use_of_sparksql/common_operation.html">
+            
+                <a href="../02-use_of_sparksql/common_operation.html">
+            
+                    
+                    常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02-use_of_sparksql/cache.html">
+            
+                <a href="../02-use_of_sparksql/cache.html">
+            
+                    
+                    Cache Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02-use_of_sparksql/external_data_source.html">
+            
+                <a href="../02-use_of_sparksql/external_data_source.html">
+            
+                    
+                    外部数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-performance-turning/">
+            
+                <a href="../03-performance-turning/">
+            
+                    
+                    SparkSQL调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04-context/">
+            
+                <a href="../04-context/">
+            
+                    
+                    SparkSQL的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-context/sqlcontext.html">
+            
+                <a href="../04-context/sqlcontext.html">
+            
+                    
+                    SqlContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-context/hivecontext.html">
+            
+                <a href="../04-context/hivecontext.html">
+            
+                    
+                    HiveContext的运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-catalyst/">
+            
+                <a href="../05-catalyst/">
+            
+                    
+                    Catalyst优化器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-catalyst/introduction.html">
+            
+                <a href="../05-catalyst/introduction.html">
+            
+                    
+                    Catalyst介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-catalyst/tree_node.html">
+            
+                <a href="../05-catalyst/tree_node.html">
+            
+                    
+                    TreeNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-catalyst/rule.html">
+            
+                <a href="../05-catalyst/rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-catalyst/analyzer.html">
+            
+                <a href="../05-catalyst/analyzer.html">
+            
+                    
+                    Analyzer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-catalyst/optimizer.html">
+            
+                <a href="../05-catalyst/optimizer.html">
+            
+                    
+                    Optimizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-catalyst/overall.html">
+            
+                <a href="../05-catalyst/overall.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SparkSQL组件解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="sqlparser.html">
+            
+                <a href="sqlparser.html">
+            
+                    
+                    SqlParser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="physical_plan.html">
+            
+                <a href="physical_plan.html">
+            
+                    
+                    Physical Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="udf.html">
+            
+                <a href="udf.html">
+            
+                    
+                    UDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="in-memory_columnar_storage.html">
+            
+                <a href="in-memory_columnar_storage.html">
+            
+                    
+                    In-Memory Columnar Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="external_data_source.html">
+            
+                <a href="external_data_source.html">
+            
+                    
+                    External Data Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="code_generation.html">
+            
+                <a href="code_generation.html">
+            
+                    
+                    Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../07-overall/">
+            
+                <a href="../07-overall/">
+            
+                    
+                    推荐资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SqlParser</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sqlparser">SqlParser</h1>
+<p>SqlParser&#x662F;&#x4E00;&#x4E2A;SQL&#x8BED;&#x8A00;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x529F;&#x80FD;&#x662F;&#x5C06;SQL&#x8BED;&#x53E5;&#x89E3;&#x6790;&#x6210;Unresolved Logical Plan&#x3002;</p>
+<h3 id="scala&#x7684;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x89E3;&#x6790;&#x5668;">Scala&#x7684;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x89E3;&#x6790;&#x5668;</h3>
+<p>SqlParser&#x4F7F;&#x7528;&#x7684;&#x662F;Scala&#x63D0;&#x4F9B;&#x7684;StandardTokenParsers&#x548C;PackratParsers&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E8E;&#x8BCD;&#x6CD5;&#x89E3;&#x6790;&#x548C;&#x8BED;&#x6CD5;&#x89E3;&#x6790;&#xFF0C;&#x9996;&#x5148;&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x5BF9;SQL&#x8BED;&#x53E5;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x5148;&#x6765;&#x770B;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x6570;&#x5B57;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x3002;</p>
+<pre><code>import scala.util.parsing.combinator.PackratParsers
+import scala.util.parsing.combinator.syntactical._
+
+object MyLexical extends StandardTokenParsers with PackratParsers{
+
+  //&#x5B9A;&#x4E49;&#x5206;&#x5272;&#x7B26;
+  lexical.delimiters ++= List(&quot;.&quot;, &quot;;&quot;, &quot;+&quot;, &quot;-&quot;, &quot;*&quot;)
+  //&#x5B9A;&#x4E49;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x52A0;&#xFF0C;&#x51CF;&#xFF0C;&#x4E58;
+  lazy val expr: PackratParser[Int] = plus | minus | multi
+  //&#x52A0;&#x6CD5;&#x8868;&#x793A;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;
+  lazy val plus: PackratParser[Int] = num ~ &quot;+&quot; ~ num ^^ { case n1 ~ &quot;+&quot; ~ n2 =&gt; n1.toInt + n2.toInt}
+  //&#x51CF;&#x6CD5;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;
+  lazy val minus: PackratParser[Int] = num ~ &quot;-&quot; ~ num ^^ { case n1 ~ &quot;-&quot; ~ n2 =&gt; n1.toInt - n2.toInt}
+  //&#x4E58;&#x6CD5;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;
+  lazy val multi: PackratParser[Int] = num ~ &quot;*&quot; ~ num ^^ { case n1 ~ &quot;*&quot; ~ n2 =&gt; n1.toInt * n2.toInt}
+  lazy val num = numericLit
+
+  def parse(input: String) = {
+    //&#x5B9A;&#x4E49;&#x8BCD;&#x6CD5;&#x8BFB;&#x5165;&#x5668;myread&#xFF0C;&#x5E76;&#x5C06;&#x626B;&#x63CF;&#x5934;&#x653E;&#x7F6E;&#x5728;input&#x7684;&#x9996;&#x4F4D;
+    val myread = new PackratReader(new lexical.Scanner(input))
+    print(&quot;&#x5904;&#x7406;&#x8868;&#x8FBE;&#x5F0F; &quot; + input)
+    phrase(expr)(myread) match {
+      case Success(result, _) =&gt; println(&quot; Success!&quot;); println(result); Some(result)
+      case n =&gt; println(n); println(&quot;Err!&quot;); None
+    }
+  }
+
+  def main(args: Array[String]) {
+    val prg = &quot;6 * 3&quot; :: &quot;24-/*aaa*/4&quot; :: &quot;a+5&quot; :: &quot;21/3&quot; :: Nil
+    prg.map(parse)
+  }
+}
+</code></pre><p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code>&#x5904;&#x7406;&#x8868;&#x8FBE;&#x5F0F; 6 * 3 Success!     //lexical&#x5BF9;&#x7A7A;&#x683C;&#x8FDB;&#x884C;&#x4E86;&#x5904;&#x7406;&#xFF0C;&#x5F97;&#x5230;6*3
+18     //6*3&#x7B26;&#x5408;&#x4E58;&#x6CD5;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8C03;&#x7528;n1.toInt * n2.toInt&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x5E76;&#x8FD4;&#x56DE;
+&#x5904;&#x7406;&#x8868;&#x8FBE;&#x5F0F; 24-/*aaa*/4 Success!  //lexical&#x5BF9;&#x6CE8;&#x91CA;&#x8FDB;&#x884C;&#x4E86;&#x5904;&#x7406;&#xFF0C;&#x5F97;&#x5230;20-4
+20    //20-4&#x7B26;&#x5408;&#x51CF;&#x6CD5;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8C03;&#x7528;n1.toInt - n2.toInt&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x5E76;&#x8FD4;&#x56DE;
+&#x5904;&#x7406;&#x8868;&#x8FBE;&#x5F0F; a+5[1.1] failure: number expected
+      //lexical&#x5728;&#x89E3;&#x6790;&#x5230;a&#xFF0C;&#x53D1;&#x73B0;&#x4E0D;&#x662F;&#x6574;&#x6570;&#x578B;&#xFF0C;&#x6545;&#x62A5;&#x9519;&#x8BEF;&#x4F4D;&#x7F6E;&#x548C;&#x5185;&#x5BB9;
+a+5
+^
+Err!
+&#x5904;&#x7406;&#x8868;&#x8FBE;&#x5F0F; 21/3[1.3] failure: ``*&apos;&apos; expected but ErrorToken(illegal character) found
+      //lexical&#x5728;&#x89E3;&#x6790;&#x5230;/&#xFF0C;&#x53D1;&#x73B0;&#x4E0D;&#x662F;&#x5206;&#x5272;&#x7B26;&#xFF0C;&#x6545;&#x62A5;&#x9519;&#x8BEF;&#x4F4D;&#x7F6E;&#x548C;&#x5185;&#x5BB9;
+21/3
+  ^
+Err!
+</code></pre><p>&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9996;&#x5148;&#x5BF9;&#x8868;&#x8FBE;&#x5F0F; 6 * 3 &#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x8BCD;&#x6CD5;&#x8BFB;&#x5165;&#x5668;myread&#x5C06;&#x626B;&#x63CF;&#x5934;&#x7F6E;&#x4E8E;6&#x7684;&#x4F4D;&#x7F6E;&#xFF1B;&#x5F53;phrase()&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x6570;&#x5B57;&#x8868;&#x8FBE;&#x5F0F;expr&#x5904;&#x7406;6 * 3&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x8BFB;&#x5165;&#x4E00;&#x4E2A;&#x8BCD;&#x5C31;&#x548C;expr&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5982;&#x8BFB;&#x5165;6*3&#x548C;expr&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5148;&#x5339;&#x914D;&#x8868;&#x8FBE;&#x5F0F;plus&#xFF0C;*&#x548C;+&#x5339;&#x914D;&#x4E0D;&#x4E0A;&#xFF1B;&#x5C31;&#x7EE7;&#x7EED;&#x5339;&#x914D;&#x8868;&#x8FBE;&#x5F0F;minus&#xFF0C;*&#x548C;-&#x5339;&#x914D;&#x4E0D;&#x4E0A;&#xFF1B;&#x5C31;&#x7EE7;&#x7EED;&#x5339;&#x914D;&#x8868;&#x8FBE;&#x5F0F;multi&#xFF0C;&#x8FD9;&#x6B21;&#x5339;&#x914D;&#x4E0A;&#x4E86;&#xFF0C;&#x7B49;&#x8BFB;&#x5165;3&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x56E0;&#x4E3A;3&#x662F;num&#x7C7B;&#x578B;&#xFF0C;&#x5C31;&#x8C03;&#x7528;&#x8C03;&#x7528;n1.toInt * n2.toInt&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;expr&#x3001;plus&#x3001;minus&#x3001;multi&#x3001;num&#x90FD;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;|&#x3001;~&#x3001;^^&#x662F;&#x590D;&#x5408;&#x56E0;&#x5B50;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x590D;&#x5408;&#x56E0;&#x5B50;&#x53EF;&#x4EE5;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;plus&#xFF08;num ~ &quot;+&quot; ~ num ^^ { case n1 ~ &quot;+&quot; ~ n2 =&gt; n1.toInt + n2.toInt}&#xFF09;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7531;num&#x3001;+&#x3001;num&#x3001;&#x51FD;&#x6570;&#x6784;&#x6210;&#x7684;&#x590D;&#x5408;&#x8868;&#x8FBE;&#x5F0F;&#xFF1B;&#x800C;expr&#xFF08;plus | minus | multi&#xFF09;&#x662F;&#x7531;plus&#x3001;minus&#x3001;multi&#x6784;&#x6210;&#x7684;&#x590D;&#x5408;&#x8868;&#x8FBE;&#x5F0F;&#xFF1B;&#x590D;&#x5408;&#x56E0;&#x5B50;&#x7684;&#x542B;&#x4E49;&#x5B9A;&#x4E49;&#x5728;&#x7C7B;scala/util/parsing/combinator/Parsers.scala&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x590D;&#x5408;&#x56E0;&#x5B50;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p ~ q</td>
+<td>p&#x6210;&#x529F;&#xFF0C;&#x624D;&#x4F1A;q&#xFF0C;&#x653E;&#x56DE;p,q&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>p ~&gt; q</td>
+<td>p&#x6210;&#x529F;&#xFF0C;&#x624D;&#x4F1A;q&#xFF0C;&#x8FD4;&#x56DE;q&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>p &lt;~ q</td>
+<td>p&#x6210;&#x529F;&#xFF0C;&#x624D;&#x4F1A;q&#xFF0C;&#x8FD4;&#x56DE;p&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>p &#x6216; q</td>
+<td>p&#x5931;&#x8D25;&#x5219;q&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x7684;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>p ^^ f</td>
+<td>&#x5982;&#x679C;p&#x6210;&#x529F;&#xFF0C;&#x5C06;&#x51FD;&#x6570;f&#x5E94;&#x7528;&#x5230;p&#x7684;&#x7ED3;&#x679C;&#x4E0A;</td>
+</tr>
+<tr>
+<td>p ^? f</td>
+<td>&#x5982;&#x679C;p&#x6210;&#x529F;&#xFF0C;&#x5982;&#x679C;&#x51FD;&#x6570;f&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5230;p&#x7684;&#x7ED3;&#x679C;&#x4E0A;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x5C06;p&#x7684;&#x7ED3;&#x679C;&#x7528;f&#x8FDB;&#x884C;&#x8F6C;&#x6362;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x9488;&#x5BF9;&#x4E0A;&#x9762;&#x7684;6 * 3&#x4F7F;&#x7528;&#x7684;&#x662F;multi&#x8868;&#x8FBE;&#x5F0F;</p>
+<p><code>(num ~ &quot;\*&quot; ~ num ^^ { case n1 ~ &quot;\*&quot; ~ n2 =&gt; n1.toInt \* n2.toInt})</code></p>
+<p>&#x5176;&#x542B;&#x4E49;&#x5C31;&#x662F;&#xFF1A;num&#x540E;&#x8DDF;*&#x518D;&#x8DDF;num&#xFF0C;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x5C31;&#x5C06;&#x4F7F;&#x7528;&#x51FD;&#x6570;n1.toInt * n2.toInt&#x3002;</p>
+<h3 id="sqlparser&#x5165;&#x53E3;">SqlParser&#x5165;&#x53E3;</h3>
+<p>SqlParser&#x7684;&#x5165;&#x53E3;&#x5728;SqlContext&#x7684;sql()&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4F1A;&#x8C03;&#x7528;parserSql&#x5E76;&#x8FD4;&#x56DE;SchemaRDD&#x3002;</p>
+<pre><code>/**
+   * Executes a SQL query using Spark, returning the result as a SchemaRDD.  The dialect that is
+   * used for SQL parsing can be configured with &apos;spark.sql.dialect&apos;.
+   *
+   * @group userf
+   */
+  def sql(sqlText: String): SchemaRDD = {
+    if (dialect == &quot;sql&quot;) {
+      new SchemaRDD(this, parseSql(sqlText))
+    } else {
+      sys.error(s&quot;Unsupported SQL dialect: $dialect&quot;)
+    }
+  }
+</code></pre><p>parseSql&#x4F1A;&#x8C03;&#x7528;ddlParser&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6210;&#x529F;&#x5C31;&#x8C03;&#x7528;sqlParser&#x3002;&#x63A5;&#x7740;sqlParser&#x4F1A;&#x8C03;&#x7528;SparkSQLParser&#xFF0C;&#x5E76;&#x4E14;&#x628A;catalyst.SqlParser&#x4F20;&#x9012;&#x8FDB;&#x53BB;&#x3002;</p>
+<pre><code> protected[sql] def parseSql(sql: String): LogicalPlan = {
+    ddlParser(sql).getOrElse(sqlParser(sql))
+  }
+
+    protected[sql] val sqlParser = {
+    val fallback = new catalyst.SqlParser
+    new catalyst.SparkSQLParser(fallback(_))
+  }
+</code></pre><p>SparkSQLParser&#x7684;&#x529F;&#x80FD;&#x662F;&#x89E3;&#x6790;SparkSQL&#x7279;&#x6709;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;cache&#xFF0C;lazy&#x7B49;&#x3002;SparkSQLParser&#x4F1A;&#x9996;&#x5148;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5F53;&#x9047;&#x5230;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;catalyst.SqlParser:</p>
+<ol>
+<li>Cache&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x89E3;&#x6790;</li>
+<li>&#x5176;&#x4ED6;SparkSQLParser&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x8BED;&#x6CD5;</li>
+</ol>
+<pre><code>private[sql] class SparkSQLParser(fallback: String =&gt; LogicalPlan) extends AbstractSparkSQLParser {
+...
+private lazy val cache: Parser[LogicalPlan] =
+    CACHE ~&gt; LAZY.? ~ (TABLE ~&gt; ident) ~ (AS ~&gt; restInput).? ^^ {
+      case isLazy ~ tableName ~ plan =&gt;
+        CacheTableCommand(tableName, plan.map(fallback), isLazy.isDefined)
+    }
+...
+  private lazy val others: Parser[LogicalPlan] =
+    wholeInput ^^ {
+      case input =&gt; fallback(input)
+    }
+}
+</code></pre><h3 id="sqlparser">SqlParser</h3>
+<p>SqlParser&#x7EE7;&#x627F;&#x81EA;AbstractSparkSQLParser&#xFF0C;&#x800C;AbstractSparkSQLParser&#x7EE7;&#x627F;&#x81EA;StandardTokenParsers&#x548C; PackratParsers&#x3002;SqlParser&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;SQL&#x8BED;&#x8A00;&#x7684;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#xFF1A;</p>
+<p><strong>&#x8BCD;&#x6CD5;&#xFF1A;</strong> SqlParser&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5806;Keyword&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x628A;&#x8FD9;&#x4E9B;Keyword&#x5168;&#x90E8;&#x52A0;&#x5230;&#x4E00;&#x4E2A;reservedWords&#x7684;&#x96C6;&#x5408;&#x5F53;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x628A;&#x8FD9;&#x4E9B;&#x5173;&#x952E;&#x5B57;&#x52A0;&#x5230;SqlLexical&#x4E2D;&#x3002;SqlLexical&#x4E2D;&#x9664;&#x4E86;&#x5B9A;&#x4E49;&#x5173;&#x952E;&#x5B57;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x5206;&#x9694;&#x7B26;&#x3002;</p>
+<pre><code>class SqlParser extends AbstractSparkSQLParser {
+...
+  protected val ABS = Keyword(&quot;ABS&quot;)
+  protected val ALL = Keyword(&quot;ALL&quot;)
+  protected val AND = Keyword(&quot;AND&quot;)
+  protected val APPROXIMATE = Keyword(&quot;APPROXIMATE&quot;)
+  protected val AS = Keyword(&quot;AS&quot;)
+  protected val ASC = Keyword(&quot;ASC&quot;)
+  protected val AVG = Keyword(&quot;AVG&quot;)
+  protected val BETWEEN = Keyword(&quot;BETWEEN&quot;)
+  ...
+  protected val reservedWords =
+    this
+      .getClass
+      .getMethods
+      .filter(_.getReturnType == classOf[Keyword])
+      .map(_.invoke(this).asInstanceOf[Keyword].str)
+  ...
+  override val lexical = new SqlLexical(reservedWords)
+  ...
+}
+</code></pre><pre><code>class SqlLexical(val keywords: Seq[String]) extends StdLexical {
+  ...
+  reserved ++= keywords.flatMap(w =&gt; allCaseVersions(w))
+
+  delimiters += (
+    &quot;@&quot;, &quot;*&quot;, &quot;+&quot;, &quot;-&quot;, &quot;&lt;&quot;, &quot;=&quot;, &quot;&lt;&gt;&quot;, &quot;!=&quot;, &quot;&lt;=&quot;, &quot;&gt;=&quot;, &quot;&gt;&quot;, &quot;/&quot;, &quot;(&quot;, &quot;)&quot;,
+    &quot;,&quot;, &quot;;&quot;, &quot;%&quot;, &quot;{&quot;, &quot;}&quot;, &quot;:&quot;, &quot;[&quot;, &quot;]&quot;, &quot;.&quot;, &quot;&amp;&quot;, &quot;|&quot;, &quot;^&quot;, &quot;~&quot;, &quot;&lt;=&gt;&quot;
+  )
+  ...
+}
+</code></pre><p><strong>&#x8BED;&#x6CD5;&#xFF1A;</strong> sql&#x8BED;&#x6CD5;&#x7684;&#x6839;&#x8282;&#x70B9;&#x662F;<code>val start: Parser[LogicalPlan]</code>&#xFF0C;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F;<code>LogicalPlan</code>&#x3002;</p>
+<pre><code>class SqlParser extends AbstractSparkSQLParser {
+  ...
+  protected lazy val start: Parser[LogicalPlan] =
+    ( select *
+      ( UNION ~ ALL        ^^^ { (q1: LogicalPlan, q2: LogicalPlan) =&gt; Union(q1, q2) }
+      | INTERSECT          ^^^ { (q1: LogicalPlan, q2: LogicalPlan) =&gt; Intersect(q1, q2) }
+      | EXCEPT             ^^^ { (q1: LogicalPlan, q2: LogicalPlan) =&gt; Except(q1, q2)}
+      | UNION ~ DISTINCT.? ^^^ { (q1: LogicalPlan, q2: LogicalPlan) =&gt; Distinct(Union(q1, q2)) }
+      )
+    | insert
+    )
+
+  protected lazy val select: Parser[LogicalPlan] =
+    SELECT ~&gt; DISTINCT.? ~
+      repsep(projection, &quot;,&quot;) ~
+      (FROM   ~&gt; relations).? ~
+      (WHERE  ~&gt; expression).? ~
+      (GROUP  ~  BY ~&gt; rep1sep(expression, &quot;,&quot;)).? ~
+      (HAVING ~&gt; expression).? ~
+      (ORDER  ~  BY ~&gt; ordering).? ~
+      (LIMIT  ~&gt; expression).? ^^ {
+        case d ~ p ~ r ~ f ~ g ~ h ~ o ~ l  =&gt;
+          val base = r.getOrElse(NoRelation)
+          val withFilter = f.map(Filter(_, base)).getOrElse(base)
+          val withProjection = g
+            .map(Aggregate(_, assignAliases(p), withFilter))
+            .getOrElse(Project(assignAliases(p), withFilter))
+          val withDistinct = d.map(_ =&gt; Distinct(withProjection)).getOrElse(withProjection)
+          val withHaving = h.map(Filter(_, withDistinct)).getOrElse(withDistinct)
+          val withOrder = o.map(Sort(_, withHaving)).getOrElse(withHaving)
+          val withLimit = l.map(Limit(_, withOrder)).getOrElse(withOrder)
+          withLimit
+      }
+
+  protected lazy val insert: Parser[LogicalPlan] =
+    INSERT ~&gt; OVERWRITE.? ~ (INTO ~&gt; relation) ~ select ^^ {
+      case o ~ r ~ s =&gt; InsertIntoTable(r, Map.empty[String, Option[String]], s, o.isDefined)
+    }
+    ...
+}
+</code></pre><h3 id="abstractsparksqlparser">AbstractSparkSQLParser</h3>
+<p>sql&#x771F;&#x6B63;&#x7684;&#x89E3;&#x6790;&#x662F;&#x5728;AbstractSparkSQLParser&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;AbstractSparkSQLParser&#x7EE7;&#x627F;&#x81EA;StandardTokenParsers&#x548C;PackratParsers&#x3002;&#x89E3;&#x6790;&#x529F;&#x80FD;&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#xFF1A;<code>phrase(start)(new lexical.Scanner(input))</code>&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5F97;&#x51FA;&#x6765;&#xFF0C;&#x8BE5;&#x8BED;&#x53E5;&#x5C31;&#x662F;&#x8C03;&#x7528;phrase()&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;SQL&#x8BED;&#x6CD5;&#x8868;&#x8FBE;&#x5F0F;start&#xFF0C;&#x5BF9;&#x8BCD;&#x6CD5;&#x8BFB;&#x5165;&#x5668;lexical&#x8BFB;&#x5165;&#x7684;SQL&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5176;&#x4E2D;</p>
+<ol>
+<li>&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;lexical&#x5B9A;&#x4E49;&#x5728;SqlParser&#x4E2D;<code>override val lexical = new SqlLexical(reservedWords)</code></li>
+<li>&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x5668;start&#x5B9A;&#x4E49;&#x5728;SqlParser&#x4E2D;<code>protected lazy val start: Parser[LogicalPlan] =...</code></li>
+</ol>
+<pre><code>abstract class AbstractSparkSQLParser
+  extends StandardTokenParsers with PackratParsers {
+
+  def apply(input: String): LogicalPlan = phrase(start)(new lexical.Scanner(input)) match {
+    case Success(plan, _) =&gt; plan
+    case failureOrError =&gt; sys.error(failureOrError.toString)
+  }
+ ...
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: SparkSQL组件解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="physical_plan.html" class="navigation navigation-next " aria-label="Next page: Physical Plan">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SqlParser","level":"1.7.1","depth":2,"next":{"title":"Physical Plan","level":"1.7.2","depth":2,"path":"06-component/physical_plan.md","ref":"06-component/physical_plan.md","articles":[]},"previous":{"title":"SparkSQL组件解析","level":"1.7","depth":1,"path":"06-component/README.md","ref":"06-component/README.md","articles":[{"title":"SqlParser","level":"1.7.1","depth":2,"path":"06-component/sqlparser.md","ref":"06-component/sqlparser.md","articles":[]},{"title":"Physical Plan","level":"1.7.2","depth":2,"path":"06-component/physical_plan.md","ref":"06-component/physical_plan.md","articles":[]},{"title":"UDF","level":"1.7.3","depth":2,"path":"06-component/udf.md","ref":"06-component/udf.md","articles":[]},{"title":"In-Memory Columnar Storage","level":"1.7.4","depth":2,"path":"06-component/in-memory_columnar_storage.md","ref":"06-component/in-memory_columnar_storage.md","articles":[]},{"title":"External Data Source","level":"1.7.5","depth":2,"path":"06-component/external_data_source.md","ref":"06-component/external_data_source.md","articles":[]},{"title":"Code Generation","level":"1.7.6","depth":2,"path":"06-component/code_generation.md","ref":"06-component/code_generation.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-component/sqlparser.md","mtime":"2019-01-10T10:05:49.629Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:06:51.527Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
