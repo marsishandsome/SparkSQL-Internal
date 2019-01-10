@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Introduction](Introduction.md)
 * [SparkSQL介绍](01-introduction/README.md)
    * [SparkSQL的发展历程](01-introduction/history.md)
    * [SparkSQL的性能](01-introduction/performance.md)
@@ -30,4 +30,3 @@
    * [External Data Source](06-component/external_data_source.md)
    * [Code Generation](06-component/code_generation.md)
 * [推荐资料](07-overall/README.md)
-
